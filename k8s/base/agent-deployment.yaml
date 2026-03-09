@@ -30,9 +30,6 @@ spec:
                 name: ai-factory-config
             - secretRef:
                 name: ai-factory-secrets
-          volumeMounts:
-            - name: content-data
-              mountPath: /app/content
           resources:
             requests:
               cpu: 200m
@@ -52,7 +49,3 @@ spec:
               port: 8000
             initialDelaySeconds: 15
             periodSeconds: 30
-      volumes:
-        - name: content-data
-          persistentVolumeClaim:
-            claimName: content-data

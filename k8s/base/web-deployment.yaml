@@ -19,22 +19,6 @@ spec:
         app.kubernetes.io/component: frontend
         app.kubernetes.io/part-of: ai-factory
     spec:
-      initContainers:
-        - name: seed-content
-          image: web:latest
-          command:
-            - sh
-            - -c
-            - |
-              if [ -z "$(ls -A /app/content 2>/dev/null)" ]; then
-                echo "Seeding content from image..."
-                cp -a /app/content-seed/. /app/content/
-              else
-                echo "Content already present, skipping seed."
-              fi
-          volumeMounts:
-            - name: content-data
-              mountPath: /app/content
       containers:
         - name: web
           image: web:latest
@@ -46,9 +30,6 @@ spec:
                 name: ai-factory-config
             - secretRef:
                 name: ai-factory-secrets
-          volumeMounts:
-            - name: content-data
-              mountPath: /app/content
           resources:
             requests:
               cpu: 100m
@@ -68,7 +49,3 @@ spec:
               port: 3001
             initialDelaySeconds: 10
             periodSeconds: 30
-      volumes:
-        - name: content-data
-          persistentVolumeClaim:
-            claimName: content-data
