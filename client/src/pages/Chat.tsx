@@ -1,12 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import {
   PageSection,
-  Split,
-  SplitItem,
-  Select,
   SelectOption,
   SelectList,
-  MenuToggle,
 } from "@patternfly/react-core";
 import Chatbot, { ChatbotDisplayMode } from "@patternfly/chatbot/dist/esm/Chatbot";
 import ChatbotContent from "@patternfly/chatbot/dist/esm/ChatbotContent";
@@ -28,7 +24,7 @@ import type { Persona } from "../types/agent";
 import "@patternfly/chatbot/dist/css/main.css";
 
 export default function Chat() {
-  const { messages, streaming, error, sendMessage, clearChat, stopStreaming } =
+  const { messages, streaming, error, sendMessage } =
     useAgent();
   const { personas } = usePersonas();
   const [selectedPersona, setSelectedPersona] = useState<Persona | null>(null);
@@ -46,9 +42,10 @@ export default function Chat() {
     }
   }, [messages]);
 
-  const handleSend = (message: string) => {
-    if (!message.trim() || streaming) return;
-    sendMessage(message.trim(), selectedPersona?.id);
+  const handleSend = (message: string | number) => {
+    const text = String(message).trim();
+    if (!text || streaming) return;
+    sendMessage(text, selectedPersona?.id);
   };
 
   const welcomePrompts = selectedPersona

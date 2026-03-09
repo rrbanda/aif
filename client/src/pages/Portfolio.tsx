@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   Card,
-  CardTitle,
   CardBody,
   Label,
   Split,
@@ -14,8 +13,6 @@ import {
   MenuToggle,
   Flex,
   FlexItem,
-  Gallery,
-  GalleryItem,
   DescriptionList,
   DescriptionListGroup,
   DescriptionListTerm,
@@ -58,7 +55,7 @@ export default function Portfolio() {
 
   const allCases = useCases.length > 0
     ? useCases.map((uc) => {
-        const r = uc as Record<string, unknown>;
+        const r = uc as unknown as Record<string, unknown>;
         return {
           id: (r.id as string) ?? "",
           name: (r.name as string) ?? "",

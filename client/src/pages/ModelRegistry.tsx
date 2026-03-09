@@ -1,8 +1,6 @@
 import { useState, Fragment } from "react";
 import {
-  PageSection,
   Card,
-  CardTitle,
   CardBody,
   Label,
   Split,
@@ -148,12 +146,12 @@ export default function ModelRegistry() {
               </Thead>
               <Tbody>
                 {models.map((model) => {
-                  const gov = (model as Record<string, unknown>).governance as
+                  const gov = (model as unknown as Record<string, unknown>).governance as
                     | Record<string, unknown>
                     | undefined;
                   const isExpanded = expandedModel === model.id;
                   const history =
-                    ((model as Record<string, unknown>).lifecycle_history as
+                    ((model as unknown as Record<string, unknown>).lifecycle_history as
                       | Array<Record<string, string>>
                       | undefined) ?? [];
 

@@ -21,8 +21,6 @@ import {
   DescriptionListTerm,
   DescriptionListDescription,
   Alert,
-  Content,
-  Title,
   Icon,
 } from "@patternfly/react-core";
 import ExclamationTriangleIcon from "@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon";
@@ -292,27 +290,27 @@ export default function MonitoringDashboard() {
                     </div>
 
                     <DescriptionList isCompact className="pf-v6-u-mt-md">
-                      {m.use_case_id && (
+                      {!!m.use_case_id && (
                         <DescriptionListGroup>
                           <DescriptionListTerm>Use Case</DescriptionListTerm>
                           <DescriptionListDescription>
-                            {m.use_case_id as string}
+                            {String(m.use_case_id)}
                           </DescriptionListDescription>
                         </DescriptionListGroup>
                       )}
-                      {m.use_case && (
+                      {!!m.use_case && (
                         <DescriptionListGroup>
                           <DescriptionListTerm>Use Case</DescriptionListTerm>
                           <DescriptionListDescription>
-                            {m.use_case as string}
+                            {String(m.use_case)}
                           </DescriptionListDescription>
                         </DescriptionListGroup>
                       )}
-                      {(m.model_type || m.type) && (
+                      {!!(m.model_type || m.type) && (
                         <DescriptionListGroup>
                           <DescriptionListTerm>Type</DescriptionListTerm>
                           <DescriptionListDescription>
-                            {(m.model_type ?? m.type) as string}
+                            {String(m.model_type ?? m.type)}
                           </DescriptionListDescription>
                         </DescriptionListGroup>
                       )}

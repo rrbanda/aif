@@ -1,7 +1,5 @@
 import { useState } from "react";
 import {
-  PageSection,
-  Title,
   Card,
   CardTitle,
   CardBody,
@@ -90,7 +88,7 @@ function RadarChart({
           opacity="0.5"
         />
       ))}
-      {points.map((p, i) => (
+      {points.map((_p, i) => (
         <line
           key={i}
           x1={cx}
