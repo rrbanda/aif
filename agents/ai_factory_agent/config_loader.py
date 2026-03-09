@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import pathlib
 from typing import Optional
 
@@ -9,10 +10,13 @@ from pydantic import BaseModel, Field
 
 logger = logging.getLogger(__name__)
 
-# Resolve paths relative to the monorepo root
-_AGENTS_DIR = pathlib.Path(__file__).parent.parent
-_PROJECT_ROOT = _AGENTS_DIR.parent
-_CONTENT_DIR = _PROJECT_ROOT / "content"
+# Use CONTENT_DIR env var if set (container), otherwise resolve from source tree
+if os.environ.get("CONTENT_DIR"):
+    _CONTENT_DIR = pathlib.Path(os.environ["CONTENT_DIR"])
+else:
+    _AGENTS_DIR = pathlib.Path(__file__).parent.parent
+    _PROJECT_ROOT = _AGENTS_DIR.parent
+    _CONTENT_DIR = _PROJECT_ROOT / "content"
 _CONFIG_DIR = _CONTENT_DIR / "config"
 
 
