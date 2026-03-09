@@ -1,0 +1,71 @@
+sections:
+  - id: overview
+    title: "Overview"
+    items:
+      - id: program-overview
+        title: "Program Overview"
+        icon: home
+        route: "/"
+        content_file: "overview/program-overview.md"
+      - id: executive-summary
+        title: "Executive Summary"
+        icon: file-text
+        route: "/executive-summary"
+        content_file: "overview/executive-summary.md"
+
+  - id: technical-track
+    title: "Technical Track"
+    source: "phases"
+    description: "The platform, pipelines, models, and operations phases"
+
+  - id: organizational-track
+    title: "Organizational Track"
+    source: "organization"
+    description: "People structures, skills, and change management"
+
+  - id: use-cases
+    title: "Use Cases"
+    source: "use-cases"
+    description: "Banking-focused examples of what the AI Factory produces"
+
+  - id: reference
+    title: "Reference"
+    items:
+      - id: architecture
+        title: "Architecture"
+        icon: layers
+        route: "/reference/architecture"
+        content_file: "reference/architecture.md"
+      - id: technology-stack
+        title: "Technology Stack"
+        icon: cpu
+        route: "/reference/technology-stack"
+        source: "tech-stack"
+      - id: roles-responsibilities
+        title: "Roles & Responsibilities"
+        icon: users
+        route: "/reference/roles"
+        source: "roles"
+      - id: success-metrics
+        title: "Success Metrics"
+        icon: bar-chart
+        route: "/reference/metrics"
+        source: "metrics"
+      - id: glossary
+        title: "Glossary"
+        icon: book-open
+        route: "/reference/glossary"
+        content_file: "reference/glossary.md"
+
+  - id: admin
+    title: "Admin"
+    requires_role: editor
+    items:
+      - id: content-manager
+        title: "Content Manager"
+        icon: edit
+        route: "/admin"
+      - id: git-history
+        title: "Version History"
+        icon: git-branch
+        route: "/admin/history"

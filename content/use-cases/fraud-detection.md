@@ -1,0 +1,13 @@
+# Fraud Detection
+
+On-premises fraud detection represents one of the highest-value and most constrained AI use cases in financial services. Transaction data—card present/not present, velocity patterns, merchant categories, geolocation—is both highly sensitive and subject to strict regulatory controls. PCI DSS requirements prohibit transmission of cardholder data outside designated environments; GDPR and similar frameworks impose additional constraints on PII. For these reasons, fraud models must be trained and served entirely within the organization's data perimeter.
+
+**Real-time inference** is non-negotiable. Authorization decisions typically require sub-200ms end-to-end latency; the model must score each transaction before the authorization response is returned. This demands optimized inference pipelines—model quantization, batching strategies, and GPU or high-performance CPU serving—deployed close to the transaction processing systems. Batch scoring for retrospective analysis is a separate workload with different latency tolerances.
+
+**Proprietary model training** on historical fraud labels creates competitive advantage. Generic third-party models lack the institution's specific fraud patterns, customer segments, and product mix. Fine-tuning or training from scratch on internal data yields models that adapt to evolving attack vectors and reduce dependence on external vendors. The training pipeline must handle class imbalance (fraud is rare), temporal leakage prevention, and regular retraining as fraud patterns shift.
+
+**False positive reduction** directly impacts operational cost and customer experience. Every false positive triggers manual review, customer outreach, or card block—expensive at scale. Metrics matter: precision-recall trade-offs, analyst time saved per investigation, and detection accuracy at fixed false positive rates. A/B testing and champion-challenger deployments enable continuous improvement without disrupting production.
+
+<!-- audience: internal -->
+Position fraud detection as a flagship use case for the AI Factory—high visibility, clear ROI, and strong data residency justification. Sub-200ms SLA is achievable with vLLM/OpenVINO or Triton serving; validate inference latency in the pilot phase. Watch for data access delays from card network or core banking teams; fraud data often sits in siloed systems.
+<!-- /audience -->

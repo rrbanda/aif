@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+.vite/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.adk/
+
+# K8s secrets (templates are safe; actual secrets are not)
+k8s/**/secret.yaml
+!k8s/**/secret.yaml.example

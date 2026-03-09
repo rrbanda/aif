@@ -1,0 +1,811 @@
+tools:
+  - id: read_config
+    name: "Read Configuration"
+    description: "Read a YAML configuration file from the AI Factory"
+    endpoint: "/api/config/{config_type}"
+    method: GET
+    parameters:
+      - name: config_type
+        type: string
+        required: true
+        enum: [program, phases, organization, use-cases, tech-stack, roles, metrics, agents, personas, agent-tools, agent-settings]
+
+  - id: read_content
+    name: "Read Content"
+    description: "Read a markdown content file from the AI Factory"
+    endpoint: "/api/content/{path}"
+    method: GET
+    parameters:
+      - name: path
+        type: string
+        required: true
+
+  - id: write_content
+    name: "Write Content"
+    description: "Create or update a markdown content file"
+    endpoint: "/api/content/{path}"
+    method: PUT
+    parameters:
+      - name: path
+        type: string
+        required: true
+      - name: content
+        type: string
+        required: true
+
+  - id: search_content
+    name: "Search Content"
+    description: "Search across all content files for matching text"
+    endpoint: "/api/content/search"
+    method: GET
+    parameters:
+      - name: query
+        type: string
+        required: true
+
+  - id: list_content_tree
+    name: "List Content Tree"
+    description: "Get the full content directory tree"
+    endpoint: "/api/content/tree"
+    method: GET
+
+  - id: git_commit
+    name: "Git Commit"
+    description: "Commit a content file change with a message"
+    endpoint: "/api/git/commit"
+    method: POST
+    parameters:
+      - name: file_path
+        type: string
+        required: true
+      - name: message
+        type: string
+        required: true
+
+  - id: generate_executive_summary
+    name: "Generate Executive Summary"
+    description: "Generate an executive-level summary of the AI Factory program or a specific phase"
+    type: generation
+    parameters:
+      - name: scope
+        type: string
+        required: true
+        enum: [program, phase, use-case]
+      - name: target_id
+        type: string
+        required: false
+
+  - id: calculate_roi_estimate
+    name: "Calculate ROI Estimate"
+    description: "Calculate estimated ROI based on program metrics and deployment phase"
+    type: generation
+    parameters:
+      - name: phase
+        type: string
+        required: true
+      - name: use_case
+        type: string
+        required: false
+
+  - id: generate_architecture_diagram_description
+    name: "Generate Architecture Diagram"
+    description: "Generate a textual architecture diagram description for the AI Factory deployment"
+    type: generation
+    parameters:
+      - name: scope
+        type: string
+        required: true
+
+  - id: generate_pipeline_description
+    name: "Generate Pipeline Description"
+    description: "Generate a detailed ML pipeline description for a use case"
+    type: generation
+    parameters:
+      - name: use_case
+        type: string
+        required: true
+
+  - id: generate_use_case_qualification
+    name: "Generate Use Case Qualification"
+    description: "Generate a qualification matrix for a potential AI use case"
+    type: generation
+    parameters:
+      - name: use_case_description
+        type: string
+        required: true
+
+  # --- Customer Account Tools ---
+
+  - id: list_customers
+    name: "List Customers"
+    description: "List all customer accounts with basic info and current phase"
+    type: account
+
+  - id: load_customer_context
+    name: "Load Customer Context"
+    description: "Load full customer account data including program state, assessments, use cases, models, and engagement"
+    type: account
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  - id: update_customer_phase
+    name: "Update Customer Phase"
+    description: "Update a customer's program phase status (not_started, in_progress, completed)"
+    type: account
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: phase_id
+        type: string
+        required: true
+      - name: status
+        type: string
+        required: true
+        enum: [not_started, in_progress, completed]
+      - name: completion_pct
+        type: integer
+        required: false
+
+  - id: update_customer_use_case
+    name: "Update Customer Use Case"
+    description: "Add or update a use case in the customer's portfolio"
+    type: account
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: use_case_id
+        type: string
+        required: true
+      - name: name
+        type: string
+        required: false
+      - name: status
+        type: string
+        required: false
+        enum: [proposed, qualified, piloting, production, scaled, retired]
+      - name: priority
+        type: integer
+        required: false
+      - name: qualified
+        type: boolean
+        required: false
+      - name: business_impact_score
+        type: number
+        required: false
+      - name: complexity_score
+        type: number
+        required: false
+
+  - id: update_customer_model
+    name: "Update Customer Model"
+    description: "Add or update a model in the customer's model inventory"
+    type: account
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: name
+        type: string
+        required: false
+      - name: use_case
+        type: string
+        required: false
+      - name: status
+        type: string
+        required: false
+        enum: [experiment, registered, validated, deployed, monitored, retired]
+      - name: model_type
+        type: string
+        required: false
+
+  - id: save_assessment_results
+    name: "Save Assessment Results"
+    description: "Persist readiness assessment results to a customer account"
+    type: account
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: overall_readiness
+        type: string
+        required: true
+      - name: data_readiness
+        type: string
+        required: false
+      - name: org_maturity
+        type: string
+        required: false
+      - name: team_readiness
+        type: string
+        required: false
+      - name: infra_readiness
+        type: string
+        required: false
+      - name: use_case_pipeline
+        type: string
+        required: false
+
+  - id: create_customer_account
+    name: "Create Customer Account"
+    description: "Create a new customer account"
+    type: account
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: name
+        type: string
+        required: true
+      - name: industry
+        type: string
+        required: false
+      - name: tier
+        type: string
+        required: false
+      - name: region
+        type: string
+        required: false
+
+  # --- Cross-Session State Tools ---
+
+  - id: save_workflow_state
+    name: "Save Workflow State"
+    description: "Persist a workflow output so results are available in future sessions"
+    type: state
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: state_key
+        type: string
+        required: true
+      - name: data
+        type: string
+        required: true
+      - name: workflow_name
+        type: string
+        required: false
+
+  - id: load_workflow_state
+    name: "Load Workflow State"
+    description: "Load a previously saved workflow result for a customer"
+    type: state
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: state_key
+        type: string
+        required: true
+
+  - id: list_workflow_states
+    name: "List Workflow States"
+    description: "List all persisted workflow states for a customer"
+    type: state
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  # --- Multi-Customer Orchestration Tools ---
+
+  - id: get_customer_portfolio_view
+    name: "Get Customer Portfolio View"
+    description: "Get aggregated view across all customer accounts with phase distribution and counts"
+    type: multi_customer
+
+  - id: get_cross_customer_patterns
+    name: "Get Cross-Customer Patterns"
+    description: "Analyze patterns across customer accounts for common challenges and insights"
+    type: multi_customer
+
+  - id: get_resource_allocation_view
+    name: "Get Resource Allocation View"
+    description: "Get Red Hat team allocation across customer engagements"
+    type: multi_customer
+
+  # --- Competitive Battlecard Tools ---
+
+  - id: generate_battlecard
+    name: "Generate Battlecard"
+    description: "Generate a competitive battlecard for a specific competitor tailored to customer context"
+    type: competitive
+    parameters:
+      - name: competitor
+        type: string
+        required: true
+        enum: [databricks, aws-sagemaker, azure-ai, google-vertex]
+      - name: customer_context
+        type: string
+        required: false
+      - name: use_case
+        type: string
+        required: false
+
+  - id: list_competitors
+    name: "List Competitors"
+    description: "List available competitors for battlecard generation"
+    type: competitive
+
+  # --- Training & Learning Tools ---
+
+  - id: get_learning_paths
+    name: "Get Learning Paths"
+    description: "Get all available learning paths for AI Factory team training"
+    type: training
+
+  - id: recommend_learning_path
+    name: "Recommend Learning Path"
+    description: "Recommend a learning path based on role and current skills"
+    type: training
+    parameters:
+      - name: role
+        type: string
+        required: true
+        enum: [data-scientist, ml-engineer, ai-leader]
+      - name: current_skills
+        type: string
+        required: false
+      - name: goals
+        type: string
+        required: false
+
+  - id: track_training_progress
+    name: "Track Training Progress"
+    description: "Track training module completion for a customer team member"
+    type: training
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: learner_name
+        type: string
+        required: true
+      - name: module_id
+        type: string
+        required: true
+      - name: status
+        type: string
+        required: false
+        enum: [enrolled, in_progress, completed]
+      - name: score
+        type: number
+        required: false
+
+  - id: get_team_training_summary
+    name: "Get Team Training Summary"
+    description: "Get training progress summary for the entire customer team"
+    type: training
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  # --- Portfolio Management Tools ---
+
+  - id: create_use_case
+    name: "Create Use Case"
+    description: "Create a new use case in the portfolio with scoring and dependencies"
+    type: portfolio
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: use_case_id
+        type: string
+        required: true
+      - name: name
+        type: string
+        required: true
+      - name: description
+        type: string
+        required: false
+      - name: business_unit
+        type: string
+        required: false
+      - name: sponsor
+        type: string
+        required: false
+      - name: priority
+        type: integer
+        required: false
+      - name: business_impact_score
+        type: number
+        required: false
+      - name: complexity_score
+        type: number
+        required: false
+      - name: data_readiness_score
+        type: number
+        required: false
+      - name: estimated_value_usd
+        type: number
+        required: false
+      - name: dependencies
+        type: string
+        required: false
+
+  - id: transition_use_case
+    name: "Transition Use Case"
+    description: "Transition a use case to a new lifecycle stage with state machine validation"
+    type: portfolio
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: use_case_id
+        type: string
+        required: true
+      - name: target_stage
+        type: string
+        required: true
+        enum: [proposed, qualified, piloting, production, scaled, retired]
+      - name: notes
+        type: string
+        required: false
+
+  - id: get_portfolio_summary
+    name: "Get Portfolio Summary"
+    description: "Get use case portfolio summary with stage distribution, priorities, and value estimates"
+    type: portfolio
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  - id: update_use_case_kpis
+    name: "Update Use Case KPIs"
+    description: "Update KPIs (metrics with targets) for a specific use case"
+    type: portfolio
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: use_case_id
+        type: string
+        required: true
+      - name: kpi_name
+        type: string
+        required: true
+      - name: kpi_value
+        type: string
+        required: true
+      - name: kpi_target
+        type: string
+        required: false
+
+  - id: get_use_case_detail
+    name: "Get Use Case Detail"
+    description: "Get full details for a specific use case including lifecycle history and KPIs"
+    type: portfolio
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: use_case_id
+        type: string
+        required: true
+
+  # --- Metrics & Feedback Tools ---
+
+  - id: ingest_model_metrics
+    name: "Ingest Model Metrics"
+    description: "Ingest production metrics (accuracy, latency, drift, etc.) for a deployed model"
+    type: metrics
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: accuracy
+        type: number
+        required: false
+      - name: precision
+        type: number
+        required: false
+      - name: recall
+        type: number
+        required: false
+      - name: f1_score
+        type: number
+        required: false
+      - name: latency_p95_ms
+        type: number
+        required: false
+      - name: throughput_rps
+        type: number
+        required: false
+      - name: drift_score
+        type: number
+        required: false
+      - name: error_rate_pct
+        type: number
+        required: false
+      - name: data_quality_score
+        type: number
+        required: false
+
+  - id: get_metrics_history
+    name: "Get Metrics History"
+    description: "Get production metrics history for a model with trend indicators"
+    type: metrics
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: last_n
+        type: integer
+        required: false
+
+  - id: detect_anomalies
+    name: "Detect Anomalies"
+    description: "Analyze model metrics for anomalies requiring attention (drift, degradation, latency)"
+    type: metrics
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+
+  - id: generate_feedback_report
+    name: "Generate Feedback Report"
+    description: "Generate aggregated feedback report across all models for a customer"
+    type: metrics
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  # --- Infrastructure Integration Tools ---
+
+  - id: get_cluster_status
+    name: "Get Cluster Status"
+    description: "Get OpenShift cluster health status including node counts and namespace status"
+    type: infrastructure
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  - id: get_gpu_status
+    name: "Get GPU Status"
+    description: "Get GPU utilization across the cluster with per-namespace breakdown"
+    type: infrastructure
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  - id: get_model_registry_status
+    name: "Get Model Registry Status"
+    description: "Get model registry status showing registered models and their states"
+    type: infrastructure
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  - id: get_inference_endpoints
+    name: "Get Inference Endpoints"
+    description: "Get inference endpoint status including latency and throughput"
+    type: infrastructure
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  - id: get_pipeline_status
+    name: "Get Pipeline Status"
+    description: "Get ML pipeline execution status including recent runs and failures"
+    type: infrastructure
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  - id: get_infrastructure_summary
+    name: "Get Infrastructure Summary"
+    description: "Get complete infrastructure overview combining cluster, GPU, and service status"
+    type: infrastructure
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+  # --- Model Lifecycle Tools ---
+
+  - id: register_model
+    name: "Register Model"
+    description: "Register a new model in the lifecycle tracker"
+    type: model_lifecycle
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: name
+        type: string
+        required: true
+      - name: use_case_id
+        type: string
+        required: true
+      - name: model_type
+        type: string
+        required: true
+      - name: framework
+        type: string
+        required: false
+      - name: version
+        type: string
+        required: false
+      - name: description
+        type: string
+        required: false
+
+  - id: transition_model
+    name: "Transition Model"
+    description: "Transition a model to a new lifecycle stage with state machine validation"
+    type: model_lifecycle
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: target_stage
+        type: string
+        required: true
+        enum: [experiment, registered, validated, deployed, monitored, retired]
+      - name: actor
+        type: string
+        required: false
+      - name: notes
+        type: string
+        required: false
+
+  - id: update_model_governance
+    name: "Update Model Governance"
+    description: "Update governance gate status (bias, security, performance, model card, etc.) for a model"
+    type: model_lifecycle
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: bias_tested
+        type: boolean
+        required: false
+      - name: security_scanned
+        type: boolean
+        required: false
+      - name: performance_validated
+        type: boolean
+        required: false
+      - name: data_lineage_documented
+        type: boolean
+        required: false
+      - name: model_card_completed
+        type: boolean
+        required: false
+      - name: risk_classification
+        type: string
+        required: false
+      - name: approval_by
+        type: string
+        required: false
+      - name: approval_notes
+        type: string
+        required: false
+
+  - id: update_model_metrics
+    name: "Update Model Metrics"
+    description: "Update performance metrics (accuracy, latency, drift, etc.) for a model"
+    type: model_lifecycle
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+      - name: accuracy
+        type: number
+        required: false
+      - name: precision
+        type: number
+        required: false
+      - name: recall
+        type: number
+        required: false
+      - name: f1_score
+        type: number
+        required: false
+      - name: latency_p95_ms
+        type: number
+        required: false
+      - name: throughput_rps
+        type: number
+        required: false
+      - name: drift_score
+        type: number
+        required: false
+
+  - id: get_model_status
+    name: "Get Model Status"
+    description: "Get full model lifecycle status including governance gates and performance metrics"
+    type: model_lifecycle
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: model_id
+        type: string
+        required: true
+
+  - id: list_models
+    name: "List Models"
+    description: "List all models for a customer, optionally filtered by lifecycle stage"
+    type: model_lifecycle
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: status_filter
+        type: string
+        required: false
+        enum: [experiment, registered, validated, deployed, monitored, retired]
+
+  # --- Deliverable Tools ---
+
+  - id: save_deliverable
+    name: "Save Deliverable"
+    description: "Save a generated deliverable document (assessment report, program charter, etc.) to the customer directory"
+    type: deliverable
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+      - name: deliverable_type
+        type: string
+        required: true
+        enum: [assessment-report, program-charter, architecture-document, mlops-runbook, platform-design, executive-briefing]
+      - name: title
+        type: string
+        required: true
+      - name: content
+        type: string
+        required: true
+
+  - id: list_deliverables
+    name: "List Deliverables"
+    description: "List all deliverables generated for a customer"
+    type: deliverable
+    parameters:
+      - name: customer_id
+        type: string
+        required: true
+
+express_api:
+  base_url: "http://localhost:3001"
+  auth:
+    username: "admin"
+    password: "admin"

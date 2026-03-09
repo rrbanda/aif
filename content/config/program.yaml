@@ -1,0 +1,39 @@
+program:
+  name: "AI Factory"
+  tagline: "From consumption to production AI"
+  description: >
+    A structured, multi-month program that establishes an enterprise AI Factory —
+    the platform, processes, people, and governance required to continuously build,
+    deploy, and operate AI at scale. Built on Red Hat OpenShift AI and NVIDIA AI Enterprise.
+  version: "1.0"
+  industry: financial-services
+  customer_placeholder: "Customer"
+
+  factory_outputs:
+    - id: predictions
+      title: "Predictions"
+      description: "Forecasting events — fraud probability, credit risk scores, market signals, capacity utilization"
+      icon: trending-up
+    - id: pattern-recognition
+      title: "Pattern Recognition"
+      description: "Identifying trends — anomalous transaction patterns, regulatory change detection, customer behavior clusters"
+      icon: scan
+    - id: process-automation
+      title: "Process Automation"
+      description: "Combining predictions and patterns — automated compliance checking, intelligent document routing, agentic workflows"
+      icon: bot
+
+  tracks:
+    - id: technical
+      title: "Technical Track"
+      description: "Platform, pipelines, models, governance, and operations"
+    - id: organizational
+      title: "Organizational Track"
+      description: "People structures, skills, culture, and change management that make the factory sustainable"
+
+  principles:
+    - "Practitioner-to-practitioner — no marketing language"
+    - "Banking-first examples, industry-adaptable structure"
+    - "Value gates between phases — progress when KPIs are met, not when time runs out"
+    - "Every phase maps to a Red Hat consulting engagement"
+    - "Nothing hardcoded — all content configurable via YAML and markdown"

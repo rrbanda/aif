@@ -1,0 +1,53 @@
+# ---------------------------------------------------------------------------
+# Stage 1 – build client (Vite) and server (tsup)
+# ---------------------------------------------------------------------------
+FROM registry.access.redhat.com/ubi9/nodejs-22 AS builder
+
+WORKDIR /app
+
+COPY package.json package-lock.json tsconfig.base.json ./
+COPY server/package.json server/tsconfig.json server/
+COPY client/package.json client/tsconfig.json \
+     client/tsconfig.app.json client/tsconfig.node.json client/
+
+RUN npm ci
+
+COPY server/src server/src
+COPY client/src client/src
+COPY client/index.html client/
+COPY client/public client/public
+COPY client/vite.config.ts client/eslint.config.js client/
+
+RUN npm run build -w server && npm run build -w client
+
+# Re-install production-only deps so we can copy a lean node_modules
+RUN rm -rf node_modules server/node_modules client/node_modules && \
+    npm ci --omit=dev
+
+# ---------------------------------------------------------------------------
+# Stage 2 – minimal runtime
+# ---------------------------------------------------------------------------
+FROM registry.access.redhat.com/ubi9/nodejs-22-minimal
+
+WORKDIR /app
+
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/server/package.json server/
+COPY --from=builder /app/node_modules node_modules
+COPY --from=builder /app/server/node_modules server/node_modules
+COPY --from=builder /app/server/dist server/dist
+COPY --from=builder /app/client/dist client/dist
+
+# Seed content baked into the image (used by init container to populate PVC)
+COPY content content-seed
+COPY content content
+
+ENV NODE_ENV=production \
+    PORT=3001 \
+    CONTENT_DIR=/app/content
+
+EXPOSE 3001
+
+USER 1001
+
+CMD ["node", "server/dist/index.js"]

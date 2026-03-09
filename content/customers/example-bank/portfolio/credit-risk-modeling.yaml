@@ -1,0 +1,25 @@
+id: credit-risk-modeling
+name: Credit Risk Model Augmentation
+description: Augment existing credit risk scorecards with ML ensemble models to improve predictive accuracy on default probability.
+business_unit: Credit Risk
+sponsor: Lisa Park
+stage: proposed
+priority: 3
+scores:
+  business_impact: 4
+  complexity: 4
+  data_readiness: 2
+estimated_value_usd: 8000000
+dependencies:
+  - credit-bureau-data-integration
+  - model-governance-framework
+kpis:
+  default_prediction_improvement: "15% target"
+  capital_reserve_optimization: "$8M potential savings"
+  regulatory_compliance: "SR 11-7 compliant"
+lifecycle_history:
+  - stage: proposed
+    timestamp: "2026-02-15T09:00:00Z"
+    notes: Identified during use case qualification workshop
+created: "2026-02-15"
+updated: "2026-03-01"

@@ -1,0 +1,22 @@
+FROM registry.access.redhat.com/ubi9/python-311
+
+WORKDIR /app
+
+COPY agents/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY agents/ai_factory_agent ai_factory_agent
+COPY agents/pyproject.toml .
+
+# Bake content into the image (PVC overlay at runtime)
+COPY content content-seed
+COPY content content
+
+ENV CONTENT_DIR=/app/content \
+    ADK_PORT=8000
+
+EXPOSE 8000
+
+USER 1001
+
+CMD ["adk", "api_server", "--port", "8000", "/app"]

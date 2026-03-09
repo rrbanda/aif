@@ -1,0 +1,20 @@
+settings:
+  default_model: "gemini-2.5-pro"
+  api_server_port: 8000
+  session:
+    timeout_minutes: 60
+    max_sessions_per_user: 5
+  memory:
+    type: in-memory
+    cross_session_recall: true
+  streaming:
+    enabled: true
+    token_level: true
+  logging:
+    level: INFO
+    format: structured
+  guardrails:
+    max_tool_calls_per_turn: 10
+    max_tokens_per_response: 4096
+    require_tool_confirmation: false
+    blocked_operations: []

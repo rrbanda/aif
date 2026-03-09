@@ -1,0 +1,343 @@
+phases:
+  - id: discovery
+    title: "Discovery & Assessment"
+    subtitle: "Understand the landscape before building"
+    order: 0
+    duration: "4-6 weeks"
+    status: active
+    track: technical
+    icon: search
+    red_hat_engagement: "AI Discovery + AI Assessment"
+    audience:
+      - customer
+      - internal
+    related_org:
+      - steering-committee
+      - workshops
+      - change-management
+    prerequisites: []
+    value_gate: "Use case portfolio scored and prioritized; program charter signed by executive sponsors"
+    content_file: "phases/00-discovery.md"
+    deliverables:
+      - title: "Workload assessment report"
+        description: "Inventory of current and planned AI workloads, classified by data sensitivity, latency needs, and regulatory constraints"
+        audience: [customer, internal]
+      - title: "Infrastructure audit"
+        description: "Assessment of existing OpenShift clusters, GPU capacity, networking, and storage readiness for AI workloads"
+        audience: [customer, internal]
+      - title: "AI maturity assessment"
+        description: "Current state of AI practices, tools, skills, and governance mapped against industry benchmarks"
+        audience: [customer, internal]
+      - title: "Prioritized use case portfolio"
+        description: "Scored and ranked use cases based on business value, feasibility, data readiness, and regulatory risk"
+        audience: [customer, internal]
+      - title: "Stakeholder map"
+        description: "Identified executive sponsors, technical leads, data owners, compliance contacts, and change champions"
+        audience: [customer, internal]
+      - title: "Program charter"
+        description: "Agreed scope, timeline, success criteria, governance model, and resource commitments"
+        audience: [customer, internal]
+      - title: "Resource and staffing plan"
+        description: "Red Hat team composition, customer team requirements, joint activities schedule"
+        audience: [internal]
+    decision_points:
+      - "Which use cases warrant factory-level investment vs lighter-touch solutions?"
+      - "What GPU/compute capacity is needed for the pilot phase?"
+      - "What data governance gaps must be addressed before proceeding?"
+      - "Is the organizational readiness sufficient, or does Change Management need to start first?"
+    risks:
+      - "Scope creep from too many use cases identified"
+      - "Insufficient executive sponsorship or competing priorities"
+      - "Data readiness significantly lower than expected"
+      - "Existing infrastructure gaps requiring capital investment"
+
+  - id: data-strategy
+    title: "Data Strategy & Readiness"
+    subtitle: "The factory runs on data — get it right first"
+    order: 1
+    duration: "6-8 weeks"
+    status: active
+    track: technical
+    icon: database
+    red_hat_engagement: "AI Platform Foundation (data integration component)"
+    audience:
+      - customer
+      - internal
+    related_org:
+      - coe
+      - change-management
+    prerequisites:
+      - discovery
+    value_gate: "Data pipelines operational for pilot use cases; data governance framework approved"
+    content_file: "phases/01-data-strategy.md"
+    deliverables:
+      - title: "Data governance framework"
+        description: "Policies for data classification, access control, retention, lineage tracking, and compliance with PCI DSS, GDPR, SOX"
+        audience: [customer, internal]
+      - title: "Data quality assessment"
+        description: "Profiling and quality analysis for datasets required by pilot use cases"
+        audience: [customer, internal]
+      - title: "Data pipeline architecture"
+        description: "Design for ingestion, transformation, and serving pipelines connecting source systems to the AI platform"
+        audience: [customer, internal]
+      - title: "PII and data residency mapping"
+        description: "Identification of PII fields, data residency requirements, and encryption/masking strategies"
+        audience: [customer, internal]
+      - title: "Feature store design"
+        description: "Reusable ML feature definitions, storage architecture, and serving patterns"
+        audience: [customer, internal]
+    decision_points:
+      - "Which data sources are accessible and at what latency?"
+      - "What PII handling approach — masking, tokenization, or synthetic data generation?"
+      - "On-prem feature store vs cloud-hosted — where does data gravity pull?"
+    risks:
+      - "Data silos across business units blocking unified access"
+      - "Data quality insufficient for model training"
+      - "Regulatory constraints limiting data movement"
+      - "Data engineering capacity insufficient for pipeline construction"
+
+  - id: platform-foundation
+    title: "Platform Foundation"
+    subtitle: "Build the factory floor"
+    order: 2
+    duration: "8-12 weeks"
+    status: active
+    track: technical
+    icon: layers
+    red_hat_engagement: "AI Platform Foundation"
+    audience:
+      - customer
+      - internal
+    related_org:
+      - coe
+      - bootcamps
+    prerequisites:
+      - data-strategy
+    value_gate: "OpenShift AI operational with GPU nodes; teams onboarded and running workbenches"
+    content_file: "phases/02-platform-foundation.md"
+    deliverables:
+      - title: "OpenShift AI deployed and configured"
+        description: "OpenShift AI Operator installed on existing OpenShift cluster with multi-tenant project structure"
+        audience: [customer, internal]
+      - title: "GPU nodes enabled"
+        description: "NVIDIA GPU Operator and Network Operator deployed; GPU resources available for scheduling"
+        audience: [customer, internal]
+      - title: "AI Hub configured"
+        description: "Central model catalog with approved models, performance insights, and deployment guidance"
+        audience: [customer, internal]
+      - title: "Multi-tenant workspace setup"
+        description: "Isolated namespaces for each team (risk, fraud, NLP, quant) with RBAC policies"
+        audience: [customer, internal]
+      - title: "Developer onboarding"
+        description: "Data scientists and ML engineers onboarded to workbenches with access to compute, data, and tools"
+        audience: [customer, internal]
+      - title: "GitOps pipeline"
+        description: "Infrastructure-as-Code for platform management using GitOps approach"
+        audience: [customer, internal]
+      - title: "Platform sizing and cost model"
+        description: "GPU cluster sizing, cost allocation model across business units, capacity planning"
+        audience: [internal]
+    decision_points:
+      - "Which foundation models to include in the AI Hub catalog?"
+      - "How to allocate GPU resources across teams — shared pool or dedicated quotas?"
+      - "Single cluster or multi-cluster topology?"
+    risks:
+      - "GPU procurement delays"
+      - "Network bandwidth insufficient for distributed training"
+      - "Security team approval timeline for new platform components"
+
+  - id: pilot-incubation
+    title: "Pilot & Incubation"
+    subtitle: "Prove it works before you scale it"
+    order: 3
+    duration: "8-12 weeks"
+    status: active
+    track: technical
+    icon: flask-conical
+    red_hat_engagement: "AI Incubator"
+    audience:
+      - customer
+      - internal
+    related_org:
+      - cop
+      - process-redesign
+      - value-realization
+      - bootcamps
+    prerequisites:
+      - platform-foundation
+    value_gate: "2-3 use cases proved end-to-end with measurable business KPIs met or exceeded"
+    content_file: "phases/03-pilot-incubation.md"
+    deliverables:
+      - title: "2-3 pilot use cases deployed end-to-end"
+        description: "Complete lifecycle from data to production inference for selected pilot use cases"
+        audience: [customer, internal]
+      - title: "KPI measurement report"
+        description: "Business metrics for each pilot: accuracy, latency, cost savings, time saved, false positive rates"
+        audience: [customer, internal]
+      - title: "Model evaluation framework"
+        description: "Reusable evaluation pipelines including fairness, robustness, and safety benchmarks"
+        audience: [customer, internal]
+      - title: "Fine-tuning pipeline"
+        description: "Automated pipeline for fine-tuning foundation models on enterprise data (SFT, OSFT)"
+        audience: [customer, internal]
+      - title: "Process redesign documentation"
+        description: "How business workflows change with AI integrated — before/after process maps"
+        audience: [customer, internal]
+      - title: "Lessons learned report"
+        description: "Technical and organizational lessons from pilot phase — what worked, what to change"
+        audience: [customer, internal]
+      - title: "Scale readiness assessment"
+        description: "Assessment of whether pilots meet value gates for scaling to production"
+        audience: [internal]
+    decision_points:
+      - "Which pilots met KPIs and should scale? Which should be iterated or dropped?"
+      - "What additional governance gates are needed before production?"
+      - "Does the platform need capacity adjustments for scaling?"
+    risks:
+      - "Pilot use cases chosen for visibility rather than feasibility"
+      - "Data quality issues discovered during model training"
+      - "Business process owners resistant to workflow changes"
+      - "KPIs not clearly defined, making success measurement ambiguous"
+
+  - id: operationalize
+    title: "Operationalize"
+    subtitle: "Make it production-grade"
+    order: 4
+    duration: "8-12 weeks"
+    status: active
+    track: technical
+    icon: settings
+    red_hat_engagement: "Operationalizing AI"
+    audience:
+      - customer
+      - internal
+    related_org:
+      - coe
+      - value-realization
+    prerequisites:
+      - pilot-incubation
+    value_gate: "MLOps pipeline operational; models deployed to production with governance gates and monitoring"
+    content_file: "phases/04-operationalize.md"
+    deliverables:
+      - title: "MLOps pipeline"
+        description: "CI/CD for models — automated testing, containerization, canary deployment, rollback"
+        audience: [customer, internal]
+      - title: "Model registry"
+        description: "Centralized registry with versioning, lineage, approval workflows, and status tracking"
+        audience: [customer, internal]
+      - title: "Governance gates"
+        description: "Automated compliance checkpoints — bias detection, security scan, performance thresholds — before production deployment"
+        audience: [customer, internal]
+      - title: "Model-as-a-Service (MaaS)"
+        description: "Platform team serves approved models via API endpoints with rate limiting, quota management, and SLA policies"
+        audience: [customer, internal]
+      - title: "Observability stack"
+        description: "Model monitoring for drift, latency, throughput, error rates, and fairness metrics"
+        audience: [customer, internal]
+      - title: "Incident response playbook"
+        description: "Runbooks for model degradation, data pipeline failures, GPU resource exhaustion, and security incidents"
+        audience: [customer, internal]
+    decision_points:
+      - "What SLAs for model inference latency and availability?"
+      - "Who approves model promotions to production — automated gates or human review?"
+      - "How to handle model rollback when performance degrades?"
+    risks:
+      - "Governance overhead slowing deployment velocity"
+      - "Observability gaps causing production issues to go undetected"
+      - "Insufficient MLOps engineering capacity"
+
+  - id: scale-adopt
+    title: "Scale & Adopt"
+    subtitle: "From one team to the whole organization"
+    order: 5
+    duration: "12-16 weeks"
+    status: active
+    track: technical
+    icon: rocket
+    red_hat_engagement: "Red Hat Consulting (custom engagement)"
+    audience:
+      - customer
+      - internal
+    related_org:
+      - evangelism
+      - cop
+      - workshops
+      - change-management
+    prerequisites:
+      - operationalize
+    value_gate: "Multiple teams actively using the factory; developer self-service operational; measurable business impact across use cases"
+    content_file: "phases/05-scale-adopt.md"
+    deliverables:
+      - title: "Multi-team onboarding"
+        description: "Additional business units onboarded to the factory with dedicated workspaces and model catalogs"
+        audience: [customer, internal]
+      - title: "Developer self-service"
+        description: "Gen AI Studio for prompt experimentation, MCP tool integration, and model endpoint discovery"
+        audience: [customer, internal]
+      - title: "Model routing and optimization"
+        description: "llm-d distributed inference routing — select models by cost, latency, and SLA requirements"
+        audience: [customer, internal]
+      - title: "Domain-specific models"
+        description: "Fine-tuned models for domain use cases — credit risk, equities research, AML, regulatory interpretation"
+        audience: [customer, internal]
+      - title: "Agentic AI deployment"
+        description: "Multi-step agent workflows using MCP for tool access — internal systems, risk calculators, market data"
+        audience: [customer, internal]
+      - title: "Adoption dashboard"
+        description: "Metrics tracking factory usage: teams onboarded, models deployed, API calls, compute utilization, cost per model"
+        audience: [customer, internal]
+    decision_points:
+      - "Which teams onboard next — prioritize by business value or readiness?"
+      - "Centralized model serving or federated per business unit?"
+      - "What level of agent autonomy is appropriate for regulated workloads?"
+    risks:
+      - "Adoption stalls without evangelism and executive support"
+      - "Teams bypass factory for shadow AI deployments"
+      - "GPU costs scale faster than business value"
+      - "Agent reliability insufficient for customer-facing use cases"
+
+  - id: operate-improve
+    title: "Operate & Improve"
+    subtitle: "Run the factory, make it better"
+    order: 6
+    duration: "Ongoing"
+    status: active
+    track: technical
+    icon: activity
+    red_hat_engagement: "Red Hat TAM + Red Hat Support"
+    audience:
+      - customer
+      - internal
+    related_org:
+      - steering-committee
+      - value-realization
+      - cop
+    prerequisites:
+      - scale-adopt
+    value_gate: "Continuous — quarterly value reviews with steering committee"
+    content_file: "phases/06-operate-improve.md"
+    deliverables:
+      - title: "AIOps for the factory"
+        description: "AI-driven monitoring of the factory itself — model drift detection, pipeline health prediction, GPU optimization, automated alerting"
+        audience: [customer, internal]
+      - title: "Continuous improvement process"
+        description: "Regular model retraining triggers, data refresh cycles, platform upgrades, capacity planning"
+        audience: [customer, internal]
+      - title: "Quarterly value review"
+        description: "Business impact assessment — ROI tracking, cost optimization, new use case pipeline"
+        audience: [customer, internal]
+      - title: "Knowledge base"
+        description: "Internal documentation of patterns, anti-patterns, runbooks, and lessons learned"
+        audience: [customer, internal]
+      - title: "Platform evolution roadmap"
+        description: "Planned upgrades, new capabilities, capacity expansion aligned with business growth"
+        audience: [customer, internal]
+    decision_points:
+      - "When to retrain vs replace a model?"
+      - "How to balance innovation (new use cases) with operational stability?"
+      - "When to expand GPU capacity vs optimize existing resources?"
+    risks:
+      - "Technical debt accumulation in ML pipelines"
+      - "Model staleness from insufficient retraining"
+      - "Key person dependencies on platform operations"
+      - "Budget pressure reducing investment in continuous improvement"

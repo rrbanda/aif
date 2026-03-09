@@ -1,0 +1,95 @@
+account:
+  id: example-bank
+  name: "Example Bank Corp"
+  industry: financial-services
+  tier: tier-1
+  region: north-america
+  openshift_version: "4.16"
+  created: "2026-01-15"
+  updated: "2026-03-08"
+
+contacts:
+  - name: "Jane Smith"
+    role: "Chief AI Officer"
+    engagement: primary-sponsor
+  - name: "Tom Chen"
+    role: "VP ML Engineering"
+    engagement: technical-lead
+
+red_hat_team:
+  ae: "Sarah Johnson"
+  account_sa: "Mike Williams"
+  ai_specialist_sa: "Priya Patel"
+  field_cto: "David Kim"
+
+program_state:
+  current_phase: "platform-foundation"
+  phases_completed:
+    - id: "discovery"
+      completed_date: "2026-02-01"
+      value_gate_passed: true
+      deliverables:
+        - "workload-assessment-report"
+        - "program-charter"
+    - id: "data-strategy"
+      completed_date: "2026-02-28"
+      value_gate_passed: true
+      deliverables:
+        - "data-pipeline-design"
+  phases_in_progress:
+    - id: "platform-foundation"
+      started_date: "2026-03-01"
+      target_date: "2026-05-15"
+      completion_pct: 25
+
+assessment:
+  overall_readiness: "Level 2"
+  data_readiness: "Level 2"
+  org_maturity: "AI Division"
+  team_readiness: "Adequate with gaps"
+  infra_readiness: "Level 1"
+  use_case_pipeline: "Ready for pilot"
+  assessment_date: "2026-01-20"
+
+use_cases:
+  - id: "fraud-detection-realtime"
+    name: "Real-time Fraud Detection"
+    status: piloting
+    priority: 1
+    business_impact_score: 4.5
+    complexity_score: 3
+    qualified: true
+  - id: "aml-alert-triage"
+    name: "AML Alert Triage"
+    status: qualified
+    priority: 2
+    business_impact_score: 4
+    complexity_score: 2
+    qualified: true
+  - id: "credit-risk-modeling"
+    name: "Credit Risk Model Augmentation"
+    status: proposed
+    priority: 3
+    business_impact_score: 3.5
+    complexity_score: 4
+    qualified: false
+
+models:
+  - id: "fraud-scorer-v1"
+    name: "Transaction Fraud Scorer"
+    use_case: "fraud-detection-realtime"
+    status: deployed
+    type: "xgboost"
+    deployed_date: "2026-03-05"
+    endpoint: "/api/v1/fraud-score"
+    metrics:
+      latency_p95_ms: 45
+      throughput_rps: 1200
+      accuracy: 0.97
+
+engagement:
+  current_sow: "AI-Factory-Phase2-SOW-2026"
+  engagement_type: "consulting"
+  start_date: "2026-01-15"
+  estimated_end: "2026-09-30"
+  notes: []

@@ -1,0 +1,40 @@
+id: credit-risk-v1
+name: Credit Risk Augmentation Model
+use_case_id: credit-risk-modeling
+model_type: ensemble
+framework: Scikit-learn 1.4
+version: "0.2.0"
+description: Ensemble model combining logistic regression and random forest for credit risk score augmentation.
+status: experiment
+created: "2026-03-01"
+updated: "2026-03-06"
+
+lifecycle_history:
+  - stage: experiment
+    timestamp: "2026-03-01T09:00:00Z"
+    actor: "Credit Risk DS Team"
+    notes: Initial experiment with 3-year credit default dataset
+
+metrics:
+  accuracy: 0.82
+  f1_score: 0.78
+  latency_p95_ms: 25
+  throughput_rps: 0
+  drift_score: 0.0
+  error_rate: 0.0
+
+governance:
+  bias_tested: false
+  security_scanned: false
+  performance_validated: false
+  data_lineage_documented: true
+  model_card_completed: false
+  risk_classification: medium
+  approvals: []
+
+deployment:
+  endpoint: null
+  replicas: 0
+  gpu_required: false
+  container_image: null
+  serving_runtime: null

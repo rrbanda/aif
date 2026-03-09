@@ -1,0 +1,58 @@
+cluster:
+  name: citi-ocp-ai-prod
+  openshift_version: "4.16"
+  cloud_provider: on-premise
+  region: us-east-dc1
+  nodes:
+    total: 24
+    control_plane: 3
+    worker: 18
+    gpu_worker: 3
+  status: healthy
+  last_health_check: "2026-03-06T08:00:00Z"
+
+gpu:
+  total_gpus: 12
+  gpu_type: NVIDIA A100 80GB
+  allocated: 8
+  available: 4
+  utilization_pct: 67
+  driver_version: "535.129.03"
+  cuda_version: "12.2"
+
+storage:
+  total_tb: 50
+  used_tb: 32
+  available_tb: 18
+  storage_class: ocs-storagecluster-ceph-rbd
+
+networking:
+  ingress_controller: HAProxy
+  service_mesh: OpenShift Service Mesh 2.5
+  certificates: valid
+  cert_expiry: "2027-01-15"
+
+ai_platform:
+  openshift_ai_version: "2.14"
+  model_serving:
+    runtime: kserve
+    active_endpoints: 2
+    gpu_endpoints: 1
+  data_science_projects: 4
+  active_notebooks: 7
+  pipelines:
+    total: 5
+    running: 2
+    failed: 0
+    succeeded: 3
+
+monitoring:
+  prometheus: enabled
+  grafana: enabled
+  alertmanager: enabled
+  active_alerts: 1
+  alert_details:
+    - name: GPUMemoryHighUsage
+      severity: warning
+      message: "GPU worker node gpu-03 memory at 92%"
+      since: "2026-03-05T22:30:00Z"

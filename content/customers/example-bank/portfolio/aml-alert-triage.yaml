@@ -1,0 +1,28 @@
+id: aml-alert-triage
+name: AML Alert Triage
+description: NLP-based alert prioritization system that reduces analyst review time by 40% while maintaining 99.5% high-risk alert coverage.
+business_unit: Compliance
+sponsor: David Lawson
+stage: qualified
+priority: 2
+scores:
+  business_impact: 4
+  complexity: 2
+  data_readiness: 3
+estimated_value_usd: 5000000
+dependencies:
+  - nlp-model-serving
+  - compliance-data-lake
+kpis:
+  analyst_time_reduction: "40% target"
+  high_risk_coverage: "99.5% maintained"
+  sar_filing_accuracy: "Improved by 20%"
+lifecycle_history:
+  - stage: proposed
+    timestamp: "2026-01-20T11:00:00Z"
+    notes: Proposed by Compliance team during assessment
+  - stage: qualified
+    timestamp: "2026-02-10T16:00:00Z"
+    notes: Qualified after data readiness review
+created: "2026-01-20"
+updated: "2026-03-04"

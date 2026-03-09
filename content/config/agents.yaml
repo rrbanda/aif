@@ -1,0 +1,1021 @@
+agents:
+  - id: coordinator
+    type: llm
+    name: "AI Factory Coordinator"
+    description: "Routes user requests to the appropriate specialist agent based on persona and intent"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/coordinator.md"
+    tools: []
+    skills: []
+    sub_agents:
+      - field-cto
+      - ae
+      - account-sa
+      - ai-specialist-sa
+      - ai-specialist-sales
+      - content
+      - program-knowledge
+      - readiness-assessment
+      - content-pipeline
+      - program-planner
+      - architecture-designer
+      - use-case-qualifier
+      - deliverable-assessment-report
+      - deliverable-program-charter
+      - deliverable-architecture-doc
+      - customer-data-scientist
+      - customer-ml-platform-lead
+      - customer-model-risk-manager
+      - customer-executive-sponsor
+      - feedback-loop
+      - governance-gate-checker
+      - multi-customer-orchestrator
+      - competitive-battlecard
+      - training-advisor
+
+  - id: field-cto
+    type: llm
+    name: "Field CTO / Executive Sponsor Assistant"
+    description: "Helps Field CTOs and Executive Sponsors with strategic AI vision, transformation roadmaps, board-level narratives, cross-functional alignment, and innovation leadership"
+    model: gemini-2.5-pro
+    temperature: 0.5
+    prompt_file: "prompts/field_cto.md"
+    persona: field-cto
+    tools:
+      - read_config
+      - read_content
+      - search_content
+      - generate_executive_summary
+      - calculate_roi_estimate
+      - list_customers
+      - load_customer_context
+      - update_customer_phase
+      - save_assessment_results
+    skills:
+      - banking-context
+      - competitive-landscape
+      - openshift-ai
+      - peer-benchmarking
+      - ai-factory-methodology
+      - customer-enablement
+
+  - id: ae
+    type: llm
+    name: "Account Executive Assistant"
+    description: "Helps Account Executives with business value, ROI, executive communication, and deal progression"
+    model: gemini-2.5-pro
+    temperature: 0.5
+    prompt_file: "prompts/ae.md"
+    persona: ae
+    tools:
+      - read_config
+      - read_content
+      - search_content
+      - generate_executive_summary
+      - calculate_roi_estimate
+      - list_customers
+      - load_customer_context
+      - update_customer_phase
+      - create_customer_account
+    skills:
+      - banking-context
+      - competitive-landscape
+      - peer-benchmarking
+      - ai-factory-methodology
+
+  - id: account-sa
+    type: llm
+    name: "Account Solution Architect Assistant"
+    description: "Helps Account SAs with technical architecture, OpenShift integration, and infrastructure design"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/account_sa.md"
+    persona: account-sa
+    tools:
+      - read_config
+      - read_content
+      - search_content
+      - generate_architecture_diagram_description
+      - load_customer_context
+      - get_cluster_status
+      - get_gpu_status
+      - get_infrastructure_summary
+    skills:
+      - openshift-ai
+      - infrastructure-sizing
+      - platform-operations
+
+  - id: ai-specialist-sa
+    type: llm
+    name: "AI Specialist SA Assistant"
+    description: "Helps AI Specialist SAs with ML pipeline design, model lifecycle, MLOps, and serving architecture"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/ai_specialist_sa.md"
+    persona: ai-specialist-sa
+    tools:
+      - read_config
+      - read_content
+      - search_content
+      - generate_pipeline_description
+    skills:
+      - openshift-ai
+      - mlops-patterns
+      - model-serving
+      - model-lifecycle
+      - data-strategy
+
+  - id: ai-specialist-sales
+    type: llm
+    name: "AI Specialist Sales Assistant"
+    description: "Helps AI Sales professionals with use case qualification, competitive positioning, and deal structuring"
+    model: gemini-2.5-pro
+    temperature: 0.5
+    prompt_file: "prompts/ai_specialist_sales.md"
+    persona: ai-specialist-sales
+    tools:
+      - read_config
+      - read_content
+      - search_content
+      - generate_use_case_qualification
+      - load_customer_context
+      - update_customer_use_case
+      - create_use_case
+      - transition_use_case
+      - get_portfolio_summary
+      - get_use_case_detail
+    skills:
+      - competitive-landscape
+      - banking-context
+      - partner-ecosystem
+      - use-case-patterns
+
+  - id: content
+    type: llm
+    name: "Content Creation Assistant"
+    description: "Creates and edits AI Factory content -- YAML configs and markdown files"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/content.md"
+    tools:
+      - read_content
+      - write_content
+      - read_config
+      - git_commit
+      - list_content_tree
+    skills:
+      - content-standards
+
+  - id: program-knowledge
+    type: llm
+    name: "Program Knowledge Assistant"
+    description: "Deep expert on AI Factory program structure, phases, gates, dependencies, and organizational elements"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/program.md"
+    tools:
+      - read_config
+      - search_content
+      - read_content
+      - load_customer_context
+    skills:
+      - banking-context
+      - openshift-ai
+      - ai-factory-methodology
+
+  # ============================================================
+  # PROCESS AGENTS — Structured workflows using ADK agent types
+  # ============================================================
+
+  # --- Readiness Assessment (Custom Agent with conditional logic) ---
+
+  - id: readiness-assessment
+    type: sequential
+    name: "AI Factory Readiness Assessment"
+    description: "Structured assessment of customer AI readiness across 5 dimensions, run sequentially with the synthesizer applying conditional logic based on assessment results"
+    sub_agents:
+      - data-readiness-assessor
+      - org-maturity-assessor
+      - team-composition-assessor
+      - infra-assessor
+      - use-case-assessor
+      - assessment-synthesizer
+
+  - id: data-readiness-assessor
+    type: llm
+    name: "Data Readiness Assessor"
+    description: "Evaluates data pipeline maturity, governance, and AI-readiness"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/assess_data.md"
+    output_key: "data_readiness_score"
+    tools:
+      - read_config
+      - read_content
+      - search_content
+    skills:
+      - data-strategy
+
+  - id: org-maturity-assessor
+    type: llm
+    name: "Organizational Maturity Assessor"
+    description: "Evaluates organizational structure for AI — ad-hoc, pod, division, or factory model"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/assess_org.md"
+    output_key: "org_maturity_level"
+    tools:
+      - read_config
+      - read_content
+
+  - id: team-composition-assessor
+    type: llm
+    name: "Team Composition Assessor"
+    description: "Evaluates team readiness — data scientists, ML engineers, platform engineers, governance roles"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/assess_team.md"
+    output_key: "team_readiness"
+    tools:
+      - read_config
+      - read_content
+
+  - id: infra-assessor
+    type: llm
+    name: "Infrastructure Assessor"
+    description: "Evaluates compute, GPU, network, and storage readiness for AI workloads"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/assess_infra.md"
+    output_key: "infra_readiness"
+    tools:
+      - read_config
+      - read_content
+    skills:
+      - platform-operations
+
+  - id: use-case-assessor
+    type: llm
+    name: "Use Case Pipeline Assessor"
+    description: "Evaluates use case pipeline volume, diversity, scoring, and stakeholder commitment"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/assess_use_cases.md"
+    output_key: "use_case_inventory"
+    tools:
+      - read_config
+      - read_content
+      - search_content
+    skills:
+      - use-case-patterns
+
+  - id: assessment-synthesizer
+    type: llm
+    name: "Assessment Synthesizer"
+    description: "Combines all assessment dimension results into a unified readiness report, persists to customer account, and saves state for downstream workflows"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/workflow/assess_synthesize.md"
+    output_key: "overall_assessment"
+    tools:
+      - read_config
+      - read_content
+      - save_assessment_results
+      - save_workflow_state
+    skills:
+      - model-governance
+      - ai-factory-methodology
+
+  # --- Content Pipeline (Sequential + Loop) ---
+
+  - id: content-pipeline
+    type: sequential
+    name: "Content Creation Pipeline"
+    description: "Structured content creation with iterative review and quality gates — draft, review loop, then write"
+    sub_agents:
+      - content-drafter
+      - content-review-loop
+      - content-finalizer
+
+  - id: content-drafter
+    type: llm
+    name: "Content Drafter"
+    description: "Generates initial content draft based on context and requirements"
+    model: gemini-2.5-pro
+    temperature: 0.5
+    prompt_file: "prompts/workflow/content_draft.md"
+    output_key: "draft"
+    tools:
+      - read_config
+      - read_content
+      - search_content
+
+  - id: content-review-loop
+    type: loop
+    name: "Content Review Loop"
+    description: "Iteratively reviews and revises content until quality passes"
+    sub_agents:
+      - content-reviewer
+      - content-reviser
+    workflow_config:
+      max_iterations: 3
+
+  - id: content-reviewer
+    type: llm
+    name: "Content Reviewer"
+    description: "Reviews draft for accuracy, tone, completeness, and alignment with AI Factory standards. Calls exit_loop when quality is satisfactory."
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/content_review.md"
+    output_key: "review_feedback"
+    tools:
+      - read_config
+      - read_content
+      - exit_loop
+
+  - id: content-reviser
+    type: llm
+    name: "Content Reviser"
+    description: "Revises content based on reviewer feedback"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/workflow/content_revise.md"
+    output_key: "draft"
+    tools:
+      - read_content
+
+  - id: content-finalizer
+    type: llm
+    name: "Content Finalizer"
+    description: "Writes final approved content to file and commits"
+    model: gemini-2.5-pro
+    temperature: 0.2
+    prompt_file: "prompts/workflow/content_finalize.md"
+    tools:
+      - write_content
+      - git_commit
+
+  # --- Program Planner (Sequential) ---
+
+  - id: program-planner
+    type: sequential
+    name: "Program Planner"
+    description: "Creates a tailored AI Factory program plan from assessment results through timeline generation"
+    sub_agents:
+      - plan-context-gatherer
+      - plan-phase-selector
+      - plan-org-mapper
+      - plan-timeline-generator
+      - plan-roadmap-synthesizer
+
+  - id: plan-context-gatherer
+    type: llm
+    name: "Planning Context Gatherer"
+    description: "Reads assessment results and customer context from config and prior workflow states"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/plan_context.md"
+    output_key: "planning_context"
+    tools:
+      - read_config
+      - read_content
+      - load_customer_context
+      - load_workflow_state
+      - list_workflow_states
+      - search_content
+
+  - id: plan-phase-selector
+    type: llm
+    name: "Phase Selector"
+    description: "Determines which program phases are relevant and their sequence"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/plan_phases.md"
+    output_key: "selected_phases"
+    tools:
+      - read_config
+      - read_content
+    skills:
+      - ai-factory-methodology
+
+  - id: plan-org-mapper
+    type: llm
+    name: "Organizational Element Mapper"
+    description: "Maps organizational elements to selected phases"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/plan_org.md"
+    output_key: "org_mapping"
+    tools:
+      - read_config
+      - read_content
+
+  - id: plan-timeline-generator
+    type: llm
+    name: "Timeline Generator"
+    description: "Generates timeline with milestones and value gates"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/workflow/plan_timeline.md"
+    output_key: "timeline"
+    tools:
+      - read_config
+
+  - id: plan-roadmap-synthesizer
+    type: llm
+    name: "Roadmap Synthesizer"
+    description: "Combines all planning outputs into a unified program roadmap and persists for downstream use"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/workflow/plan_synthesize.md"
+    output_key: "program_roadmap"
+    tools:
+      - read_config
+      - read_content
+      - save_workflow_state
+      - generate_executive_summary
+    skills:
+      - ai-factory-methodology
+
+  # --- Architecture Designer (Parallel + Sequential) ---
+
+  - id: architecture-designer
+    type: sequential
+    name: "Architecture Designer"
+    description: "Designs AI Factory reference architecture with parallel component evaluation and unified synthesis"
+    sub_agents:
+      - arch-parallel-evaluators
+      - arch-synthesizer
+
+  - id: arch-parallel-evaluators
+    type: parallel
+    name: "Architecture Parallel Evaluators"
+    description: "Evaluates infrastructure, GPU, storage, and network design in parallel"
+    sub_agents:
+      - arch-infra-sizer
+      - arch-gpu-configurator
+      - arch-storage-designer
+      - arch-network-designer
+
+  - id: arch-infra-sizer
+    type: llm
+    name: "Infrastructure Sizer"
+    description: "Evaluates compute requirements based on workload projections"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/arch_infra.md"
+    output_key: "infra_sizing"
+    tools:
+      - read_config
+      - read_content
+    skills:
+      - platform-operations
+
+  - id: arch-gpu-configurator
+    type: llm
+    name: "GPU Configurator"
+    description: "Determines GPU configuration — models, MIG profiles, multi-tenant allocation"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/arch_gpu.md"
+    output_key: "gpu_config"
+    tools:
+      - read_config
+      - read_content
+
+  - id: arch-storage-designer
+    type: llm
+    name: "Storage Designer"
+    description: "Designs storage architecture for datasets, model artifacts, and checkpoints"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/arch_storage.md"
+    output_key: "storage_design"
+    tools:
+      - read_config
+      - read_content
+
+  - id: arch-network-designer
+    type: llm
+    name: "Network Designer"
+    description: "Designs network topology for distributed training and inference"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/arch_network.md"
+    output_key: "network_design"
+    tools:
+      - read_config
+      - read_content
+
+  - id: arch-synthesizer
+    type: llm
+    name: "Architecture Synthesizer"
+    description: "Combines parallel architecture evaluations into a unified reference architecture"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/workflow/arch_synthesize.md"
+    output_key: "reference_architecture"
+    tools:
+      - read_config
+      - read_content
+      - generate_architecture_diagram_description
+
+  # --- Use Case Qualifier (Sequential) ---
+
+  - id: use-case-qualifier
+    type: sequential
+    name: "Use Case Qualifier"
+    description: "Structured evaluation pipeline for AI use case qualification"
+    sub_agents:
+      - uc-parser
+      - uc-data-assessor
+      - uc-impact-scorer
+      - uc-complexity-estimator
+      - uc-qualification-decision
+
+  - id: uc-parser
+    type: llm
+    name: "Use Case Parser"
+    description: "Parses use case description and extracts key attributes"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/uc_parse.md"
+    output_key: "uc_attributes"
+    tools:
+      - read_content
+      - search_content
+    skills:
+      - use-case-patterns
+
+  - id: uc-data-assessor
+    type: llm
+    name: "Use Case Data Assessor"
+    description: "Evaluates data readiness for the specific use case"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/uc_data.md"
+    output_key: "uc_data_score"
+    tools:
+      - read_content
+
+  - id: uc-impact-scorer
+    type: llm
+    name: "Business Impact Scorer"
+    description: "Scores business impact — revenue, cost savings, risk reduction, compliance"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/workflow/uc_impact.md"
+    output_key: "uc_impact_score"
+    tools:
+      - read_content
+      - read_config
+    skills:
+      - use-case-patterns
+      - banking-context
+
+  - id: uc-complexity-estimator
+    type: llm
+    name: "Complexity Estimator"
+    description: "Estimates implementation complexity for the use case"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/workflow/uc_complexity.md"
+    output_key: "uc_complexity_score"
+    tools:
+      - read_content
+
+  - id: uc-qualification-decision
+    type: llm
+    name: "Qualification Decision"
+    description: "Combines all scores into a qualified/not-qualified decision with reasoning"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/workflow/uc_qualify.md"
+    output_key: "uc_qualification"
+    tools:
+      - read_config
+      - generate_use_case_qualification
+    skills:
+      - use-case-patterns
+
+  # ============================================================
+  # DELIVERABLE GENERATION AGENTS
+  # ============================================================
+
+  - id: deliverable-assessment-report
+    type: sequential
+    name: "Assessment Report Generator"
+    description: "Generates a structured AI Factory readiness assessment report for a customer"
+    sub_agents:
+      - del-assess-gather
+      - del-assess-draft
+      - del-assess-save
+
+  - id: del-assess-gather
+    type: llm
+    name: "Assessment Data Gatherer"
+    description: "Loads customer context and assessment data for report generation"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/deliverables/assess_gather.md"
+    output_key: "report_context"
+    tools:
+      - load_customer_context
+      - read_config
+      - read_content
+      - load_workflow_state
+
+  - id: del-assess-draft
+    type: llm
+    name: "Assessment Report Drafter"
+    description: "Drafts the structured assessment report document"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/deliverables/assess_draft.md"
+    output_key: "report_content"
+    tools:
+      - read_content
+
+  - id: del-assess-save
+    type: llm
+    name: "Assessment Report Saver"
+    description: "Saves the final assessment report deliverable"
+    model: gemini-2.5-pro
+    temperature: 0.2
+    prompt_file: "prompts/deliverables/del_save.md"
+    tools:
+      - save_deliverable
+
+  - id: deliverable-program-charter
+    type: sequential
+    name: "Program Charter Generator"
+    description: "Generates an AI Factory program charter for a customer"
+    sub_agents:
+      - del-charter-gather
+      - del-charter-draft
+      - del-charter-save
+
+  - id: del-charter-gather
+    type: llm
+    name: "Charter Data Gatherer"
+    description: "Loads customer context, assessment, and program config for charter generation"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/deliverables/charter_gather.md"
+    output_key: "charter_context"
+    tools:
+      - load_customer_context
+      - read_config
+      - read_content
+      - load_workflow_state
+
+  - id: del-charter-draft
+    type: llm
+    name: "Charter Drafter"
+    description: "Drafts the structured program charter document"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/deliverables/charter_draft.md"
+    output_key: "charter_content"
+    tools:
+      - read_content
+      - read_config
+
+  - id: del-charter-save
+    type: llm
+    name: "Charter Saver"
+    description: "Saves the final program charter deliverable"
+    model: gemini-2.5-pro
+    temperature: 0.2
+    prompt_file: "prompts/deliverables/del_save.md"
+    tools:
+      - save_deliverable
+
+  - id: deliverable-architecture-doc
+    type: sequential
+    name: "Architecture Document Generator"
+    description: "Generates an AI Factory reference architecture document for a customer"
+    sub_agents:
+      - del-arch-gather
+      - del-arch-draft
+      - del-arch-save
+
+  - id: del-arch-gather
+    type: llm
+    name: "Architecture Data Gatherer"
+    description: "Loads customer infra context and reference architecture for doc generation"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/deliverables/arch_gather.md"
+    output_key: "arch_context"
+    tools:
+      - load_customer_context
+      - read_config
+      - read_content
+      - load_workflow_state
+
+  - id: del-arch-draft
+    type: llm
+    name: "Architecture Document Drafter"
+    description: "Drafts the structured architecture reference document"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/deliverables/arch_draft.md"
+    output_key: "arch_content"
+    tools:
+      - read_content
+      - read_config
+      - generate_architecture_diagram_description
+
+  - id: del-arch-save
+    type: llm
+    name: "Architecture Document Saver"
+    description: "Saves the final architecture document deliverable"
+    model: gemini-2.5-pro
+    temperature: 0.2
+    prompt_file: "prompts/deliverables/del_save.md"
+    tools:
+      - save_deliverable
+
+  # ============================================================
+  # CUSTOMER-FACING AGENTS
+  # ============================================================
+
+  - id: customer-data-scientist
+    type: llm
+    name: "Data Scientist Assistant"
+    description: "Helps customer data scientists with experiment tracking, model development, pipeline status, and deployment requests"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/customer/data_scientist.md"
+    persona: customer-data-scientist
+    tools:
+      - load_customer_context
+      - register_model
+      - transition_model
+      - update_model_metrics
+      - get_model_status
+      - list_models
+      - load_workflow_state
+      - read_content
+      - read_config
+    skills:
+      - openshift-ai
+      - model-lifecycle
+      - data-strategy
+
+  - id: customer-ml-platform-lead
+    type: llm
+    name: "ML Platform Lead Assistant"
+    description: "Helps customer ML platform leads with cluster status, resource allocation, pipeline management, and platform health"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/customer/ml_platform_lead.md"
+    persona: customer-ml-platform-lead
+    tools:
+      - load_customer_context
+      - list_models
+      - get_model_status
+      - update_model_metrics
+      - get_cluster_status
+      - get_gpu_status
+      - get_model_registry_status
+      - get_inference_endpoints
+      - get_pipeline_status
+      - get_infrastructure_summary
+      - load_workflow_state
+      - list_workflow_states
+      - read_content
+      - read_config
+    skills:
+      - openshift-ai
+      - infrastructure-sizing
+      - platform-operations
+
+  - id: customer-model-risk-manager
+    type: llm
+    name: "Model Risk Manager Assistant"
+    description: "Helps customer model risk managers with governance gates, compliance checks, bias monitoring, and validation status"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/customer/model_risk_manager.md"
+    persona: customer-model-risk-manager
+    tools:
+      - load_customer_context
+      - list_models
+      - get_model_status
+      - update_model_governance
+      - transition_model
+      - load_workflow_state
+      - read_content
+      - read_config
+    skills:
+      - banking-context
+      - model-governance
+
+  - id: customer-executive-sponsor
+    type: llm
+    name: "Executive Sponsor Assistant"
+    description: "Helps customer executive sponsors with program progress, ROI tracking, use case portfolio status, and strategic decisions"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/customer/executive_sponsor.md"
+    persona: customer-executive-sponsor
+    tools:
+      - load_customer_context
+      - list_customers
+      - list_models
+      - get_portfolio_summary
+      - get_use_case_detail
+      - load_workflow_state
+      - list_workflow_states
+      - list_deliverables
+      - read_content
+      - read_config
+      - generate_executive_summary
+      - calculate_roi_estimate
+    skills:
+      - banking-context
+      - ai-factory-methodology
+      - customer-enablement
+
+  # ============================================================
+  # FEEDBACK LOOP AGENTS
+  # ============================================================
+
+  - id: feedback-loop
+    type: sequential
+    name: "Feedback Loop Pipeline"
+    description: "Ingests production metrics, detects anomalies, and generates improvement recommendations"
+    sub_agents:
+      - feedback-metrics-collector
+      - feedback-anomaly-analyzer
+      - feedback-recommendation-generator
+
+  - id: feedback-metrics-collector
+    type: llm
+    name: "Metrics Collector"
+    description: "Collects and summarizes current production metrics across all deployed models"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/feedback/metrics_collector.md"
+    output_key: "metrics_summary"
+    tools:
+      - load_customer_context
+      - list_models
+      - get_metrics_history
+      - get_inference_endpoints
+      - generate_feedback_report
+    skills:
+      - model-lifecycle
+
+  - id: feedback-anomaly-analyzer
+    type: llm
+    name: "Anomaly Analyzer"
+    description: "Analyzes collected metrics for anomalies, drift, and degradation patterns"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/feedback/anomaly_analyzer.md"
+    output_key: "anomaly_analysis"
+    tools:
+      - detect_anomalies
+      - get_metrics_history
+    skills:
+      - model-lifecycle
+
+  - id: feedback-recommendation-generator
+    type: llm
+    name: "Improvement Recommender"
+    description: "Generates actionable improvement recommendations based on anomaly analysis"
+    model: gemini-2.5-pro
+    temperature: 0.5
+    prompt_file: "prompts/feedback/recommendation_generator.md"
+    output_key: "improvement_recommendations"
+    tools:
+      - load_customer_context
+      - save_workflow_state
+      - read_content
+
+  # ============================================================
+  # GOVERNANCE GATE AGENTS
+  # ============================================================
+
+  - id: governance-gate-checker
+    type: sequential
+    name: "Governance Gate Checker"
+    description: "Runs automated governance checks on models before deployment promotion"
+    sub_agents:
+      - gov-bias-checker
+      - gov-security-checker
+      - gov-performance-checker
+      - gov-compliance-synthesizer
+
+  - id: gov-bias-checker
+    type: llm
+    name: "Bias Check Agent"
+    description: "Evaluates model bias testing results and fairness metrics"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/governance/bias_checker.md"
+    output_key: "bias_check_result"
+    tools:
+      - get_model_status
+      - get_metrics_history
+    skills:
+      - model-governance
+
+  - id: gov-security-checker
+    type: llm
+    name: "Security Check Agent"
+    description: "Evaluates model security scan results and dependency vulnerabilities"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/governance/security_checker.md"
+    output_key: "security_check_result"
+    tools:
+      - get_model_status
+    skills:
+      - model-governance
+
+  - id: gov-performance-checker
+    type: llm
+    name: "Performance Check Agent"
+    description: "Validates model performance against SLA thresholds"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/governance/performance_checker.md"
+    output_key: "performance_check_result"
+    tools:
+      - get_model_status
+      - get_metrics_history
+      - get_inference_endpoints
+    skills:
+      - model-governance
+      - platform-operations
+
+  - id: gov-compliance-synthesizer
+    type: llm
+    name: "Compliance Gate Synthesizer"
+    description: "Synthesizes all governance checks into a pass/fail decision with detailed justification"
+    model: gemini-2.5-pro
+    temperature: 0.3
+    prompt_file: "prompts/governance/compliance_synthesizer.md"
+    output_key: "governance_decision"
+    tools:
+      - update_model_governance
+      - transition_model
+      - save_workflow_state
+    skills:
+      - model-governance
+      - banking-context
+
+  # ============================================================
+  # MULTI-CUSTOMER & STRATEGIC AGENTS
+  # ============================================================
+
+  - id: multi-customer-orchestrator
+    type: llm
+    name: "Multi-Customer Orchestrator"
+    description: "Provides portfolio-level views across all customer accounts with pattern analysis and resource allocation"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/strategic/multi_customer.md"
+    tools:
+      - get_customer_portfolio_view
+      - get_cross_customer_patterns
+      - get_resource_allocation_view
+      - list_customers
+    skills:
+      - competitive-landscape
+      - ai-factory-methodology
+
+  - id: competitive-battlecard
+    type: llm
+    name: "Competitive Battlecard Generator"
+    description: "Generates dynamic competitive battlecards tailored to specific customer scenarios"
+    model: gemini-2.5-pro
+    temperature: 0.5
+    prompt_file: "prompts/strategic/battlecard.md"
+    tools:
+      - generate_battlecard
+      - list_competitors
+      - load_customer_context
+    skills:
+      - competitive-landscape
+
+  - id: training-advisor
+    type: llm
+    name: "Training & Learning Advisor"
+    description: "Recommends learning paths, tracks training progress, and manages skill development for customer teams"
+    model: gemini-2.5-pro
+    temperature: 0.4
+    prompt_file: "prompts/strategic/training_advisor.md"
+    tools:
+      - get_learning_paths
+      - recommend_learning_path
+      - track_training_progress
+      - get_team_training_summary
+      - load_customer_context
+    skills:
+      - customer-enablement

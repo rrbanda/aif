@@ -1,0 +1,93 @@
+categories:
+  - id: deployment-velocity
+    title: "Deployment Velocity"
+    icon: zap
+    why: "Is the factory actually producing?"
+    metrics:
+      - name: "Time from idea to production"
+        unit: "days"
+        target: "< 30 days for standard models after Phase 4"
+      - name: "Models in production"
+        unit: "count"
+        target: "2-3 after pilot, 10+ after scale"
+      - name: "Deployment frequency"
+        unit: "deployments/month"
+        target: "Weekly model updates possible"
+
+  - id: infrastructure-efficiency
+    title: "Infrastructure Efficiency"
+    icon: cpu
+    why: "Is expensive GPU compute earning its keep?"
+    metrics:
+      - name: "GPU utilization rate"
+        unit: "percentage"
+        target: "> 70% sustained utilization"
+      - name: "Inference throughput"
+        unit: "tokens/second"
+        target: "Varies by model size — measured against SLAs"
+      - name: "Cost per model served"
+        unit: "$/month"
+        target: "Decreasing over time as utilization improves"
+
+  - id: model-quality
+    title: "Model Quality"
+    icon: check-circle
+    why: "The factory must produce reliable outputs, not just fast ones"
+    metrics:
+      - name: "Task accuracy"
+        unit: "percentage (F1, precision, recall)"
+        target: "Defined per use case against baselines"
+      - name: "Hallucination rate"
+        unit: "percentage"
+        target: "< 5% for grounded responses"
+      - name: "Drift detection frequency"
+        unit: "alerts/month"
+        target: "Alerts within 24 hours of significant drift"
+
+  - id: business-impact
+    title: "Business Impact"
+    icon: dollar-sign
+    why: "Connects factory performance to strategic value"
+    metrics:
+      - name: "Time saved"
+        unit: "hours/month"
+        target: "Quantified per use case"
+      - name: "Cost reduction"
+        unit: "$/year"
+        target: "Documented per use case"
+      - name: "False positive reduction"
+        unit: "percentage"
+        target: "Measured against pre-AI baseline"
+      - name: "Revenue impact"
+        unit: "$/year"
+        target: "Where applicable — new capabilities, faster decisions"
+
+  - id: adoption
+    title: "Adoption"
+    icon: users
+    why: "A factory nobody uses is wasted infrastructure"
+    metrics:
+      - name: "Teams using the factory"
+        unit: "count"
+        target: "3+ after Phase 5"
+      - name: "API calls per month"
+        unit: "count"
+        target: "Growing month-over-month"
+      - name: "Developer satisfaction"
+        unit: "NPS or survey score"
+        target: "> 7/10"
+
+  - id: governance
+    title: "Governance"
+    icon: shield-check
+    why: "Regulated industries require proof of responsible operation"
+    metrics:
+      - name: "Models with active monitoring"
+        unit: "percentage"
+        target: "100% of production models"
+      - name: "Compliance audit pass rate"
+        unit: "percentage"
+        target: "100%"
+      - name: "Mean time to remediate"
+        unit: "hours"
+        target: "< 4 hours for critical issues"

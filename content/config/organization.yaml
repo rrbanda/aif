@@ -1,0 +1,260 @@
+elements:
+  - id: steering-committee
+    title: "AI Steering Committee"
+    type: governance
+    icon: users
+    order: 0
+    starts_with_phase: discovery
+    runs_through: operate-improve
+    cadence: "Monthly"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - discovery
+      - operate-improve
+    content_file: "organization/steering-committee.md"
+    summary: "Executive governance body that owns budget, priorities, risk appetite, and strategic direction for the AI Factory"
+    members:
+      - "Executive sponsor (CTO / COO / CAIO)"
+      - "Line-of-business leaders (heads of units using AI)"
+      - "Chief Risk Officer or delegate"
+      - "Chief Data Officer or delegate"
+      - "Head of Technology / Platform Engineering"
+      - "Red Hat engagement lead"
+
+  - id: coe
+    title: "AI Center of Excellence"
+    type: expertise
+    icon: award
+    order: 1
+    starts_with_phase: data-strategy
+    runs_through: operate-improve
+    cadence: "Continuous"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - data-strategy
+      - platform-foundation
+      - operationalize
+    content_file: "organization/coe.md"
+    summary: "Central expert team defining standards, reference architectures, evaluation criteria, and providing consulting to teams building on the factory"
+    services:
+      - "Define and maintain AI platform standards and best practices"
+      - "Publish approved model catalog and evaluation benchmarks"
+      - "Consult with teams on architecture, model selection, and pipeline design"
+      - "Manage reusable assets — templates, pipelines, evaluation frameworks"
+      - "Coordinate with security and compliance on AI-specific policies"
+
+  - id: cop
+    title: "AI Community of Practice"
+    type: culture
+    icon: message-circle
+    order: 2
+    starts_with_phase: pilot-incubation
+    runs_through: operate-improve
+    cadence: "Bi-weekly"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - pilot-incubation
+      - scale-adopt
+      - operate-improve
+    content_file: "organization/cop.md"
+    summary: "Cross-functional, opt-in community of practitioners sharing patterns, learnings, and reusable assets"
+    formats:
+      - "Show-and-tell sessions — teams demo what they built"
+      - "Office hours — COE experts available for Q&A"
+      - "Lightning talks — 10-minute deep dives on specific topics"
+      - "Shared knowledge base — wiki, Slack/Teams channel, code repos"
+
+  - id: evangelism
+    title: "AI Evangelism"
+    type: adoption
+    icon: megaphone
+    order: 3
+    starts_with_phase: pilot-incubation
+    runs_through: operate-improve
+    cadence: "Monthly"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - pilot-incubation
+      - scale-adopt
+    content_file: "organization/evangelism.md"
+    summary: "Internal advocacy program that makes AI Factory successes visible, drives adoption, and builds organizational momentum"
+    activities:
+      - "Demo days — showcase working use cases to broader organization"
+      - "Executive briefings — quarterly updates on factory value and roadmap"
+      - "Internal newsletter or blog — success stories, new capabilities, team spotlights"
+      - "Adoption metrics dashboard — visible progress tracking"
+      - "Cross-team matchmaking — connect teams with similar challenges"
+
+  - id: bootcamps
+    title: "AI Bootcamps"
+    type: training
+    icon: graduation-cap
+    order: 4
+    starts_with_phase: platform-foundation
+    runs_through: scale-adopt
+    cadence: "Quarterly cohorts"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - platform-foundation
+      - pilot-incubation
+    content_file: "organization/bootcamps.md"
+    summary: "Intensive, role-specific training programs that build practical AI skills"
+    tracks:
+      - name: "ML Engineers"
+        focus: "OpenShift AI, model serving (vLLM, TensorRT-LLM), fine-tuning pipelines, model registry, MLOps"
+        duration: "5 days"
+        red_hat_courses:
+          - "AI267: Developing and Deploying AI/ML Applications on Red Hat OpenShift AI"
+          - "Red Hat Certified Specialist in OpenShift AI (EX267)"
+      - name: "Data Scientists"
+        focus: "Experiment tracking (MLflow), fine-tuning (NeMo, InstructLab), evaluation, model compression, Gen AI Studio"
+        duration: "3 days"
+        red_hat_courses:
+          - "AI253: Creating Machine Learning Models with Python and Red Hat OpenShift AI"
+      - name: "Platform Engineers"
+        focus: "GPU Operator, Network Operator, cluster sizing, observability, GitOps for AI, llm-d, capacity planning"
+        duration: "3 days"
+        red_hat_courses:
+          - "AI252: Introduction to Python Programming and Red Hat OpenShift AI"
+      - name: "Business Stakeholders"
+        focus: "What AI can and cannot do, use case framing, data readiness assessment, reading model evaluations"
+        duration: "1 day"
+
+  - id: workshops
+    title: "AI Workshops"
+    type: discovery
+    icon: layout
+    order: 5
+    starts_with_phase: discovery
+    runs_through: scale-adopt
+    cadence: "As needed — triggered when new teams or use cases enter the pipeline"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - discovery
+      - scale-adopt
+    content_file: "organization/workshops.md"
+    summary: "Collaborative working sessions with business teams to identify use cases, assess feasibility, and prototype solutions"
+    format:
+      duration: "1-2 days per workshop"
+      participants: "Business domain experts + data scientists + ML engineers + Red Hat consultants"
+      outputs:
+        - "Completed use case canvas"
+        - "Data readiness checklist"
+        - "Feasibility scorecard"
+        - "Prioritized next steps"
+    templates:
+      - "Use case canvas — problem definition, data sources, success criteria, constraints"
+      - "Data readiness checklist — availability, quality, governance, access"
+      - "Feasibility scorecard — technical feasibility, business value, risk, effort"
+
+  - id: change-management
+    title: "Change Management"
+    type: enablement
+    icon: refresh-cw
+    order: 6
+    starts_with_phase: discovery
+    runs_through: operate-improve
+    cadence: "Continuous"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - discovery
+      - pilot-incubation
+      - scale-adopt
+    content_file: "organization/change-management.md"
+    summary: "Formal workstream managing the human side of AI adoption — stakeholder engagement, communication, resistance, and adoption tracking"
+    workstreams:
+      - "Stakeholder analysis — identify champions, skeptics, and blockers at each level"
+      - "Communication plan — what, when, to whom, through which channel"
+      - "Resistance management — proactive identification and mitigation of concerns"
+      - "Adoption tracking — measure actual usage, satisfaction, and behavioral change"
+      - "Feedback loops — structured mechanisms for practitioners to surface issues"
+    rationale: "McKinsey's 10/20/70 rule: 10% algorithms, 20% technology, 70% people and processes. The AI Factory fails without deliberate change management."
+
+  - id: process-redesign
+    title: "Process Redesign"
+    type: transformation
+    icon: git-branch
+    order: 7
+    starts_with_phase: pilot-incubation
+    runs_through: scale-adopt
+    cadence: "Per use case — aligned with pilot and scale phases"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - pilot-incubation
+      - scale-adopt
+    content_file: "organization/process-redesign.md"
+    summary: "Collaborative redesign of business processes around AI — not bolting AI onto existing workflows, but reimagining end-to-end"
+    approach:
+      - "Map current process (as-is) with business domain experts"
+      - "Identify where AI changes decisions, timing, or roles"
+      - "Design future process (to-be) with AI integrated"
+      - "Define human-in-the-loop checkpoints for regulated decisions"
+      - "Pilot the new process alongside the AI model"
+      - "Measure before/after with process-level KPIs"
+    banking_examples:
+      - process: "Fraud investigation"
+        before: "Analyst manually reviews flagged transactions from rule-based system"
+        after: "AI model scores transactions; analyst reviews only high-confidence alerts with AI-provided context"
+      - process: "Regulatory reporting"
+        before: "Manual document review, extraction, and compilation"
+        after: "AI extracts and classifies regulatory data; human reviews AI output for accuracy and signs off"
+      - process: "Credit risk assessment"
+        before: "Standardized scorecard with manual overrides"
+        after: "AI model provides risk assessment with explainability; credit officer reviews with richer context"
+    rationale: "BCG's research shows that scaling AI requires redesigning end-to-end processes, not just automating discrete steps. Organizations that skip this step see AI as a tool bolted on, not a capability integrated in."
+
+  - id: value-realization
+    title: "Value Realization"
+    type: measurement
+    icon: trending-up
+    order: 8
+    starts_with_phase: pilot-incubation
+    runs_through: operate-improve
+    cadence: "Quarterly"
+    audience:
+      - customer
+      - internal
+    related_phases:
+      - pilot-incubation
+      - operationalize
+      - scale-adopt
+      - operate-improve
+    content_file: "organization/value-realization.md"
+    summary: "Formal KPI tracking connecting factory outputs to business outcomes — the evidence base for continued investment"
+    metric_categories:
+      - category: "Deployment velocity"
+        metrics: ["Time from idea to production", "Number of models in production", "Deployment frequency"]
+      - category: "Infrastructure efficiency"
+        metrics: ["GPU utilization rate", "Inference throughput", "Cost per model served"]
+      - category: "Model quality"
+        metrics: ["Accuracy/F1 scores", "Hallucination rates", "Grounding accuracy", "Drift detection frequency"]
+      - category: "Business impact"
+        metrics: ["Time saved (hours)", "Cost reduction ($)", "Revenue impact ($)", "False positive reduction (%)"]
+      - category: "Adoption"
+        metrics: ["Teams using the factory", "API calls per month", "Developer satisfaction score"]
+      - category: "Governance"
+        metrics: ["Models with active monitoring (%)", "Compliance audit pass rate", "Mean time to remediate issues"]
+    gates:
+      - between: ["pilot-incubation", "operationalize"]
+        criteria: "Pilot use cases meet defined business KPIs"
+      - between: ["operationalize", "scale-adopt"]
+        criteria: "Production models running with governance and SLAs met"
+      - between: ["scale-adopt", "operate-improve"]
+        criteria: "Multiple teams active; measurable business impact documented"
+    rationale: "Deloitte and Dell both gate program progression on measurable value. Without this, AI Factory programs become infrastructure projects that never prove business impact."

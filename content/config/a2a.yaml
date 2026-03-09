@@ -1,0 +1,67 @@
+# Agent-to-Agent (A2A) Protocol Configuration
+# Defines which agents are exposed via A2A for federated architecture.
+# See: https://google.github.io/adk-docs/a2a/
+
+a2a:
+  enabled: false
+  version: "1.0"
+  discovery_endpoint: "/.well-known/agent.json"
+
+  # Agents exposed as A2A servers (callable by external agents)
+  server_agents:
+    - agent_id: program-knowledge
+      name: "AI Factory Program Knowledge"
+      description: "Expert on AI Factory program structure, phases, and organizational elements"
+      capabilities:
+        - "program_structure"
+        - "phase_guidance"
+        - "org_elements"
+      auth:
+        type: "api_key"
+
+    - agent_id: customer-executive-sponsor
+      name: "Executive Program Dashboard"
+      description: "Program progress, ROI metrics, and strategic recommendations"
+      capabilities:
+        - "program_status"
+        - "roi_metrics"
+        - "use_case_portfolio"
+      auth:
+        type: "api_key"
+
+    - agent_id: governance-gate-checker
+      name: "Model Governance Gate"
+      description: "Automated governance checks for model deployment promotion"
+      capabilities:
+        - "bias_check"
+        - "security_check"
+        - "performance_validation"
+        - "compliance_gate"
+      auth:
+        type: "api_key"
+
+  # External agents consumed as A2A clients (called by our agents)
+  client_agents:
+    - name: "Customer Model Registry"
+      description: "Customer's internal model registry for model metadata"
+      endpoint: ""
+      capabilities:
+        - "model_lookup"
+        - "model_metadata"
+      enabled: false
+
+    - name: "Customer Data Catalog"
+      description: "Customer's data catalog for data asset discovery"
+      endpoint: ""
+      capabilities:
+        - "dataset_search"
+        - "data_lineage"
+      enabled: false
+
+    - name: "Customer Monitoring System"
+      description: "Customer's production monitoring for real-time model metrics"
+      endpoint: ""
+      capabilities:
+        - "metrics_stream"
+        - "alert_status"
+      enabled: false

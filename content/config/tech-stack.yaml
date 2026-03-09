@@ -1,0 +1,141 @@
+products:
+  # --- Red Hat ---
+  - id: openshift
+    name: "Red Hat OpenShift"
+    vendor: red-hat
+    layer: platform
+    role: "Container orchestration — the foundation the AI Factory runs on. Already deployed on-prem at the customer."
+    icon: openshift
+    url: "https://www.redhat.com/en/technologies/cloud-computing/openshift"
+
+  - id: openshift-ai
+    name: "Red Hat OpenShift AI"
+    vendor: red-hat
+    layer: ai-platform
+    role: "AI/ML lifecycle management — the control plane for the AI Factory"
+    icon: openshift-ai
+    url: "https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai"
+    features:
+      - "AI Hub — centralized model catalog with performance insights and deployment guidance"
+      - "Model-as-a-Service (MaaS) — serve models via API with rate limiting and quotas"
+      - "Gen AI Studio — prompt playground with MCP tool integration"
+      - "Fine-tuning pipelines — automated SFT and OSFT workflows"
+      - "Model registry — versioning, lineage, approval workflows"
+      - "Feature Store — reusable ML features across teams"
+      - "LLM Compressor + GuideLLM — model compression and benchmarking"
+      - "MLflow — experiment tracking and evaluation logging"
+      - "llm-d — Kubernetes-native distributed inference routing"
+
+  - id: rhel-ai
+    name: "Red Hat Enterprise Linux AI"
+    vendor: red-hat
+    layer: ai-platform
+    role: "Foundation model platform for individual servers — includes Granite models and InstructLab for model alignment"
+    url: "https://www.redhat.com/en/products/ai/enterprise-linux-ai"
+
+  - id: ai-inference-server
+    name: "Red Hat AI Inference Server"
+    vendor: red-hat
+    layer: inference
+    role: "High-performance model serving powered by vLLM — handles inference at scale"
+    url: "https://www.redhat.com/en/products/ai/inference-server"
+
+  - id: rhel
+    name: "Red Hat Enterprise Linux"
+    vendor: red-hat
+    layer: os
+    role: "Security-hardened operating system foundation — advanced security and compliance capabilities"
+    url: "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux"
+
+  - id: ansible
+    name: "Red Hat Ansible Automation Platform"
+    vendor: red-hat
+    layer: automation
+    role: "Infrastructure automation — provisioning, configuration, and orchestration of AI infrastructure"
+    url: "https://www.redhat.com/en/technologies/management/ansible"
+
+  # --- NVIDIA ---
+  - id: nvidia-ai-enterprise
+    name: "NVIDIA AI Enterprise"
+    vendor: nvidia
+    layer: ai-platform
+    role: "GPU-optimized AI software suite — inference microservices, model building, GPU management"
+    features:
+      - "NIM — pre-optimized inference microservices"
+      - "NeMo — generative AI model building and customization"
+      - "TensorRT-LLM — optimized inference runtime"
+      - "GPU Operator — automated driver deployment and health monitoring"
+      - "Network Operator — networking configuration and optimization"
+      - "DOCA microservices — zero-trust architecture and AI runtime security"
+      - "Dynamo — inference optimization framework"
+
+  - id: nvidia-gpus
+    name: "NVIDIA GPUs"
+    vendor: nvidia
+    layer: compute
+    role: "Accelerated computing for training and inference"
+    options:
+      - "NVIDIA H100 — current generation, widely deployed"
+      - "NVIDIA Blackwell (B200) — next generation, higher throughput"
+      - "NVIDIA RTX PRO 6000 — inference-optimized"
+
+  - id: granite
+    name: "IBM Granite Models"
+    vendor: ibm
+    layer: models
+    role: "Open-source foundation models (Apache 2.0) included with Red Hat AI — indemnified for enterprise use"
+    variants:
+      - "Granite 3B — lightweight, fast inference"
+      - "Granite 8B — balanced performance"
+      - "Granite 34B — highest capability"
+
+  - id: nemotron
+    name: "NVIDIA Nemotron"
+    vendor: nvidia
+    layer: models
+    role: "High-performance open models available via NIM microservices"
+
+  # --- Hardware Partners ---
+  - id: dell-poweredge
+    name: "Dell PowerEdge XE"
+    vendor: dell
+    layer: hardware
+    role: "AI-optimized servers supporting up to 8 NVIDIA GPUs per node"
+
+  - id: lenovo-thinksystem
+    name: "Lenovo ThinkSystem"
+    vendor: lenovo
+    layer: hardware
+    role: "Inferencing-optimized server infrastructure"
+
+  - id: cisco-ucs
+    name: "Cisco UCS"
+    vendor: cisco
+    layer: hardware
+    role: "Enterprise-grade compute with integrated networking and security"
+
+layers:
+  - id: os
+    title: "Operating System"
+    order: 0
+  - id: platform
+    title: "Container Platform"
+    order: 1
+  - id: ai-platform
+    title: "AI Platform"
+    order: 2
+  - id: inference
+    title: "Inference Serving"
+    order: 3
+  - id: models
+    title: "Foundation Models"
+    order: 4
+  - id: compute
+    title: "GPU Compute"
+    order: 5
+  - id: hardware
+    title: "Server Hardware"
+    order: 6
+  - id: automation
+    title: "Automation"
+    order: 7

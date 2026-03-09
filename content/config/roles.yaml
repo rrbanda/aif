@@ -1,0 +1,93 @@
+roles:
+  # --- Red Hat Team ---
+  - id: rh-engagement-lead
+    title: "Engagement Lead"
+    organization: red-hat
+    description: "Owns the program relationship, coordinates across Red Hat teams, manages timeline and escalations"
+    phases: [discovery, data-strategy, platform-foundation, pilot-incubation, operationalize, scale-adopt]
+
+  - id: rh-ai-architect
+    title: "AI Solutions Architect"
+    organization: red-hat
+    description: "Designs the AI Factory architecture — OpenShift AI topology, GPU sizing, integration points, security model"
+    phases: [discovery, data-strategy, platform-foundation]
+
+  - id: rh-consultant
+    title: "Red Hat Consultant"
+    organization: red-hat
+    description: "Hands-on deployment and configuration of OpenShift AI, GPU enablement, pipeline setup, GitOps"
+    phases: [platform-foundation, pilot-incubation, operationalize]
+
+  - id: rh-ai-specialist
+    title: "AI/ML Specialist"
+    organization: red-hat
+    description: "Collaborates with data science teams on model fine-tuning, evaluation, serving optimization, and MLOps"
+    phases: [pilot-incubation, operationalize, scale-adopt]
+
+  - id: rh-trainer
+    title: "Red Hat Training"
+    organization: red-hat
+    description: "Delivers AI Bootcamps and certifications for customer teams"
+    phases: [platform-foundation, pilot-incubation]
+
+  - id: rh-tam
+    title: "Technical Account Manager"
+    organization: red-hat
+    description: "Long-term technical relationship management, proactive issue prevention, platform health"
+    phases: [operate-improve]
+
+  # --- Customer Team ---
+  - id: cust-exec-sponsor
+    title: "Executive Sponsor"
+    organization: customer
+    description: "Champions the AI Factory at the executive level, secures budget, removes organizational blockers"
+    phases: [discovery, operate-improve]
+
+  - id: cust-ai-lead
+    title: "AI/ML Platform Lead"
+    organization: customer
+    description: "Owns the AI Factory platform day-to-day — team coordination, capacity planning, vendor management"
+    phases: [discovery, data-strategy, platform-foundation, pilot-incubation, operationalize, scale-adopt, operate-improve]
+
+  - id: cust-data-engineer
+    title: "Data Engineer"
+    organization: customer
+    description: "Builds and maintains data pipelines, feature stores, and data quality processes"
+    phases: [data-strategy, platform-foundation, pilot-incubation]
+
+  - id: cust-data-scientist
+    title: "Data Scientist"
+    organization: customer
+    description: "Develops, trains, evaluates, and fine-tunes AI models on the factory platform"
+    phases: [pilot-incubation, operationalize, scale-adopt]
+
+  - id: cust-ml-engineer
+    title: "ML Engineer"
+    organization: customer
+    description: "Productionizes models — MLOps, serving optimization, monitoring, CI/CD for models"
+    phases: [operationalize, scale-adopt, operate-improve]
+
+  - id: cust-platform-engineer
+    title: "Platform Engineer"
+    organization: customer
+    description: "Manages OpenShift clusters, GPU nodes, networking, storage, and observability for AI workloads"
+    phases: [platform-foundation, operationalize, scale-adopt, operate-improve]
+
+  - id: cust-security
+    title: "Security & Compliance"
+    organization: customer
+    description: "Reviews and approves AI platform security posture, data handling policies, and regulatory compliance"
+    phases: [discovery, data-strategy, operationalize]
+
+  - id: cust-business-owner
+    title: "Business Process Owner"
+    organization: customer
+    description: "Owns the business process that AI will enhance — defines success criteria, validates outcomes, approves process redesign"
+    phases: [discovery, pilot-incubation, scale-adopt]
+
+  # --- Joint ---
+  - id: joint-change-lead
+    title: "Change Management Lead"
+    organization: joint
+    description: "Drives the change management workstream — stakeholder engagement, communication, adoption tracking"
+    phases: [discovery, pilot-incubation, scale-adopt, operate-improve]

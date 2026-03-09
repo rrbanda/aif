@@ -1,0 +1,48 @@
+id: aml-triage-v1
+name: AML Alert Triage Classifier
+use_case_id: aml-alert-triage
+model_type: transformer
+framework: PyTorch 2.2
+version: "0.8.1"
+description: NLP-based classifier that prioritizes AML alerts by analyzing transaction narratives and customer profiles.
+status: validated
+created: "2026-02-10"
+updated: "2026-03-02"
+
+lifecycle_history:
+  - stage: experiment
+    timestamp: "2026-02-10T08:00:00Z"
+    actor: "AML Data Science"
+    notes: Fine-tuned FinBERT on 18 months of SAR filings and alert outcomes
+  - stage: registered
+    timestamp: "2026-02-22T16:00:00Z"
+    actor: "Tom Chen"
+    notes: Registered after 0.91 precision on high-risk alerts
+  - stage: validated
+    timestamp: "2026-03-02T10:00:00Z"
+    actor: "Model Risk"
+    notes: Validation complete, pending deployment approval
+
+metrics:
+  accuracy: 0.89
+  f1_score: 0.91
+  latency_p95_ms: 120
+  throughput_rps: 350
+  drift_score: 0.12
+  error_rate: 0.005
+
+governance:
+  bias_tested: true
+  security_scanned: true
+  performance_validated: true
+  data_lineage_documented: true
+  model_card_completed: false
+  risk_classification: high
+  approvals: []
+
+deployment:
+  endpoint: null
+  replicas: 0
+  gpu_required: true
+  container_image: null
+  serving_runtime: kserve

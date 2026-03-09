@@ -1,0 +1,119 @@
+personas:
+  - id: field-cto
+    title: "Field CTO / Executive Sponsor"
+    short_title: "Field CTO"
+    icon: star
+    organization: red-hat
+    description: "Strategic AI vision, transformation roadmaps, board-level narratives, and cross-functional alignment"
+    greeting: "I'm your AI Factory strategic advisor. I can help with AI transformation roadmaps, board-ready narratives, cross-functional alignment strategies, innovation frameworks, and executive stakeholder engagement."
+    suggested_prompts:
+      - "Build a 12-month AI transformation roadmap for a Tier-1 bank"
+      - "Draft a board-level narrative on why the bank needs an AI Factory"
+      - "How do I align CTO, CRO, and CDO around a shared AI vision?"
+      - "What does a successful AI Center of Excellence look like at scale?"
+
+  - id: ae
+    title: "Account Executive"
+    short_title: "AE"
+    icon: briefcase
+    organization: red-hat
+    description: "Focused on business value, deal progression, and executive relationships"
+    greeting: "I'm your AI Factory assistant for account strategy. I can help with ROI analysis, executive summaries, competitive positioning, and program value articulation."
+    suggested_prompts:
+      - "Summarize the AI Factory value prop for a CTO meeting"
+      - "What ROI metrics should I highlight for Phase 4?"
+      - "Draft an executive briefing email about our AI Factory progress"
+      - "How does our approach compare to Databricks for this customer?"
+
+  - id: account-sa
+    title: "Account Solution Architect"
+    short_title: "Account SA"
+    icon: cube
+    organization: red-hat
+    description: "Focused on technical architecture, OpenShift integration, and infrastructure design"
+    greeting: "I'm your AI Factory architecture assistant. I can help with infrastructure design, OpenShift AI topology, GPU sizing, and deployment patterns."
+    suggested_prompts:
+      - "Design a multi-tenant AI Factory on existing OpenShift"
+      - "What GPU configuration do we need for Phase 3?"
+      - "How does the platform foundation integrate with their data lake?"
+      - "Generate an architecture description for the customer's environment"
+
+  - id: ai-specialist-sa
+    title: "AI Specialist Solution Architect"
+    short_title: "AI SA"
+    icon: brain
+    organization: red-hat
+    description: "Focused on AI/ML pipelines, model lifecycle, MLOps, and serving architecture"
+    greeting: "I'm your AI/ML specialist assistant. I can help with pipeline design, model serving, fine-tuning strategies, MLOps patterns, and evaluation frameworks."
+    suggested_prompts:
+      - "Design the fine-tuning pipeline for domain-specific banking models"
+      - "Compare vLLM vs TensorRT-LLM for real-time inference"
+      - "What's the model governance flow from registry to production?"
+      - "How should we set up llm-d for multi-model routing?"
+
+  - id: ai-specialist-sales
+    title: "AI Specialist Sales Professional"
+    short_title: "AI Sales"
+    icon: trending-up
+    organization: red-hat
+    description: "Focused on AI market positioning, use case qualification, and partner ecosystem"
+    greeting: "I'm your AI sales specialist assistant. I can help with use case qualification, competitive analysis, NVIDIA partnership positioning, and deal structuring."
+    suggested_prompts:
+      - "Which use cases are strongest for a Tier-1 bank?"
+      - "How does our AI Factory compare to AWS SageMaker + Bedrock?"
+      - "Draft a use case qualification matrix for this opportunity"
+      - "What's the NVIDIA AI Enterprise licensing model for this deal?"
+
+  # --- Customer Personas ---
+
+  - id: customer-data-scientist
+    title: "Data Scientist"
+    short_title: "Data Scientist"
+    icon: flask
+    organization: customer
+    description: "Customer data scientist working with the AI Factory platform for model development and experimentation"
+    greeting: "I'm your AI Factory assistant for data science workflows. I can help with experiment tracking, model development, pipeline execution, and deployment requests."
+    suggested_prompts:
+      - "What models are currently deployed for my use case?"
+      - "Show me the experiment history for fraud detection"
+      - "How do I request a new model deployment?"
+      - "What's the status of my training pipeline?"
+
+  - id: customer-ml-platform-lead
+    title: "ML Platform Lead"
+    short_title: "ML Platform"
+    icon: server
+    organization: customer
+    description: "Customer ML platform engineer responsible for AI Factory infrastructure and platform operations"
+    greeting: "I'm your AI Factory platform assistant. I can help with cluster status, resource allocation, pipeline management, and platform health monitoring."
+    suggested_prompts:
+      - "What's the current GPU utilization across namespaces?"
+      - "Show me the model registry status"
+      - "Are there any pipeline failures in the last 24 hours?"
+      - "What's our inference endpoint latency?"
+
+  - id: customer-model-risk-manager
+    title: "Model Risk Manager"
+    short_title: "Risk Manager"
+    icon: shield
+    organization: customer
+    description: "Customer model risk and governance professional overseeing AI model compliance and validation"
+    greeting: "I'm your AI Factory governance assistant. I can help with model validation status, compliance checks, bias monitoring, and governance gate reviews."
+    suggested_prompts:
+      - "Which models are pending governance review?"
+      - "Show me the bias metrics for the fraud detection model"
+      - "What compliance gates must a model pass before production?"
+      - "Generate a model risk assessment summary"
+
+  - id: customer-executive-sponsor
+    title: "Executive Sponsor"
+    short_title: "Exec Sponsor"
+    icon: award
+    organization: customer
+    description: "Customer executive sponsor overseeing the AI Factory program, tracking ROI and strategic progress"
+    greeting: "I'm your AI Factory executive dashboard. I can help with program progress, ROI tracking, use case portfolio status, and strategic recommendations."
+    suggested_prompts:
+      - "What's the overall progress of our AI Factory program?"
+      - "How many use cases are in production vs. pilot?"
+      - "Show me the ROI metrics for deployed models"
+      - "What are the top risks to the program timeline?"

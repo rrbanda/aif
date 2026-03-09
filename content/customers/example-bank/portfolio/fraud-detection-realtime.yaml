@@ -1,0 +1,32 @@
+id: fraud-detection-realtime
+name: Real-time Fraud Detection
+description: ML-powered real-time transaction fraud detection replacing rules-based system, reducing false positives by 60% and catching 35% more true fraud.
+business_unit: Retail Banking
+sponsor: Jane Smith
+stage: piloting
+priority: 1
+scores:
+  business_impact: 5
+  complexity: 3
+  data_readiness: 4
+estimated_value_usd: 12000000
+dependencies:
+  - real-time-data-pipeline
+  - gpu-inference-cluster
+kpis:
+  false_positive_reduction: "60% target"
+  fraud_catch_rate_improvement: "35% target"
+  processing_latency: "<100ms P95"
+  annual_fraud_loss_reduction: "$12M"
+lifecycle_history:
+  - stage: proposed
+    timestamp: "2026-01-15T10:00:00Z"
+    notes: Identified during discovery phase as top priority
+  - stage: qualified
+    timestamp: "2026-01-25T14:00:00Z"
+    notes: Passed qualification with 4.5/5 business impact score
+  - stage: piloting
+    timestamp: "2026-03-01T09:00:00Z"
+    notes: Pilot launched with 5% of transaction volume
+created: "2026-01-15"
+updated: "2026-03-06"

@@ -1,0 +1,99 @@
+use_cases:
+  - id: fraud-detection
+    title: "Fraud Detection"
+    industry: financial-services
+    icon: shield
+    complexity: high
+    ai_type:
+      - predictive
+      - real-time-inference
+    related_phases:
+      - pilot-incubation
+      - operationalize
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/fraud-detection.md"
+    summary: "On-premises fraud detection model trained on proprietary transaction data with real-time inference serving sub-200ms SLAs"
+    why_ai_factory: "Transaction data is highly sensitive (PII, PCI DSS). Cannot send to third-party APIs. Requires on-prem model training and inference within the organization's data perimeter."
+    factory_output: predictions
+    key_metrics:
+      - "False positive rate reduction"
+      - "Detection accuracy (precision/recall)"
+      - "Inference latency (p95)"
+      - "Analyst time saved per investigation"
+
+  - id: regulatory-reporting
+    title: "Regulatory Reporting & Document Analysis"
+    industry: financial-services
+    icon: file-text
+    complexity: medium
+    ai_type:
+      - generative
+      - extraction
+      - classification
+    related_phases:
+      - pilot-incubation
+      - operationalize
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/regulatory-reporting.md"
+    summary: "AI-powered analysis and extraction from regulatory documents, compliance checking, and automated report generation"
+    why_ai_factory: "Regulatory documents contain confidential information. RAG over internal knowledge bases requires on-prem vector databases and model serving. Audit trail for every AI-assisted decision is mandatory."
+    factory_output: process-automation
+    key_metrics:
+      - "Document processing time reduction"
+      - "Extraction accuracy"
+      - "Compliance check coverage"
+      - "Hours saved per reporting cycle"
+
+  - id: domain-models
+    title: "Domain-Specific Models"
+    industry: financial-services
+    icon: brain
+    complexity: high
+    ai_type:
+      - fine-tuned
+      - domain-specific
+    related_phases:
+      - scale-adopt
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/domain-models.md"
+    summary: "Fine-tuned foundation models specialized for credit risk, equities research, AML pattern detection, and regulatory interpretation"
+    why_ai_factory: "Generic models lack financial domain knowledge. Fine-tuning on proprietary data creates competitive advantage that the organization owns. Models trained on sensitive data cannot leave the organization's infrastructure."
+    factory_output: pattern-recognition
+    key_metrics:
+      - "Domain task accuracy vs generic model baseline"
+      - "Fine-tuning time and cost"
+      - "Model reuse across teams"
+      - "Inference cost per query"
+
+  - id: aiops
+    title: "AIOps — AI-Driven Operations"
+    industry: cross-industry
+    icon: activity
+    complexity: medium
+    ai_type:
+      - predictive
+      - anomaly-detection
+      - automation
+    related_phases:
+      - operate-improve
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/aiops.md"
+    summary: "AI-driven infrastructure monitoring, anomaly detection, incident classification, root cause analysis, and capacity forecasting"
+    why_ai_factory: "The AI Factory itself generates operational data that can be used to optimize its own performance. AIOps is both a product the factory produces and a capability that keeps the factory running efficiently."
+    factory_output: predictions
+    dual_role:
+      as_product: "AI models for IT operations — anomaly detection on trading platform metrics, predictive capacity planning, automated incident classification"
+      for_factory: "Monitoring the factory itself — model drift detection, pipeline health prediction, GPU utilization optimization, automated retraining triggers"
+    key_metrics:
+      - "Mean time to detect anomalies"
+      - "False alarm rate"
+      - "Incident classification accuracy"
+      - "Capacity forecast accuracy"
