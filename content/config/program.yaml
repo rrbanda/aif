@@ -177,10 +177,11 @@ program:
       - "Distribution"
 
   next_steps:
-    - "Review the datasheet"
-    - "Engage your preferred OEM, VAR, or Distributor in the Red Hat and NVIDIA network"
-    - "Accelerate with Red Hat Services"
-    - "Start with your use cases"
+    steps:
+      - "Review the datasheet"
+      - "Engage your preferred OEM, VAR, or Distributor in the Red Hat and NVIDIA network"
+      - "Accelerate with Red Hat Services"
+      - "Start with your use cases"
     call_to_action: "The platform is ready. The services are ready. When do you start?"
 
   principles:
