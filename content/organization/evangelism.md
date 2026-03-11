@@ -21,3 +21,25 @@ A visible dashboard tracks adoption: teams using the factory, API calls, deploym
 ## Cross-Team Matchmaking
 
 Connect teams with similar challenges or complementary capabilities. A team struggling with model serving may benefit from another team's experience; a team with excess GPU capacity may share with one that is constrained. Evangelism includes facilitating these connections.
+
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** Evangelism activities intensify during Scale & Adopt (Stage 5). Red Hat can provide co-branded success stories, case study templates, and executive presentation materials.
+
+**Effort estimation:**
+- Success story documentation: 1-2 days per use case
+- Internal demo environment setup: 1 week
+- Executive presentation development: 2-3 days per audience
+
+**Common pitfalls:**
+- Evangelizing before proving value — wait until pilot KPIs are documented before broad communication
+- Technical-only messaging — business stakeholders need business outcome stories, not architecture diagrams
+- Ignoring skeptics — engage critics directly with evidence and pilot invitations rather than broadcasting past them
+- Single-channel communication — use multiple formats: demos, newsletters, brown bags, executive briefings
+
+**Key insight:** The best evangelists are customer practitioners who have used the platform successfully, not Red Hat or vendor representatives. Help identify and empower internal champions.
+
+<!-- /audience -->

@@ -20,10 +20,11 @@ import ChatbotWelcomePrompt from "@patternfly/chatbot/dist/esm/ChatbotWelcomePro
 import { useAgent } from "../hooks/useAgent";
 import { usePersonas } from "../hooks/useCustomerData";
 import type { Persona } from "../types/agent";
+import type { ViewMode } from "../types";
 
 import "@patternfly/chatbot/dist/css/main.css";
 
-export default function Chat() {
+export default function Chat({ viewMode }: { viewMode: ViewMode }) {
   const { messages, streaming, error, sendMessage } =
     useAgent();
   const { personas } = usePersonas();
@@ -31,7 +32,10 @@ export default function Chat() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [announcement, setAnnouncement] = useState("");
 
-  const allPersonas = personas?.personas ?? [];
+  const rawPersonas = personas?.personas ?? [];
+  const allPersonas = viewMode === "customer"
+    ? rawPersonas.filter((p) => p.organization === "customer")
+    : rawPersonas;
 
   useEffect(() => {
     if (messages.length > 0) {

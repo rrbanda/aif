@@ -25,6 +25,7 @@ import {
   useCustomerAccount,
 } from "../hooks/useCustomerData";
 import ApplicationsPage from "../components/layout/ApplicationsPage";
+import type { ViewMode } from "../types";
 
 const DIMENSIONS = [
   { key: "data_readiness", label: "Data Readiness", color: "#0066CC" },
@@ -126,7 +127,7 @@ function RadarChart({
   );
 }
 
-export default function AssessmentDashboard() {
+export default function AssessmentDashboard({ viewMode }: { viewMode: ViewMode }) {
   const { customers, loading: custLoading } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState<string>("");
   const [custSelectOpen, setCustSelectOpen] = useState(false);
@@ -331,6 +332,72 @@ export default function AssessmentDashboard() {
                         </DescriptionListDescription>
                       </DescriptionListGroup>
                     ))}
+                  </DescriptionList>
+                </CardBody>
+              </Card>
+            </GalleryItem>
+          )}
+
+          {viewMode === "internal" && account?.red_hat_team && (
+            <GalleryItem>
+              <Card>
+                <CardTitle>Red Hat Account Team</CardTitle>
+                <CardBody>
+                  <DescriptionList isHorizontal>
+                    {account.red_hat_team.ae && (
+                      <DescriptionListGroup>
+                        <DescriptionListTerm>AE</DescriptionListTerm>
+                        <DescriptionListDescription>{account.red_hat_team.ae}</DescriptionListDescription>
+                      </DescriptionListGroup>
+                    )}
+                    {account.red_hat_team.account_sa && (
+                      <DescriptionListGroup>
+                        <DescriptionListTerm>Account SA</DescriptionListTerm>
+                        <DescriptionListDescription>{account.red_hat_team.account_sa}</DescriptionListDescription>
+                      </DescriptionListGroup>
+                    )}
+                    {account.red_hat_team.ai_specialist_sa && (
+                      <DescriptionListGroup>
+                        <DescriptionListTerm>AI Specialist SA</DescriptionListTerm>
+                        <DescriptionListDescription>{account.red_hat_team.ai_specialist_sa}</DescriptionListDescription>
+                      </DescriptionListGroup>
+                    )}
+                    {account.red_hat_team.field_cto && (
+                      <DescriptionListGroup>
+                        <DescriptionListTerm>Field CTO</DescriptionListTerm>
+                        <DescriptionListDescription>{account.red_hat_team.field_cto}</DescriptionListDescription>
+                      </DescriptionListGroup>
+                    )}
+                  </DescriptionList>
+                </CardBody>
+              </Card>
+            </GalleryItem>
+          )}
+
+          {viewMode === "internal" && account?.engagement && (
+            <GalleryItem>
+              <Card>
+                <CardTitle>Engagement Details</CardTitle>
+                <CardBody>
+                  <DescriptionList isHorizontal>
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>Type</DescriptionListTerm>
+                      <DescriptionListDescription>
+                        <Label isCompact>{account.engagement.engagement_type}</Label>
+                      </DescriptionListDescription>
+                    </DescriptionListGroup>
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>SOW</DescriptionListTerm>
+                      <DescriptionListDescription>{account.engagement.current_sow}</DescriptionListDescription>
+                    </DescriptionListGroup>
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>Start</DescriptionListTerm>
+                      <DescriptionListDescription>{account.engagement.start_date}</DescriptionListDescription>
+                    </DescriptionListGroup>
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>Est. End</DescriptionListTerm>
+                      <DescriptionListDescription>{account.engagement.estimated_end}</DescriptionListDescription>
+                    </DescriptionListGroup>
                   </DescriptionList>
                 </CardBody>
               </Card>

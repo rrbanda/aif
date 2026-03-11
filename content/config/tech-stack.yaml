@@ -1,20 +1,17 @@
 products:
-  # --- Red Hat ---
-  - id: openshift
-    name: "Red Hat OpenShift"
-    vendor: red-hat
-    layer: platform
-    role: "Container orchestration — the foundation the AI Factory runs on. Already deployed on-prem at the customer."
-    icon: openshift
-    url: "https://www.redhat.com/en/technologies/cloud-computing/openshift"
-
-  - id: openshift-ai
-    name: "Red Hat OpenShift AI"
+  # --- Red Hat AI Enterprise ---
+  - id: red-hat-ai-enterprise
+    name: "Red Hat AI Enterprise"
     vendor: red-hat
     layer: ai-platform
-    role: "AI/ML lifecycle management — the control plane for the AI Factory"
+    role: "Integrated AI platform for deploying and running efficient and cost-effective AI models, agents and applications in the hybrid cloud"
     icon: openshift-ai
     url: "https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai"
+    capabilities:
+      - "Unified AI lifecycle: Manages end-to-end process (develop, tune, infer) for predictive, generative, and agentic AI on a single, centralized platform"
+      - "Intelligent scale & performance: Optimizes AI inference at scale ensuring efficient GPU utilization and intelligent resource allocation"
+      - "Enterprise governance & trust: Comprehensive, layered security and safety across the entire AI lifecycle"
+      - "Hybrid cloud agility: Flexible deployment across the entire hybrid cloud, diverse hardware, and the edge"
     features:
       - "AI Hub — centralized model catalog with performance insights and deployment guidance"
       - "Model-as-a-Service (MaaS) — serve models via API with rate limiting and quotas"
@@ -25,6 +22,20 @@ products:
       - "LLM Compressor + GuideLLM — model compression and benchmarking"
       - "MLflow — experiment tracking and evaluation logging"
       - "llm-d — Kubernetes-native distributed inference routing"
+
+  - id: openshift
+    name: "Red Hat OpenShift"
+    vendor: red-hat
+    layer: platform
+    role: "Container orchestration — the foundation the AI Factory runs on"
+    icon: openshift
+    url: "https://www.redhat.com/en/technologies/cloud-computing/openshift"
+    capabilities:
+      - "Virtualization hypervisor"
+      - "Container orchestration"
+      - "MLOps tooling"
+      - "DevOps tooling"
+      - "Ecosystem integration"
 
   - id: rhel-ai
     name: "Red Hat Enterprise Linux AI"
@@ -54,15 +65,20 @@ products:
     role: "Infrastructure automation — provisioning, configuration, and orchestration of AI infrastructure"
     url: "https://www.redhat.com/en/technologies/management/ansible"
 
-  # --- NVIDIA ---
+  # --- NVIDIA AI Enterprise ---
   - id: nvidia-ai-enterprise
     name: "NVIDIA AI Enterprise"
     vendor: nvidia
     layer: ai-platform
-    role: "GPU-optimized AI software suite — inference microservices, model building, GPU management"
+    role: "GPU-optimized AI software suite — accelerate and optimize production AI deployments"
+    capabilities:
+      - "Accelerated Time to Value — ready-to-deploy NIM microservices and blueprints"
+      - "Run AI Workloads at Scale — maximize GPU utilization, increase throughput, centralize governance"
+      - "Build with Confidence — extended-lifetime production branches, secure supply chain, STIG-hardened containers"
     features:
       - "NIM — pre-optimized inference microservices"
       - "NeMo — generative AI model building and customization"
+      - "NeMo Retriever — document ingestion for enterprise RAG"
       - "TensorRT-LLM — optimized inference runtime"
       - "GPU Operator — automated driver deployment and health monitoring"
       - "Network Operator — networking configuration and optimization"
@@ -75,9 +91,30 @@ products:
     layer: compute
     role: "Accelerated computing for training and inference"
     options:
-      - "NVIDIA H100 — current generation, widely deployed"
-      - "NVIDIA Blackwell (B200) — next generation, higher throughput"
-      - "NVIDIA RTX PRO 6000 — inference-optimized"
+      - "NVIDIA Blackwell (B200) — current generation, highest throughput (Available Now)"
+      - "NVIDIA Rubin — next generation platform (H2 2026, Day 0 support)"
+      - "NVIDIA H100 — widely deployed, proven at scale"
+      - "NVIDIA RTX PRO 6000 — inference-optimized workstations"
+
+  - id: nvidia-networking
+    name: "NVIDIA Networking"
+    vendor: nvidia
+    layer: networking
+    role: "High-performance and programmable networking for AI workloads"
+    options:
+      - "SpectrumX — high-performance AI networking"
+      - "BlueField — programmable DPU for zero-trust networking"
+
+  # --- Server & Rack Scale Platforms ---
+  - id: nvidia-platforms
+    name: "NVIDIA Server and Rack Scale Platforms"
+    vendor: nvidia
+    layer: hardware
+    role: "Purpose-built infrastructure for AI workloads at rack scale"
+    options:
+      - "DGX — purpose-built AI supercomputing systems"
+      - "HGX — GPU baseboard for OEM server integration"
+      - "RTX Pro — professional AI workstations"
 
   - id: granite
     name: "IBM Granite Models"
@@ -95,7 +132,7 @@ products:
     layer: models
     role: "High-performance open models available via NIM microservices"
 
-  # --- Hardware Partners ---
+  # --- Hardware Partners (OEMs) ---
   - id: dell-poweredge
     name: "Dell PowerEdge XE"
     vendor: dell
@@ -114,48 +151,83 @@ products:
     layer: hardware
     role: "Enterprise-grade compute with integrated networking and security"
 
+quickstarts:
+  - id: enterprise-rag
+    title: "Enterprise RAG"
+    description: "Ground AI in proprietary data with NVIDIA NeMo Retriever for document ingestion and Nemotron for generation. Red Hat provides orchestration and governance control."
+  - id: video-search
+    title: "Video Search & Summarization"
+    description: "NVIDIA VLM microservices for video search, summarization, and analysis at scale. Deployed on the Red Hat production platform."
+  - id: model-as-a-service
+    title: "Model as a Service"
+    description: "Models as shared resources via API endpoints. Central hosting for teams and applications with orchestration, multi-tenancy, and API management."
+  - id: enterprise-research
+    title: "Enterprise Research"
+    description: "Connects agents to enterprise data. Distill materials with efficiency and precision. Faster token generation and data ingestion with improved semantic accuracy."
+  - id: it-self-service
+    title: "IT Self-Service"
+    description: "AI-powered IT helpdesk and self-service automation for common operational requests."
+  - id: product-recommenders
+    title: "Product Recommenders"
+    description: "Personalized product recommendation engines powered by on-premises AI models."
+  - id: infra-monitoring
+    title: "Infrastructure Monitoring"
+    description: "AI-driven infrastructure monitoring, anomaly detection, and capacity forecasting."
+
 layers:
   - id: infrastructure
-    title: "Layer 1: Infrastructure"
-    description: "Power, cooling, networking, and server hardware purpose-built for AI workloads"
+    title: "Layer 1: Infrastructure & Hardware"
+    description: "Server and rack scale platforms — DGX, HGX, RTX Pro, SpectrumX, BlueField"
     order: 0
-    includes: [hardware, os]
-  - id: compute
-    title: "Layer 2: Accelerated Compute"
-    description: "GPU-powered processing for training and inference at scale"
+    includes: [hardware, os, networking]
+  - id: platform-availability
+    title: "Layer 2: Platform Availability"
+    description: "Virtualization, container orchestration, MLOps, high-performance networking, bare metal, confidential compute"
     order: 1
-  - id: ai-platform
-    title: "Layer 3: AI Platform"
-    description: "The control plane — model lifecycle, governance, pipelines, and workspaces"
+    includes: [platform]
+  - id: develop-deploy
+    title: "Layer 3: Develop & Deploy"
+    description: "Agents & models, data & customization, train & fine-tune, production inference, distributed serving, scheduling"
     order: 2
-    includes: [platform, inference, automation]
+    includes: [ai-platform, inference, automation]
   - id: models
-    title: "Layer 4: Foundation Models"
-    description: "Pre-trained and fine-tuned models serving as the intelligence layer"
+    title: "Layer 4: Optimized Models & Quickstarts"
+    description: "Optimized validated open models, Red Hat AI quickstarts, NVIDIA AI Blueprints"
     order: 3
   - id: applications
     title: "Layer 5: Intelligent Applications"
-    description: "Production AI capabilities the business consumes — predictions, pattern recognition, automation, and agentic AI"
+    description: "Predictive ML, Generative AI, Agentic AI, Physical AI"
     order: 4
 
-  # Legacy layer IDs for backward compatibility with product assignments
   - id: os
     title: "Operating System"
     parent: infrastructure
     order: 10
+  - id: compute
+    title: "Accelerated Compute"
+    parent: infrastructure
+    order: 11
+  - id: networking
+    title: "Networking"
+    parent: infrastructure
+    order: 12
   - id: platform
     title: "Container Platform"
-    parent: ai-platform
-    order: 11
+    parent: platform-availability
+    order: 13
+  - id: ai-platform
+    title: "AI Platform"
+    parent: develop-deploy
+    order: 14
+  - id: inference
+    title: "Inference Serving"
+    parent: develop-deploy
+    order: 15
+  - id: automation
+    title: "Automation"
+    parent: develop-deploy
+    order: 16
   - id: hardware
     title: "Server Hardware"
     parent: infrastructure
-    order: 12
-  - id: inference
-    title: "Inference Serving"
-    parent: ai-platform
-    order: 13
-  - id: automation
-    title: "Automation"
-    parent: ai-platform
-    order: 14
+    order: 17

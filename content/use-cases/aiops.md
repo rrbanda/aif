@@ -7,3 +7,28 @@ AIOps plays a **dual role** in the AI Factory: it is both a product the factory 
 **As a capability for the factory**, AIOps monitors the AI Factory itself. Model drift detection identifies when production model performance degrades due to data distribution shift. Pipeline health prediction flags failing data ingestion or training jobs before they cascade. GPU utilization optimization recommends right-sizing and scheduling to reduce idle capacity. Automated retraining triggers fire when drift thresholds are exceeded. This "factory observing factory" loop reduces operational toil and accelerates incident response.
 
 The same platform — OpenShift AI, GPU infrastructure, MLOps pipelines — supports both roles. AIOps models for infrastructure monitoring consume metrics from Prometheus, OpenTelemetry, and application logs. AIOps models for the factory consume model registry metadata, pipeline run history, and inference latency metrics. Shared tooling and patterns reduce duplication.
+
+<!-- audience: internal -->
+
+## Internal: Deal Positioning
+
+**Why AI Factory wins here:** AIOps is the "eat your own cooking" use case — the AI Factory monitors itself. This dual role makes it a low-risk, high-visibility pilot that demonstrates the platform's capabilities to IT operations teams, who are often skeptical of AI claims.
+
+**Competitive differentiation:**
+- Datadog/Splunk/Dynatrace: Observability platforms with AI features, but models are vendor-trained, not customizable. No proprietary anomaly detection on institutional data.
+- ServiceNow AIOps: Tied to ServiceNow ITSM, limited model customization.
+- Red Hat AI Factory: Train custom AIOps models on the organization's own infrastructure data. OpenShift observability (Prometheus, Grafana) is native. Models run on-prem alongside the workloads they monitor.
+
+**Positioning strategy:**
+- AIOps is a "Stage 6" use case but can start earlier as a platform team internal use case
+- Low risk: Only affects operations team, not customer-facing
+- Quick win: Anomaly detection on existing Prometheus metrics is straightforward
+- Internal champion builder: Platform engineering team becomes the first AI Factory success story
+
+**Typical ROI metrics to present:**
+- Mean time to detect anomalies: 50-70% reduction
+- False alarm rate: 40-60% reduction (vs. static thresholds)
+- Incident classification accuracy: 85-95%
+- Capacity forecast accuracy: Within 10% for 30-day horizon
+
+<!-- /audience -->

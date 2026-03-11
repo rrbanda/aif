@@ -15,3 +15,24 @@ The AI Community of Practice (CoP) is a cross-functional, opt-in community of pr
 ## Participation and Ownership
 
 The CoP is opt-in. Participation grows when sessions deliver value. A lightweight steering group (2–3 practitioners plus CoE liaison) can own the calendar and format. Avoid making attendance mandatory; voluntary engagement indicates genuine interest and builds organic adoption.
+
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** The CoP is typically launched during the Pilot phase and grows during Scale & Adopt. Red Hat Consulting seeds the first few sessions; the CoP should become self-sustaining.
+
+**Effort estimation:**
+- Initial setup and first 3 sessions: 2-3 weeks of consulting time
+- Ongoing: Customer-led with occasional Red Hat guest speakers (TAM can coordinate)
+
+**Common pitfalls:**
+- Mandatory attendance kills engagement — keep it voluntary and valuable
+- No structure leads to wasted time — use consistent formats (demo, discussion, Q&A)
+- Siloed by team — the whole point is cross-team knowledge sharing
+- No knowledge capture — sessions without documentation are lost knowledge
+
+**Red Hat advantage:** Red Hat's open source community model is the template. Position the CoP as the internal version of upstream community participation. Red Hat practitioners can guest-present on AI Factory patterns and best practices.
+
+<!-- /audience -->

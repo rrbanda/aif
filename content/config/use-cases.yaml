@@ -198,3 +198,104 @@ use_cases:
       - "False alarm rate"
       - "Incident classification accuracy"
       - "Capacity forecast accuracy"
+
+  # --- AI Quickstart Use Cases (from Red Hat AI Factory with NVIDIA deck) ---
+
+  - id: enterprise-rag
+    title: "Enterprise RAG"
+    industry: cross-industry
+    icon: search
+    complexity: medium
+    ai_type:
+      - generative
+      - retrieval
+    related_phases:
+      - pilot-incubation
+      - scale-adopt
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/enterprise-rag.md"
+    summary: "Ground AI in proprietary data with NVIDIA NeMo Retriever for document ingestion and Nemotron for generation, with Red Hat orchestration and governance"
+    why_ai_factory: "Enterprise documents contain confidential information. RAG over internal knowledge bases requires on-premises vector databases, embedding models, and LLM serving — all within the organization's data perimeter."
+    factory_output: agentic-ai
+    quickstart: true
+    key_metrics:
+      - "Retrieval accuracy (recall@k)"
+      - "Answer faithfulness score"
+      - "Query latency"
+      - "Document coverage"
+
+  - id: video-search
+    title: "Video Search & Summarization"
+    industry: cross-industry
+    icon: video
+    complexity: high
+    ai_type:
+      - generative
+      - multimodal
+    related_phases:
+      - scale-adopt
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/video-search.md"
+    summary: "Search, summarize, and analyze video at scale using NVIDIA VLM microservices deployed on the Red Hat production platform"
+    why_ai_factory: "Video content contains sensitive organizational data — security footage, training recordings, operational procedures. Processing must stay on-premises."
+    factory_output: pattern-recognition
+    quickstart: true
+    key_metrics:
+      - "Search relevance (mAP)"
+      - "Summarization accuracy"
+      - "Processing throughput (videos/hour)"
+      - "Query response time"
+
+  - id: model-as-a-service
+    title: "Model as a Service"
+    industry: cross-industry
+    icon: cloud
+    complexity: medium
+    ai_type:
+      - serving
+      - multi-tenant
+    related_phases:
+      - operationalize
+      - scale-adopt
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/model-as-a-service.md"
+    summary: "Models as shared resources via API endpoints with central hosting, orchestration, multi-tenancy, and API management"
+    why_ai_factory: "Centralizing model serving eliminates redundant deployments, reduces GPU waste, and provides consistent governance, rate limiting, and cost tracking across teams."
+    factory_output: predictions
+    quickstart: true
+    key_metrics:
+      - "API latency (p50, p95, p99)"
+      - "GPU utilization per model"
+      - "Cost per inference request"
+      - "Teams onboarded"
+
+  - id: enterprise-research
+    title: "Enterprise Research"
+    industry: cross-industry
+    icon: book-open
+    complexity: high
+    ai_type:
+      - agentic
+      - retrieval
+      - generative
+    related_phases:
+      - scale-adopt
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/enterprise-research.md"
+    summary: "Connects AI agents to enterprise data to distill materials with efficiency and precision — faster token generation, improved semantic accuracy"
+    why_ai_factory: "Research materials contain proprietary analysis, competitive intelligence, and pre-publication findings. AI-assisted research must operate within the organization's security perimeter."
+    factory_output: agentic-ai
+    quickstart: true
+    key_metrics:
+      - "Research time reduction"
+      - "Citation accuracy"
+      - "Content coverage"
+      - "User satisfaction score"

@@ -31,3 +31,28 @@ Discovery should include a structured readiness assessment across five dimension
 - **Infrastructure underprovisioning** — GPU and compute capacity insufficient for training loads creates bottlenecks that cascade through the entire pipeline. Forecast based on growth, not current workloads.
 - **Talent and skills gap** — The factory cannot run when the workforce has not been equipped to operate it. Plan bootcamps early.
 - **Missing executive sponsorship** — Without a signed program charter with budget authority, programs stall when priorities shift. Non-negotiable for Stage 0 exit.
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** Discovery maps directly to weeks 1-4 of the Red Hat Services Starter Package. Red Hat Consulting leads the assessment workshops, with NVIDIA expertise accessed for GPU sizing and architecture validation.
+
+**Resource estimation:**
+- Red Hat Consulting: 2 consultants, 4 weeks (160 hours)
+- Customer commitment: Technical lead + executive sponsor availability for workshops
+- Typical deliverable set: Workload assessment, infrastructure audit, maturity assessment, use case portfolio, program charter
+
+**Common objections and responses:**
+- *"We already know our use cases"* — Discovery validates assumptions. Most customers discover 30-40% of initially proposed use cases are not feasible at scale. Better to learn now than in pilot.
+- *"We don't need a full assessment"* — Abbreviated discovery leads to platform misfit. Infrastructure gaps surface during deployment, causing delays and rework.
+- *"Can we skip to platform deployment?"* — Without discovery, platform architecture decisions lack data. GPU sizing, network topology, and storage design depend on workload analysis.
+
+**Competitive context:**
+- AWS/Azure skip discovery — they want you on cloud ASAP. This leads to oversized cloud spend and later migration pain.
+- Databricks focuses narrowly on data/MLOps, missing organizational readiness entirely.
+- Red Hat AI Factory discovery is holistic: technical + organizational + data + governance.
+
+**Key deal stage:** Discovery is the entry point. Close consulting SOW for Services Starter Package. Position as low-risk, high-insight investment before major platform commitment.
+
+<!-- /audience -->

@@ -27,3 +27,28 @@ Operationalization is where the "pilot-to-production gap" becomes real. Over 40%
 - **Governance gates skipped under pressure** — Business urgency pressures teams to bypass bias checks, security scans, or performance thresholds. Document override procedures but make gates the default — auditors will ask for this.
 - **Observability gaps** — Models deployed without drift detection or fairness monitoring degrade silently. By the time problems surface, they've affected customers or created regulatory risk.
 - **Insufficient MLOps maturity** — Most organizations attempting factory-scale operationalization are at Google MLOps Level 0 or early Level 1. The gap between ambition and operational maturity is where implementations stall. Invest in pipeline automation before scaling model count.
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** Operationalization typically requires extended consulting engagement beyond the initial Starter Package, or transition to Technical Account Management (TAM) for ongoing advisory.
+
+**Resource estimation:**
+- Red Hat Consulting: 1 consultant, 8-12 weeks (pipeline design + governance gate implementation)
+- Red Hat TAM: Begin Day 2 advisory relationship at this stage
+- Customer commitment: ML platform engineering team, model risk / compliance team, SRE/operations team
+
+**Common objections and responses:**
+- *"Governance gates will slow our deployment velocity"* — Governance gates actually accelerate deployment by catching issues before production. The alternative is production incidents, model rollbacks, and audit findings. Position as risk mitigation, not overhead.
+- *"We don't need MLOps yet, we only have a few models"* — MLOps infrastructure should be in place before scaling model count. Retrofitting CI/CD for models after 10+ are in production is significantly more expensive than building it for 2-3.
+- *"Our SRE team can handle model monitoring"* — ML observability is different from infrastructure monitoring. Model drift, fairness degradation, and data quality shifts require ML-specific tools and expertise.
+
+**Competitive positioning:**
+- Databricks MLflow: Strong experiment tracking, but inference serving (Mosaic AI) is less mature than NIM + llm-d. Position Red Hat for production inference at scale.
+- AWS SageMaker Pipelines: Tight AWS coupling, no on-prem option. Position for hybrid and data sovereignty.
+- Azure ML Endpoints: Similar pattern but tied to Azure identity and networking stack.
+
+**Key deal milestone:** Operationalization value gate (MLOps pipeline operational, governance gates enforcing) is the proof point that justifies multi-year subscription renewal and GPU node expansion.
+
+<!-- /audience -->

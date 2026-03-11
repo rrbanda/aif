@@ -17,3 +17,25 @@ Proactively identify and address resistance. Common sources: fear of job displac
 ## Adoption Tracking
 
 Measure actual usage, satisfaction, and behavioral change. Deployment does not equal adoption. Track: who is using the factory, how often, for what, and with what satisfaction. Use surveys, usage analytics, and qualitative feedback. Feed findings back into communication and training plans.
+
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** Change management is a cross-cutting concern across all phases of the Services Starter Package. Red Hat Consulting addresses it during discovery (stakeholder mapping), platform foundation (developer onboarding), and pilot (process redesign).
+
+**Effort estimation:**
+- Stakeholder analysis and communication plan: 1-2 weeks
+- Resistance assessment and mitigation: Ongoing throughout engagement
+- Adoption tracking setup: 1 week (integrate with platform telemetry)
+
+**Common pitfalls:**
+- Treating change management as optional — technology deployments without organizational change produce shelfware
+- Top-down only approach — change must be driven by both executive mandate and practitioner value
+- Ignoring middle management — team leads and department heads are the adoption gatekeepers
+- Measuring deployment instead of adoption — "installed" is not "used"
+
+**Red Hat advantage:** Red Hat's open source culture and community-driven adoption model directly informs change management strategy. Position adoption as community building, not mandate compliance.
+
+<!-- /audience -->

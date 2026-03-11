@@ -47,3 +47,18 @@
 - **SOX** — Sarbanes-Oxley Act. US financial reporting and auditing requirements.
 - **AML** — Anti-Money Laundering. Regulations requiring detection and reporting of suspicious financial activity.
 - **PII** — Personally Identifiable Information. Data that can identify an individual.
+
+
+<!-- audience: internal -->
+
+## Internal: Key Terms for Customer Conversations
+
+- **Red Hat AI Enterprise** — The umbrella product name. Includes OpenShift AI and related AI platform capabilities. Use this name in customer-facing materials.
+- **Red Hat AI Factory with NVIDIA** — The joint solution name. Always include "with NVIDIA" — this is a co-engineered offering, not a Red Hat solo product.
+- **Services Starter Package** — The consulting + training + TAM bundle. Always position as part of the initial engagement.
+- **Node-based pricing** — Simplified pricing model. Per-GPU-node subscription for both Red Hat AI Enterprise and NVIDIA AI Enterprise.
+- **Day 0 support** — New NVIDIA hardware platforms are supported from launch day. Currently: Blackwell. Coming: Rubin (H2 2026).
+- **NIM** — NVIDIA Inference Microservices. Pre-optimized containers for model serving. Key NVIDIA value-add.
+- **llm-d** — Kubernetes-native distributed inference routing. Red Hat contribution to intelligent multi-model serving.
+
+<!-- /audience -->

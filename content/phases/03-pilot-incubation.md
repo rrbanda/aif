@@ -26,3 +26,32 @@ The most common pilot failure modes are not technical:
 - **Data quality issues discovered during training** — should have been caught in Stage 1
 
 Over 40% of agentic AI projects may be canceled by 2027 due to escalating costs, unclear business value, and inadequate risk controls (Gartner). Pilots with clear KPIs and business owner commitment avoid this trap.
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** Pilot stage maps to weeks 9-12+ of the Services Starter Package ("One use case onboarding"). Red Hat Consulting guides the first pilot end-to-end, with knowledge transfer so the customer can execute subsequent pilots independently.
+
+**Resource estimation:**
+- Red Hat Consulting: 1-2 consultants, 8-12 weeks (overlaps with platform stabilization)
+- Customer commitment: Data science team, business process owner, model risk officer
+- NVIDIA involvement: NIM deployment for inference, NeMo for fine-tuning guidance
+
+**Pilot selection guidance (internal):**
+- Prioritize use cases with: existing data, clear KPIs, engaged business owner, regulatory simplicity
+- Avoid first pilots that require: real-time production integration, cross-department data sharing, novel model architectures
+- Best first pilots by industry:
+  - Financial services: Fraud detection (clear KPIs, existing data, regulatory motivation)
+  - Healthcare: Clinical documentation (high time savings, contained scope)
+  - Manufacturing: Predictive maintenance (sensor data available, clear ROI)
+  - Energy: Demand forecasting (historical data, measurable accuracy)
+
+**Common objections and responses:**
+- *"Our data science team can handle this"* — The goal is not just building a model; it is proving the full factory lifecycle (data → train → evaluate → deploy → monitor). Most teams have model-building skills but lack MLOps and governance pipeline experience.
+- *"One use case isn't enough to justify the investment"* — The pilot proves the platform and process. Once proven, subsequent use cases deploy 3-5x faster because the factory infrastructure is in place.
+- *"Why can't we just use a pre-trained model?"* — Pre-trained models work for generic tasks. Enterprise use cases (fraud patterns, clinical terminology, equipment signatures) require domain fine-tuning on proprietary data. This is the competitive moat.
+
+**Key deal stage:** Pilot success is the strongest expansion trigger. Document KPI results meticulously — these become the business case for scaling GPU nodes, adding teams, and expanding use cases.
+
+<!-- /audience -->

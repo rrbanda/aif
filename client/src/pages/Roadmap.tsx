@@ -32,9 +32,9 @@ import {
 } from "../hooks/useCustomerData";
 import { useConfig } from "../hooks/useConfig";
 import ApplicationsPage from "../components/layout/ApplicationsPage";
-import type { PhasesConfig, Phase } from "../types";
+import type { PhasesConfig, Phase, ViewMode } from "../types";
 
-export default function Roadmap() {
+export default function Roadmap({ viewMode }: { viewMode: ViewMode }) {
   const { customers, loading: custLoading } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState("");
   const [custSelectOpen, setCustSelectOpen] = useState(false);
@@ -295,6 +295,60 @@ export default function Roadmap() {
               );
             })}
           </div>
+
+          {viewMode === "internal" && account?.red_hat_team && (
+            <Card className="pf-v6-u-mt-lg">
+              <CardTitle>Red Hat Account Team</CardTitle>
+              <CardBody>
+                <DescriptionList isHorizontal isCompact>
+                  {account.red_hat_team.ae && (
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>Account Executive</DescriptionListTerm>
+                      <DescriptionListDescription>{account.red_hat_team.ae}</DescriptionListDescription>
+                    </DescriptionListGroup>
+                  )}
+                  {account.red_hat_team.account_sa && (
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>Account SA</DescriptionListTerm>
+                      <DescriptionListDescription>{account.red_hat_team.account_sa}</DescriptionListDescription>
+                    </DescriptionListGroup>
+                  )}
+                  {account.red_hat_team.ai_specialist_sa && (
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>AI Specialist SA</DescriptionListTerm>
+                      <DescriptionListDescription>{account.red_hat_team.ai_specialist_sa}</DescriptionListDescription>
+                    </DescriptionListGroup>
+                  )}
+                  {account.red_hat_team.field_cto && (
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>Field CTO</DescriptionListTerm>
+                      <DescriptionListDescription>{account.red_hat_team.field_cto}</DescriptionListDescription>
+                    </DescriptionListGroup>
+                  )}
+                </DescriptionList>
+                {account.engagement && (
+                  <DescriptionList isHorizontal isCompact className="pf-v6-u-mt-md">
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>Engagement Type</DescriptionListTerm>
+                      <DescriptionListDescription>
+                        <Label isCompact>{account.engagement.engagement_type}</Label>
+                      </DescriptionListDescription>
+                    </DescriptionListGroup>
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>SOW</DescriptionListTerm>
+                      <DescriptionListDescription>{account.engagement.current_sow}</DescriptionListDescription>
+                    </DescriptionListGroup>
+                    <DescriptionListGroup>
+                      <DescriptionListTerm>Timeline</DescriptionListTerm>
+                      <DescriptionListDescription>
+                        {account.engagement.start_date} — {account.engagement.estimated_end}
+                      </DescriptionListDescription>
+                    </DescriptionListGroup>
+                  </DescriptionList>
+                )}
+              </CardBody>
+            </Card>
+          )}
 
           {deliverables.length > 0 && (
             <Card className="pf-v6-u-mt-lg">

@@ -17,3 +17,25 @@ CoE members consult with delivery teams on architecture, model selection, pipeli
 ## Coordination with Security and Compliance
 
 The CoE works with security and compliance teams to translate policy into technical requirements. PII handling, model explainability, audit logging, and access controls must be baked into standards. In financial services, this coordination is non-negotiable.
+
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** The CoE is typically established during the Platform Foundation phase (weeks 5-12). Red Hat Consulting helps define charter, governance model, and initial standards. Ongoing advisory via TAM supports CoE maturation.
+
+**Effort estimation:**
+- CoE charter and governance model: 2 weeks
+- Initial standards and patterns documentation: 3-4 weeks
+- Ongoing advisory: TAM engagement (bi-weekly)
+
+**Common pitfalls:**
+- CoE as bottleneck — the CoE should enable, not gatekeep. Standards should be guardrails, not approval queues
+- Understaffed CoE — a 2-person CoE cannot support 50 data scientists. Plan for growth
+- No executive authority — CoE recommendations without enforcement power are ignored
+- Disconnected from business — a purely technical CoE misses business alignment. Include business liaisons
+
+**Competitive positioning:** Databricks and cloud providers don't typically help establish organizational structures. Red Hat Consulting's CoE guidance is a differentiator — technology + organizational change as one engagement.
+
+<!-- /audience -->

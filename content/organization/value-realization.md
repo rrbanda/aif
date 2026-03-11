@@ -31,3 +31,25 @@ Gates prevent advancing without evidence. They also create natural review points
 ## Reporting Cadence
 
 Report value metrics quarterly to the steering committee and in executive briefings. Maintain a dashboard for practitioners and program leads. Use metrics to prioritize—double down on what works, deprioritize or fix what does not.
+
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** Value realization tracking begins at Discovery (baseline metrics) and continues through TAM engagement. QVR presentations to the Steering Committee are the primary delivery vehicle.
+
+**Effort estimation:**
+- Baseline metrics capture: 1-2 weeks during Discovery
+- Value tracking framework setup: 1 week
+- Quarterly value reports: 2-3 days per report
+
+**Common pitfalls:**
+- Not capturing baselines — you cannot demonstrate improvement without before-state data
+- Vanity metrics — "models deployed" is not business value. Focus on cost savings, revenue impact, risk reduction
+- Delayed measurement — start tracking from pilot, not post-production
+- Single metric — use a balanced scorecard: financial impact, operational efficiency, risk reduction, adoption
+
+**Key to renewal:** Documented value realization is the primary input to subscription renewal decisions. If the customer cannot articulate the value, renewal is at risk. TAM ensures value is tracked and communicated continuously.
+
+<!-- /audience -->

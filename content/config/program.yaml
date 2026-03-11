@@ -1,11 +1,11 @@
 program:
-  name: "AI Factory"
-  tagline: "Manufacture intelligence at enterprise scale"
+  name: "Red Hat AI Factory with NVIDIA"
+  tagline: "Accelerate development and delivery of AI solutions"
   description: >
-    88% of AI pilots never reach production. The AI Factory changes that.
-    A co-engineered platform from Red Hat and NVIDIA that gives your organization the
-    infrastructure, pipelines, governance, and skills to continuously build, deploy,
-    and operate AI — on your own terms, on your own data, on your own infrastructure.
+    A unified, co-engineered foundation for building, deploying, and scaling production-ready AI.
+    Red Hat AI Factory with NVIDIA combines Red Hat AI Enterprise and NVIDIA AI Enterprise to
+    deliver an end-to-end solution optimized for NVIDIA hardware environments — accelerating
+    the path from experimentation to production through a unified platform.
   version: "1.0"
   industry_lead: financial-services
   industries:
@@ -16,18 +16,65 @@ program:
   customer_placeholder: "Customer"
 
   hero:
-    headline: "Your organization is an AI Factory"
-    subheadline: "The question is whether you're building it — or falling behind"
+    headline: "Accelerate development and delivery of AI solutions"
+    subheadline: "Red Hat AI Factory with NVIDIA — from experimentation to repeatable business outcomes"
     stats:
       - value: "88%"
         label: "of AI pilots fail to reach production"
         source: "IDC/Lenovo 2024"
-      - value: "61%"
-        label: "of enterprise workers have spent <5 hours learning AI"
-        source: "Harvard Business Review 2025"
-      - value: "<200ms"
-        label: "inference latency for real-time AI workloads"
-        source: "Production SLA target"
+      - value: "10x"
+        label: "inference cost reduction every 12 months"
+        source: "Industry benchmark"
+      - value: "<4 weeks"
+        label: "prototype to production deployment target"
+        source: "AI Factory SLA"
+
+  value_propositions:
+    - id: production-ready
+      title: "Production-Ready Foundation"
+      description: "Accelerate the path from experimentation to production through a unified platform for building, deploying, and scaling AI-ready applications."
+      icon: rocket
+    - id: collaborative-expertise
+      title: "Collaborative Expertise"
+      description: "A joint offering that combines Red Hat AI Enterprise and NVIDIA AI Enterprise to deliver an end-to-end solution optimized for NVIDIA hardware environments."
+      icon: handshake
+    - id: unified-solution
+      title: "Unified AI Solution"
+      description: "Integrates the engineering and support expertise of both Red Hat and NVIDIA to deliver a trusted, enterprise-grade platform."
+      icon: layers
+    - id: streamlined-ops
+      title: "Streamlined Operations"
+      description: "Empowers IT operations teams to streamline management of both traditional infrastructure and the evolving demands of the AI stack."
+      icon: settings
+
+  benefit_pillars:
+    - id: accelerate-value
+      title: "Accelerate Time to Value"
+      description: "Accelerate AI from concept to production with simplified workflows, validated blueprints, and optimized models."
+      icon: zap
+      details:
+        - "Ready-to-deploy NIM microservices and blueprints"
+        - "Red Hat AI quickstarts for common enterprise patterns"
+        - "NVIDIA AI Blueprints for industry-specific use cases"
+        - "Pre-validated reference architectures"
+    - id: operational-efficiency
+      title: "Increase Operational Efficiency"
+      description: "Maximize efficiency and cut costs with optimized AI inference, scalable serving, and intelligent resource management."
+      icon: trending-up
+      details:
+        - "Optimized GPU utilization with intelligent scheduling"
+        - "Scalable model serving with rate limiting and quotas"
+        - "Simplified node-based pricing"
+        - "Centralized policy, governance, and visibility"
+    - id: mitigate-risk
+      title: "Mitigate Risk"
+      description: "Secure, compliant, and trustworthy AI factory with Red Hat and NVIDIA across your hybrid cloud."
+      icon: shield
+      details:
+        - "Extended-lifetime production branches"
+        - "Secure supply chain and STIG-hardened containers"
+        - "Comprehensive governance gates at every stage"
+        - "Full audit trails for regulated industries"
 
   factory_outputs:
     - id: predictions
@@ -64,6 +111,77 @@ program:
       description: "Sub-200ms inference SLAs, automated governance gates, and full audit trails — because regulated industries demand it."
     - title: "Production at scale"
       description: "Move from isolated experiments to a repeatable factory that any team can use to build, deploy, and monitor AI."
+
+  platform_availability:
+    current:
+      name: "NVIDIA Blackwell"
+      status: "Available Now"
+    upcoming:
+      name: "NVIDIA Rubin"
+      status: "H2 2026"
+      note: "Day 0 support"
+
+  ai_use_case_categories:
+    - "Predictive ML"
+    - "Generative AI"
+    - "Agentic AI"
+    - "Physical AI"
+
+  services_package:
+    title: "Red Hat Services Starter Package for AI Factory"
+    subtitle: "Accelerate to production with Red Hat Services"
+    description: "Deploy AI Factory confidently with support from our experts"
+    phases:
+      - id: consulting
+        title: "Red Hat Consulting"
+        timeline: "Weeks 1-8"
+        milestone: "Architecture design & deployment"
+        description: "Expert hands-on collaboration to design and deploy initial architecture. Focus on a specific use case(s), including onboarding onto the production platform."
+        details:
+          - "Expert hands-on collaboration to design and deploy initial architecture"
+          - "Focus on a specific use case(s), including onboarding onto the production platform"
+          - "Red Hat Consulting accesses NVIDIA expertise"
+      - id: use-case-onboarding
+        title: "Use Case Onboarding"
+        timeline: "Weeks 9-12+"
+        milestone: "One use case onboarding"
+        description: "Guided onboarding of the first production use case end-to-end, with knowledge transfer to internal teams."
+      - id: training
+        title: "Red Hat Training"
+        timeline: "Ongoing"
+        milestone: "Skills enablement"
+        description: "Build skills to operate and extend independently with GenAIOps Enablement with Red Hat AI Enterprise (AI501) course."
+        details:
+          - "GenAIOps Enablement with Red Hat AI Enterprise (AI501) course"
+          - "Continue learning with access to Red Hat Learning Subscription"
+      - id: tam
+        title: "Red Hat Technical Account Management"
+        timeline: "Ongoing"
+        milestone: "Day 2 advisory & scaling"
+        description: "Receive ongoing Day 2 advisory support and guidance as you scale use cases and onboard new lines of business."
+        details:
+          - "Ongoing Day 2 advisory support and guidance"
+          - "Scale use cases and onboard new lines of business"
+
+  how_to_get:
+    title: "How to get Red Hat AI Factory with NVIDIA"
+    subtitle: "A validated system delivered through a value chain of partners"
+    validated_system:
+      - "Pre-validated for production scale"
+      - "Streamlined commercial joint solution"
+      - "Simplified node-based pricing"
+      - "Economics designed to accelerate"
+    channels:
+      - "OEMs"
+      - "Value Added Resellers"
+      - "Distribution"
+
+  next_steps:
+    - "Review the datasheet"
+    - "Engage your preferred OEM, VAR, or Distributor in the Red Hat and NVIDIA network"
+    - "Accelerate with Red Hat Services"
+    - "Start with your use cases"
+    call_to_action: "The platform is ready. The services are ready. When do you start?"
 
   principles:
     - "Practitioner-to-practitioner — substance over slides"

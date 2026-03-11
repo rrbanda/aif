@@ -1,0 +1,90 @@
+model_id: fraud-scorer-v1
+entries:
+  - timestamp: "2026-03-05T12:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 48
+    throughput_rps: 980
+    drift_score: 0.02
+    error_rate: 0.001
+    data_quality_score: 0.96
+  - timestamp: "2026-03-05T18:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 44
+    throughput_rps: 1150
+    drift_score: 0.03
+    error_rate: 0.001
+    data_quality_score: 0.96
+  - timestamp: "2026-03-06T00:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 42
+    throughput_rps: 1200
+    drift_score: 0.04
+    error_rate: 0.002
+    data_quality_score: 0.95
+  - timestamp: "2026-03-06T06:00:00Z"
+    accuracy: 0.96
+    f1_score: 0.93
+    latency_p95_ms: 45
+    throughput_rps: 1180
+    drift_score: 0.05
+    error_rate: 0.002
+    data_quality_score: 0.95
+  - timestamp: "2026-03-06T12:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 43
+    throughput_rps: 1210
+    drift_score: 0.06
+    error_rate: 0.002
+    data_quality_score: 0.95
+  - timestamp: "2026-03-06T18:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 46
+    throughput_rps: 1190
+    drift_score: 0.07
+    error_rate: 0.002
+    data_quality_score: 0.95
+  - timestamp: "2026-03-07T00:00:00Z"
+    accuracy: 0.96
+    f1_score: 0.93
+    latency_p95_ms: 47
+    throughput_rps: 1150
+    drift_score: 0.08
+    error_rate: 0.003
+    data_quality_score: 0.94
+  - timestamp: "2026-03-07T06:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 44
+    throughput_rps: 1200
+    drift_score: 0.08
+    error_rate: 0.002
+    data_quality_score: 0.95
+  - timestamp: "2026-03-07T12:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 45
+    throughput_rps: 1220
+    drift_score: 0.08
+    error_rate: 0.002
+    data_quality_score: 0.95
+  - timestamp: "2026-03-07T18:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 43
+    throughput_rps: 1250
+    drift_score: 0.09
+    error_rate: 0.001
+    data_quality_score: 0.95
+  - timestamp: "2026-03-08T00:00:00Z"
+    accuracy: 0.97
+    f1_score: 0.94
+    latency_p95_ms: 45
+    throughput_rps: 1200
+    drift_score: 0.08
+    error_rate: 0.002
+    data_quality_score: 0.95

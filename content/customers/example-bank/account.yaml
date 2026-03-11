@@ -15,6 +15,15 @@ contacts:
   - name: "Tom Chen"
     role: "VP ML Engineering"
     engagement: technical-lead
+  - name: "Lisa Park"
+    role: "Head of Credit Risk Analytics"
+    engagement: use-case-owner
+  - name: "David Lawson"
+    role: "Chief Compliance Officer"
+    engagement: governance-sponsor
+  - name: "Rachel Torres"
+    role: "Director, AI Platform Engineering"
+    engagement: platform-lead
 
 red_hat_team:
   ae: "Sarah Johnson"
@@ -31,23 +40,27 @@ program_state:
       deliverables:
         - "workload-assessment-report"
         - "program-charter"
+        - "stakeholder-map"
+        - "use-case-portfolio"
     - id: "data-strategy"
       completed_date: "2026-02-28"
       value_gate_passed: true
       deliverables:
-        - "data-pipeline-design"
+        - "data-governance-framework"
+        - "data-pipeline-architecture"
+        - "pii-residency-mapping"
   phases_in_progress:
     - id: "platform-foundation"
       started_date: "2026-03-01"
       target_date: "2026-05-15"
-      completion_pct: 25
+      completion_pct: 35
 
 assessment:
   overall_readiness: "Level 2"
   data_readiness: "Level 2"
   org_maturity: "AI Division"
   team_readiness: "Adequate with gaps"
-  infra_readiness: "Level 1"
+  infra_readiness: "Level 2"
   use_case_pipeline: "Ready for pilot"
   assessment_date: "2026-01-20"
 
@@ -92,4 +105,11 @@ engagement:
   engagement_type: "consulting"
   start_date: "2026-01-15"
   estimated_end: "2026-09-30"
-  notes: []
+  deal_value_usd: 850000
+  expansion_potential: "High — 3 additional GPU nodes requested for pilot scaling, 2 new business units interested"
+  competitive_threat: "Low — deeply integrated with OpenShift. Databricks evaluated but lacks on-prem inference."
+  next_qbr_date: "2026-04-15"
+  notes:
+    - "Executive sponsor (Jane Smith) highly engaged — monthly 1:1 with Field CTO"
+    - "Platform engineering team (Rachel Torres) is strong — absorbing knowledge transfer well"
+    - "Compliance team (David Lawson) initially cautious but converted after governance gate demo"

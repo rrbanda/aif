@@ -107,3 +107,26 @@ Google's MLOps maturity model provides a complementary lens:
 - **Level 2 (CI/CD for ML)**: Full CI/CD. Automated testing. Automated deployment. Feature store. Model monitoring.
 
 Most organizations attempting an AI Factory operate at Level 0 or early Level 1. The gap between ambition and operational maturity is where implementations stall.
+
+
+<!-- audience: internal -->
+
+## Internal: Scoring Guidance
+
+**How to use readiness assessment in deal qualification:**
+- Level 0-1 across most dimensions → Start at Discovery. Longer engagement timeline (12+ months to production).
+- Level 2 in Data + Infrastructure → Ready for Platform Foundation. Shorter path to pilot.
+- Level 3+ across dimensions → Rare. These customers may be ready for Scale & Adopt directly.
+
+**Competitive intelligence:**
+- Customers who have already built on Databricks or SageMaker may score higher on data readiness but lower on infrastructure readiness for on-prem AI.
+- Customers with strong cloud ML practice need the "data sovereignty" and "competitive differentiation" arguments to justify on-prem AI Factory investment.
+- Readiness scores below Level 2 in organizational maturity are the strongest indicator of pilot failure. Prioritize organizational track investment.
+
+**Assessment delivery tips:**
+- Run assessment as a structured workshop, not a checklist survey
+- Include both technical and business stakeholders
+- Use scoring to create urgency: "You are at Level 1 in infrastructure readiness — this means X months before production AI is possible"
+- Assessment report becomes the foundation for the program charter and SOW
+
+<!-- /audience -->

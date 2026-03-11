@@ -17,3 +17,25 @@ Document which decisions require committee approval versus those that can be mad
 ## Composition
 
 Include the executive sponsor (CTO, COO, or CAIO), line-of-business leaders whose units consume AI outputs, Chief Risk Officer or delegate, Chief Data Officer or delegate, Head of Technology/Platform Engineering, and the Red Hat engagement lead. Keep the group small enough to decide—typically 6–10 people. Absent key voices, decisions stall.
+
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** The Steering Committee is established during Discovery and serves as the governance body throughout the engagement. Red Hat Field CTO typically co-chairs or presents at quarterly reviews.
+
+**Effort estimation:**
+- Charter development and membership confirmation: 1 week during Discovery
+- Quarterly Value Reviews (QVR): Half-day sessions, 4 per year
+- Ad-hoc escalation sessions: As needed
+
+**Common pitfalls:**
+- Too large — keep to 6-10 members. Larger groups cannot make decisions
+- Missing CRO/CCO — risk and compliance must be at the table for AI governance
+- Infrequent meetings — quarterly minimum; monthly during active phases
+- No decision authority — committee must have budget and priority-setting power, not just advisory
+
+**Red Hat engagement:** Field CTO relationship with the Steering Committee is critical for renewal and expansion. QVR sessions are the primary venue for demonstrating value and surfacing expansion opportunities.
+
+<!-- /audience -->

@@ -95,3 +95,34 @@ This feedback loop is what makes it a factory — not a one-time deployment, but
 - **Phase 4 (Operationalize)**: Establish Layer 4 (MLOps) and Layer 5 (Observability)
 - **Phase 5 (Scale)**: Expand all 5 layers to support additional teams and use cases
 - **Phase 6 (Operate)**: Continuously optimize the full stack
+
+
+<!-- audience: internal -->
+
+## Internal: Architecture Layer Guidance
+
+**Layer 1 (Compute/HPC) — Sizing conversations:**
+- Start with 3 GPU nodes minimum (viable factory). Recommend 8-12 for production + development separation.
+- Network: 25Gbps minimum between GPU nodes. 100Gbps for distributed training.
+- Storage: 10TB minimum for model artifacts. 50TB+ for enterprise data pipelines.
+
+**Layer 3 (Model Development) — Tooling decisions:**
+- InstructLab vs NeMo for fine-tuning: InstructLab is Red Hat-led, simpler, community-driven. NeMo is NVIDIA-led, more advanced, requires deeper NVIDIA expertise.
+- vLLM vs TensorRT-LLM: vLLM is open-source and flexible. TensorRT-LLM is NVIDIA-optimized for maximum throughput on NVIDIA GPUs. Both supported.
+- Recommend starting with vLLM for flexibility, moving to TensorRT-LLM for production optimization.
+
+**Layer 4 (MLOps) — Maturity assessment:**
+- Most customers are at Google MLOps Level 0 or early Level 1. Set expectations accordingly.
+- Full MLOps automation (Level 2) typically takes 6-12 months from factory deployment.
+- Focus on model registry and governance gates first; CI/CD for models second.
+
+**Competitive comparison by layer:**
+| Layer | Red Hat AI Factory | AWS SageMaker | Azure ML | Databricks |
+|-------|-------------------|---------------|----------|------------|
+| Compute | On-prem NVIDIA GPUs | EC2 GPU instances | Azure N-series | Cloud GPU clusters |
+| Platform | OpenShift AI | SageMaker Studio | Azure ML Studio | Databricks Workspace |
+| Model Serving | NIM + llm-d + vLLM | SageMaker Endpoints | Azure ML Endpoints | Mosaic AI Serving |
+| Governance | Built-in gates | Manual | Manual | Unity Catalog |
+| Data Residency | On-prem guaranteed | Cloud regions | Cloud regions | Cloud regions |
+
+<!-- /audience -->

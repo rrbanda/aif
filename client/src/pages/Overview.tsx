@@ -1,6 +1,4 @@
 import { useConfig } from "../hooks/useConfig";
-import { useContent } from "../hooks/useContent";
-import MarkdownRenderer from "../components/content/MarkdownRenderer";
 import type { ProgramConfig, ViewMode } from "../types";
 import {
   Card,
@@ -18,14 +16,14 @@ import {
   Flex,
   FlexItem,
   Button,
+  Label,
+  List,
+  ListItem,
 } from "@patternfly/react-core";
 import { Link } from "react-router-dom";
 
 export default function Overview({ viewMode }: { viewMode: ViewMode }) {
   const { data, loading, error } = useConfig<ProgramConfig>("program");
-  const { content, loading: contentLoading } = useContent(
-    "overview/program-overview.md"
-  );
 
   const program = data?.program;
 
@@ -75,7 +73,7 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
 
         {stats && stats.length > 0 && (
           <Split hasGutter className="pf-v6-u-mb-xl">
-            {stats.map((stat: { value: string; label: string; source?: string }, i: number) => (
+            {stats.map((stat, i) => (
               <SplitItem key={i} isFilled>
                 <Card isCompact>
                   <CardBody>
@@ -95,6 +93,22 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
           </Split>
         )}
 
+        {program.platform_availability && (
+          <Flex className="pf-v6-u-mb-xl">
+            <FlexItem>
+              <Label color="green">
+                {program.platform_availability.current.name}: {program.platform_availability.current.status}
+              </Label>
+            </FlexItem>
+            <FlexItem>
+              <Label color="blue">
+                {program.platform_availability.upcoming.name}: {program.platform_availability.upcoming.status}
+                {program.platform_availability.upcoming.note && ` (${program.platform_availability.upcoming.note})`}
+              </Label>
+            </FlexItem>
+          </Flex>
+        )}
+
         <Flex>
           <FlexItem>
             <Button variant="primary" component={(props) => <Link {...props} to="/roadmap" />}>
@@ -109,17 +123,44 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
         </Flex>
       </PageSection>
 
-      {program.why_ai_factory && (
+      {program.value_propositions && program.value_propositions.length > 0 && (
         <PageSection>
           <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-md">
-            Why the AI Factory
+            The solution
           </Title>
           <Gallery hasGutter>
-            {program.why_ai_factory.map((item: { title: string; description: string }) => (
-              <GalleryItem key={item.title}>
+            {program.value_propositions.map((vp) => (
+              <GalleryItem key={vp.id}>
                 <Card isCompact>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardBody>{item.description}</CardBody>
+                  <CardTitle>{vp.title}</CardTitle>
+                  <CardBody>{vp.description}</CardBody>
+                </Card>
+              </GalleryItem>
+            ))}
+          </Gallery>
+        </PageSection>
+      )}
+
+      {program.benefit_pillars && program.benefit_pillars.length > 0 && (
+        <PageSection>
+          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-md">
+            Why Red Hat AI Factory with NVIDIA
+          </Title>
+          <Gallery hasGutter>
+            {program.benefit_pillars.map((pillar) => (
+              <GalleryItem key={pillar.id}>
+                <Card>
+                  <CardTitle>{pillar.title}</CardTitle>
+                  <CardBody>
+                    <p className="pf-v6-u-mb-md">{pillar.description}</p>
+                    {pillar.details && pillar.details.length > 0 && (
+                      <List>
+                        {pillar.details.map((d, i) => (
+                          <ListItem key={i}>{d}</ListItem>
+                        ))}
+                      </List>
+                    )}
+                  </CardBody>
                 </Card>
               </GalleryItem>
             ))}
@@ -157,15 +198,82 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
         </Gallery>
       </PageSection>
 
-      {contentLoading ? (
+      {program.services_package && (
         <PageSection>
-          <p className="pf-v6-u-color-200">Loading content...</p>
+          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
+            {program.services_package.title}
+          </Title>
+          <p className="pf-v6-u-color-200 pf-v6-u-mb-md">
+            {program.services_package.description}
+          </p>
+          <Gallery hasGutter>
+            {program.services_package.phases.map((phase) => (
+              <GalleryItem key={phase.id}>
+                <Card>
+                  <CardTitle>
+                    <Flex>
+                      <FlexItem>{phase.title}</FlexItem>
+                      <FlexItem>
+                        <Label isCompact>{phase.timeline}</Label>
+                      </FlexItem>
+                    </Flex>
+                  </CardTitle>
+                  <CardBody>
+                    <p className="pf-v6-u-font-weight-bold pf-v6-u-mb-sm">{phase.milestone}</p>
+                    <p className="pf-v6-u-mb-md">{phase.description}</p>
+                    {phase.details && phase.details.length > 0 && (
+                      <List>
+                        {phase.details.map((d, i) => (
+                          <ListItem key={i}>{d}</ListItem>
+                        ))}
+                      </List>
+                    )}
+                  </CardBody>
+                </Card>
+              </GalleryItem>
+            ))}
+          </Gallery>
         </PageSection>
-      ) : content ? (
+      )}
+
+      {viewMode === "internal" && program.why_ai_factory && program.why_ai_factory.length > 0 && (
         <PageSection>
-          <MarkdownRenderer content={content} viewMode={viewMode} />
+          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-md">
+            Internal: Data sovereignty & competitive moat
+          </Title>
+          <Gallery hasGutter>
+            {program.why_ai_factory.map((item, i) => (
+              <GalleryItem key={i}>
+                <Card isCompact>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardBody>{item.description}</CardBody>
+                </Card>
+              </GalleryItem>
+            ))}
+          </Gallery>
         </PageSection>
-      ) : null}
+      )}
+
+      <PageSection>
+        <Flex>
+          <FlexItem>
+            <Button
+              variant="link"
+              component={(props) => <Link {...props} to="/reference/overview/program-overview" />}
+            >
+              Read the full program overview
+            </Button>
+          </FlexItem>
+          <FlexItem>
+            <Button
+              variant="link"
+              component={(props) => <Link {...props} to="/reference/overview/executive-summary" />}
+            >
+              Executive summary
+            </Button>
+          </FlexItem>
+        </Flex>
+      </PageSection>
     </>
   );
 }

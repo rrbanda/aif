@@ -31,6 +31,7 @@ import {
   useCustomerAccount,
 } from "../hooks/useCustomerData";
 import ApplicationsPage from "../components/layout/ApplicationsPage";
+import type { ViewMode } from "../types";
 
 function MetricBar({
   label,
@@ -89,7 +90,7 @@ function MetricBar({
   );
 }
 
-export default function MonitoringDashboard() {
+export default function MonitoringDashboard({ viewMode }: { viewMode: ViewMode }) {
   const { customers, loading: custLoading } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState("");
   const [custSelectOpen, setCustSelectOpen] = useState(false);
@@ -314,6 +315,34 @@ export default function MonitoringDashboard() {
                           </DescriptionListDescription>
                         </DescriptionListGroup>
                       )}
+                      {viewMode === "internal" && (() => {
+                        const deploy = m.deployment as Record<string, unknown> | undefined;
+                        if (!deploy) return null;
+                        return (
+                          <>
+                            {deploy.endpoint && (
+                              <DescriptionListGroup>
+                                <DescriptionListTerm>Endpoint</DescriptionListTerm>
+                                <DescriptionListDescription>
+                                  <code style={{ fontSize: "0.85em" }}>{String(deploy.endpoint)}</code>
+                                </DescriptionListDescription>
+                              </DescriptionListGroup>
+                            )}
+                            {deploy.serving_runtime && (
+                              <DescriptionListGroup>
+                                <DescriptionListTerm>Runtime</DescriptionListTerm>
+                                <DescriptionListDescription>{String(deploy.serving_runtime)}</DescriptionListDescription>
+                              </DescriptionListGroup>
+                            )}
+                            {deploy.replicas !== undefined && (
+                              <DescriptionListGroup>
+                                <DescriptionListTerm>Replicas</DescriptionListTerm>
+                                <DescriptionListDescription>{String(deploy.replicas)}</DescriptionListDescription>
+                              </DescriptionListGroup>
+                            )}
+                          </>
+                        );
+                      })()}
                     </DescriptionList>
                   </CardBody>
                 </Card>

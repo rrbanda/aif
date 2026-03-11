@@ -30,6 +30,42 @@ export interface WhyAIFactory {
   description: string;
 }
 
+export interface ValueProposition {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface BenefitPillar {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  details?: string[];
+}
+
+export interface ServicePhase {
+  id: string;
+  title: string;
+  timeline: string;
+  milestone: string;
+  description: string;
+  details?: string[];
+}
+
+export interface ServicesPackage {
+  title: string;
+  subtitle: string;
+  description: string;
+  phases: ServicePhase[];
+}
+
+export interface PlatformAvailability {
+  current: { name: string; status: string };
+  upcoming: { name: string; status: string; note?: string };
+}
+
 export interface Program {
   name: string;
   tagline: string;
@@ -41,9 +77,14 @@ export interface Program {
   industry?: string;
   customer_placeholder: string;
   hero?: Hero;
+  value_propositions?: ValueProposition[];
+  benefit_pillars?: BenefitPillar[];
   factory_outputs: FactoryOutput[];
   tracks: Track[];
   why_ai_factory?: WhyAIFactory[];
+  platform_availability?: PlatformAvailability;
+  services_package?: ServicesPackage;
+  next_steps?: string[];
   principles: string[];
 }
 

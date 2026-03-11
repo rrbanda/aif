@@ -26,6 +26,7 @@ import {
   useCustomerAccount,
 } from "../hooks/useCustomerData";
 import ApplicationsPage from "../components/layout/ApplicationsPage";
+import type { ViewMode } from "../types";
 
 const STAGES = [
   { id: "proposed", label: "Proposed", color: "grey" as const },
@@ -42,7 +43,7 @@ function formatUSD(val: number): string {
   return `$${val}`;
 }
 
-export default function Portfolio() {
+export default function Portfolio({ viewMode }: { viewMode: ViewMode }) {
   const { customers, loading: custLoading } = useCustomers();
   const [selectedCustomer, setSelectedCustomer] = useState("");
   const [custSelectOpen, setCustSelectOpen] = useState(false);
@@ -236,6 +237,20 @@ export default function Portfolio() {
                                 <DescriptionListDescription>
                                   {uc.scores.complexity}/5
                                 </DescriptionListDescription>
+                              </DescriptionListGroup>
+                            )}
+                          </DescriptionList>
+                        )}
+                        {viewMode === "internal" && uc.sponsor && (
+                          <DescriptionList isCompact className="pf-v6-u-mt-sm">
+                            <DescriptionListGroup>
+                              <DescriptionListTerm>Sponsor</DescriptionListTerm>
+                              <DescriptionListDescription>{uc.sponsor}</DescriptionListDescription>
+                            </DescriptionListGroup>
+                            {uc.business_unit && (
+                              <DescriptionListGroup>
+                                <DescriptionListTerm>BU</DescriptionListTerm>
+                                <DescriptionListDescription>{uc.business_unit}</DescriptionListDescription>
                               </DescriptionListGroup>
                             )}
                           </DescriptionList>

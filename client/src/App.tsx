@@ -57,12 +57,12 @@ function AppRoutes() {
           }
         >
           <Route index element={<Overview viewMode={viewMode} />} />
-          <Route path="chat" element={<Chat />} />
-          <Route path="assessment" element={<AssessmentDashboard />} />
-          <Route path="models" element={<ModelRegistry />} />
-          <Route path="portfolio" element={<Portfolio />} />
-          <Route path="monitoring" element={<MonitoringDashboard />} />
-          <Route path="roadmap" element={<Roadmap />} />
+          <Route path="chat" element={<Chat viewMode={viewMode} />} />
+          <Route path="assessment" element={<AssessmentDashboard viewMode={viewMode} />} />
+          <Route path="models" element={<ModelRegistry viewMode={viewMode} />} />
+          <Route path="portfolio" element={<Portfolio viewMode={viewMode} />} />
+          <Route path="monitoring" element={<MonitoringDashboard viewMode={viewMode} />} />
+          <Route path="roadmap" element={<Roadmap viewMode={viewMode} />} />
           <Route
             path="phases/:id"
             element={<PhaseView viewMode={viewMode} />}

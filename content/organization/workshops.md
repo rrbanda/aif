@@ -19,3 +19,23 @@ Workshops run 1–2 days per session. Participants include business owners (who 
 ## When to Run Workshops
 
 Trigger workshops when new teams or use cases enter the pipeline—during discovery, when scaling to additional business units, or when reprioritizing the portfolio. Do not run workshops as a one-time event; treat them as a repeatable capability.
+
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** Workshops are a standard Red Hat Consulting deliverable during Discovery (use case identification) and Scale & Adopt (new team onboarding).
+
+**Effort estimation:**
+- Use case identification workshop: 1-2 days, 8-15 participants
+- Architecture design workshop: 2 days, technical audience
+- Platform onboarding workshop: 1 day per team
+
+**Common pitfalls:**
+- Workshop without follow-through — outputs must feed directly into use case scoring and prioritization
+- Wrong audience — mix of too-senior (executives) and too-junior (individual contributors) kills productive discussion
+- No pre-work — participants arrive unprepared, spend workshop time on context-setting instead of design
+- One-time event — workshops should be repeatable as new use cases and teams emerge
+
+<!-- /audience -->

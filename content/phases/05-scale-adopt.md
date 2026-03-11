@@ -17,3 +17,29 @@ Scale & Adopt expands the factory beyond the initial pilot teams to become the o
 **Agentic AI deployment** introduces autonomous agents with MCP (Model Context Protocol) tool integration for retrieval, tool use, and orchestration. Deploy agents for document Q&A, workflow automation, operational decision support, or code generation. Define agent boundaries, tool permissions, and human-in-the-loop checkpoints for high-risk actions. This is the next inflection point in enterprise AI — agents that reason, plan, and act using enterprise tools and data.
 
 **Adoption dashboard** tracks usage (inference calls, training jobs), compute consumption (GPU hours, memory), and cost per model or team. Use this data for capacity planning, chargeback/showback, and value realization reporting to the steering committee.
+
+<!-- audience: internal -->
+
+## Internal: Delivery Methodology
+
+**Red Hat Services alignment:** Scale stage is driven by TAM with periodic consulting engagements for new team onboarding or complex use cases. This is where the land-and-expand revenue model activates.
+
+**Resource estimation:**
+- Red Hat TAM: Ongoing (weekly/bi-weekly check-ins)
+- Red Hat Consulting: On-demand for new team onboarding or agentic AI deployment (2-4 week engagements)
+- Red Hat Training: AI501 course for new teams, Red Hat Learning Subscription for ongoing skills development
+
+**Expansion signals (watch for these):**
+- Customer requesting GPU capacity expansion → upsell GPU nodes + subscriptions
+- New business units asking for platform access → onboarding consulting engagement
+- Customer evaluating agentic AI or multi-model serving → advanced consulting + additional NIM subscriptions
+- Customer benchmarking GPU alternatives → defensive engagement, reinforce NVIDIA partnership value
+
+**Common objections and responses:**
+- *"Shadow AI teams are deploying outside the factory"* — This is a governance and adoption problem. Position the factory as enabling (self-service, Gen AI Studio) rather than controlling. Evangelism and COP activities are critical at this stage.
+- *"GPU costs are scaling faster than business value"* — Implement chargeback/showback to create cost visibility. llm-d routing optimizes model selection by cost. Right-size GPU allocation per team.
+- *"We need to evaluate other platforms"* — Competitive displacement risk. Demonstrate the switching cost (data pipelines, model registry, governance gates, team training all built on the factory). Position upgrade path (Blackwell → Rubin) as platform continuity advantage.
+
+**Agentic AI positioning:** Agentic AI is the strongest differentiation at scale stage. Enterprise agents require the full factory stack — foundation models, fine-tuned domain models, inference infrastructure, MCP tool integration, and governance. No other platform provides this end-to-end on-premises.
+
+<!-- /audience -->
