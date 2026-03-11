@@ -56,21 +56,27 @@ export default function Chat() {
       }))
     : [
         {
-          title: "Program overview",
-          message: "Tell me about the AI Factory program",
-          onClick: () => handleSend("Tell me about the AI Factory program"),
+          title: "What is the AI Factory?",
+          message: "Explain the AI Factory — what it produces, how it works, and why organizations need one",
+          onClick: () => handleSend("Explain the AI Factory — what it produces, how it works, and why organizations need one"),
         },
         {
-          title: "Readiness assessment",
-          message: "Run a readiness assessment for my organization",
+          title: "Assess our readiness",
+          message: "Run a readiness assessment for my organization across data, infrastructure, team, and governance dimensions",
           onClick: () =>
-            handleSend("Run a readiness assessment for my organization"),
+            handleSend("Run a readiness assessment for my organization across data, infrastructure, team, and governance dimensions"),
         },
         {
-          title: "Use case qualification",
-          message: "Help me qualify an AI use case for fraud detection",
+          title: "Qualify a use case",
+          message: "Help me evaluate whether fraud detection is the right first AI Factory use case for our organization",
           onClick: () =>
-            handleSend("Help me qualify an AI use case for fraud detection"),
+            handleSend("Help me evaluate whether fraud detection is the right first AI Factory use case for our organization"),
+        },
+        {
+          title: "Architecture deep-dive",
+          message: "Walk me through the five-layer AI Factory architecture and how Red Hat and NVIDIA technologies map to each layer",
+          onClick: () =>
+            handleSend("Walk me through the five-layer AI Factory architecture and how Red Hat and NVIDIA technologies map to each layer"),
         },
       ];
 
@@ -89,7 +95,7 @@ export default function Chat() {
       <Chatbot displayMode={ChatbotDisplayMode.embedded}>
         <ChatbotHeader>
           <ChatbotHeaderMain>
-            <ChatbotHeaderTitle>AI Factory Assistant</ChatbotHeaderTitle>
+            <ChatbotHeaderTitle>AI Factory Agent</ChatbotHeaderTitle>
           </ChatbotHeaderMain>
           <ChatbotHeaderActions>
             <ChatbotHeaderSelectorDropdown
@@ -117,11 +123,11 @@ export default function Chat() {
           <MessageBox announcement={announcement} ariaLabel="AI Factory chat messages">
             {messages.length === 0 && (
               <ChatbotWelcomePrompt
-                title="AI Factory Assistant"
+                title="AI Factory Agent"
                 description={
                   selectedPersona
                     ? selectedPersona.greeting
-                    : "How can I help you with your AI Factory program today?"
+                    : "An agentic AI that understands the AI Factory — its architecture, use cases, maturity stages, and organizational model. This agent demonstrates what the factory itself produces: AI that reasons, retrieves, and acts using enterprise knowledge."
                 }
                 prompts={welcomePrompts}
               />

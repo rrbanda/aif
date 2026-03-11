@@ -1,39 +1,73 @@
 program:
   name: "AI Factory"
-  tagline: "From consumption to production AI"
+  tagline: "Manufacture intelligence at enterprise scale"
   description: >
-    A structured, multi-month program that establishes an enterprise AI Factory —
-    the platform, processes, people, and governance required to continuously build,
-    deploy, and operate AI at scale. Built on Red Hat OpenShift AI and NVIDIA AI Enterprise.
+    88% of AI pilots never reach production. The AI Factory changes that.
+    A co-engineered platform from Red Hat and NVIDIA that gives your organization the
+    infrastructure, pipelines, governance, and skills to continuously build, deploy,
+    and operate AI — on your own terms, on your own data, on your own infrastructure.
   version: "1.0"
-  industry: financial-services
+  industry_lead: financial-services
+  industries:
+    - financial-services
+    - healthcare
+    - manufacturing
+    - energy
   customer_placeholder: "Customer"
+
+  hero:
+    headline: "Your organization is an AI Factory"
+    subheadline: "The question is whether you're building it — or falling behind"
+    stats:
+      - value: "88%"
+        label: "of AI pilots fail to reach production"
+        source: "IDC/Lenovo 2024"
+      - value: "61%"
+        label: "of enterprise workers have spent <5 hours learning AI"
+        source: "Harvard Business Review 2025"
+      - value: "<200ms"
+        label: "inference latency for real-time AI workloads"
+        source: "Production SLA target"
 
   factory_outputs:
     - id: predictions
       title: "Predictions"
-      description: "Forecasting events — fraud probability, credit risk scores, market signals, capacity utilization"
+      description: "Real-time scoring and forecasting — fraud probability, credit risk, market signals, demand forecasting, clinical risk stratification"
       icon: trending-up
     - id: pattern-recognition
       title: "Pattern Recognition"
-      description: "Identifying trends — anomalous transaction patterns, regulatory change detection, customer behavior clusters"
+      description: "Detecting what humans miss — anomalous transactions, regulatory changes, equipment degradation, disease markers, grid anomalies"
       icon: scan
     - id: process-automation
       title: "Process Automation"
-      description: "Combining predictions and patterns — automated compliance checking, intelligent document routing, agentic workflows"
+      description: "End-to-end intelligent workflows — compliance checking, document routing, agentic operations, predictive maintenance, clinical documentation"
       icon: bot
+    - id: agentic-ai
+      title: "Agentic AI"
+      description: "Autonomous AI agents that reason, plan, and act — using enterprise tools and data to execute multi-step workflows with governance guardrails"
+      icon: brain
 
   tracks:
     - id: technical
       title: "Technical Track"
-      description: "Platform, pipelines, models, governance, and operations"
+      description: "Seven maturity stages from discovery through continuous operations — platform, data, models, governance, and production AI at scale"
     - id: organizational
       title: "Organizational Track"
-      description: "People structures, skills, culture, and change management that make the factory sustainable"
+      description: "The people side of the factory — governance, expertise, skills, culture, and change management that make AI sustainable"
+
+  why_ai_factory:
+    - title: "Data sovereignty"
+      description: "Your data never leaves your perimeter. Models train and serve on infrastructure you own and control."
+    - title: "Competitive differentiation"
+      description: "Models fine-tuned on proprietary data create capabilities competitors cannot replicate by subscribing to the same API."
+    - title: "Operational control"
+      description: "Sub-200ms inference SLAs, automated governance gates, and full audit trails — because regulated industries demand it."
+    - title: "Production at scale"
+      description: "Move from isolated experiments to a repeatable factory that any team can use to build, deploy, and monitor AI."
 
   principles:
-    - "Practitioner-to-practitioner — no marketing language"
-    - "Banking-first examples, industry-adaptable structure"
-    - "Value gates between phases — progress when KPIs are met, not when time runs out"
-    - "Every phase maps to a Red Hat consulting engagement"
+    - "Practitioner-to-practitioner — substance over slides"
+    - "Industry-specific examples with financial services as the reference implementation"
+    - "Value gates between stages — progress when KPIs are met, not when time runs out"
+    - "Platform-first — consulting enables, the platform endures"
     - "Nothing hardcoded — all content configurable via YAML and markdown"

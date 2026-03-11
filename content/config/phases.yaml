@@ -7,7 +7,6 @@ phases:
     status: active
     track: technical
     icon: search
-    red_hat_engagement: "AI Discovery + AI Assessment"
     audience:
       - customer
       - internal
@@ -37,12 +36,9 @@ phases:
       - title: "Program charter"
         description: "Agreed scope, timeline, success criteria, governance model, and resource commitments"
         audience: [customer, internal]
-      - title: "Resource and staffing plan"
-        description: "Red Hat team composition, customer team requirements, joint activities schedule"
-        audience: [internal]
     decision_points:
       - "Which use cases warrant factory-level investment vs lighter-touch solutions?"
-      - "What GPU/compute capacity is needed for the pilot phase?"
+      - "What GPU/compute capacity is needed for the pilot stage?"
       - "What data governance gaps must be addressed before proceeding?"
       - "Is the organizational readiness sufficient, or does Change Management need to start first?"
     risks:
@@ -59,7 +55,6 @@ phases:
     status: active
     track: technical
     icon: database
-    red_hat_engagement: "AI Platform Foundation (data integration component)"
     audience:
       - customer
       - internal
@@ -72,7 +67,7 @@ phases:
     content_file: "phases/01-data-strategy.md"
     deliverables:
       - title: "Data governance framework"
-        description: "Policies for data classification, access control, retention, lineage tracking, and compliance with PCI DSS, GDPR, SOX"
+        description: "Policies for data classification, access control, retention, lineage tracking, and regulatory compliance"
         audience: [customer, internal]
       - title: "Data quality assessment"
         description: "Profiling and quality analysis for datasets required by pilot use cases"
@@ -104,7 +99,6 @@ phases:
     status: active
     track: technical
     icon: layers
-    red_hat_engagement: "AI Platform Foundation"
     audience:
       - customer
       - internal
@@ -126,7 +120,7 @@ phases:
         description: "Central model catalog with approved models, performance insights, and deployment guidance"
         audience: [customer, internal]
       - title: "Multi-tenant workspace setup"
-        description: "Isolated namespaces for each team (risk, fraud, NLP, quant) with RBAC policies"
+        description: "Isolated namespaces for each team with RBAC policies"
         audience: [customer, internal]
       - title: "Developer onboarding"
         description: "Data scientists and ML engineers onboarded to workbenches with access to compute, data, and tools"
@@ -134,9 +128,6 @@ phases:
       - title: "GitOps pipeline"
         description: "Infrastructure-as-Code for platform management using GitOps approach"
         audience: [customer, internal]
-      - title: "Platform sizing and cost model"
-        description: "GPU cluster sizing, cost allocation model across business units, capacity planning"
-        audience: [internal]
     decision_points:
       - "Which foundation models to include in the AI Hub catalog?"
       - "How to allocate GPU resources across teams — shared pool or dedicated quotas?"
@@ -154,7 +145,6 @@ phases:
     status: active
     track: technical
     icon: flask-conical
-    red_hat_engagement: "AI Incubator"
     audience:
       - customer
       - internal
@@ -184,11 +174,8 @@ phases:
         description: "How business workflows change with AI integrated — before/after process maps"
         audience: [customer, internal]
       - title: "Lessons learned report"
-        description: "Technical and organizational lessons from pilot phase — what worked, what to change"
+        description: "Technical and organizational lessons from pilot stage — what worked, what to change"
         audience: [customer, internal]
-      - title: "Scale readiness assessment"
-        description: "Assessment of whether pilots meet value gates for scaling to production"
-        audience: [internal]
     decision_points:
       - "Which pilots met KPIs and should scale? Which should be iterated or dropped?"
       - "What additional governance gates are needed before production?"
@@ -207,7 +194,6 @@ phases:
     status: active
     track: technical
     icon: settings
-    red_hat_engagement: "Operationalizing AI"
     audience:
       - customer
       - internal
@@ -229,7 +215,7 @@ phases:
         description: "Automated compliance checkpoints — bias detection, security scan, performance thresholds — before production deployment"
         audience: [customer, internal]
       - title: "Model-as-a-Service (MaaS)"
-        description: "Platform team serves approved models via API endpoints with rate limiting, quota management, and SLA policies"
+        description: "Approved models served via API endpoints with rate limiting, quota management, and SLA policies"
         audience: [customer, internal]
       - title: "Observability stack"
         description: "Model monitoring for drift, latency, throughput, error rates, and fairness metrics"
@@ -254,7 +240,6 @@ phases:
     status: active
     track: technical
     icon: rocket
-    red_hat_engagement: "Red Hat Consulting (custom engagement)"
     audience:
       - customer
       - internal
@@ -278,10 +263,10 @@ phases:
         description: "llm-d distributed inference routing — select models by cost, latency, and SLA requirements"
         audience: [customer, internal]
       - title: "Domain-specific models"
-        description: "Fine-tuned models for domain use cases — credit risk, equities research, AML, regulatory interpretation"
+        description: "Fine-tuned models for domain use cases — credit risk, clinical NLP, predictive maintenance, regulatory interpretation"
         audience: [customer, internal]
       - title: "Agentic AI deployment"
-        description: "Multi-step agent workflows using MCP for tool access — internal systems, risk calculators, market data"
+        description: "Autonomous agents using MCP for tool access — enterprise systems, risk calculators, document repositories, clinical systems, market data — with governance guardrails for safe autonomous action"
         audience: [customer, internal]
       - title: "Adoption dashboard"
         description: "Metrics tracking factory usage: teams onboarded, models deployed, API calls, compute utilization, cost per model"
@@ -304,7 +289,6 @@ phases:
     status: active
     track: technical
     icon: activity
-    red_hat_engagement: "Red Hat TAM + Red Hat Support"
     audience:
       - customer
       - internal
@@ -327,7 +311,7 @@ phases:
         description: "Business impact assessment — ROI tracking, cost optimization, new use case pipeline"
         audience: [customer, internal]
       - title: "Knowledge base"
-        description: "Internal documentation of patterns, anti-patterns, runbooks, and lessons learned"
+        description: "Reusable patterns, pipeline templates, governance patterns, and troubleshooting guides"
         audience: [customer, internal]
       - title: "Platform evolution roadmap"
         description: "Planned upgrades, new capabilities, capacity expansion aligned with business growth"

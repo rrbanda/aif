@@ -115,27 +115,47 @@ products:
     role: "Enterprise-grade compute with integrated networking and security"
 
 layers:
-  - id: os
-    title: "Operating System"
+  - id: infrastructure
+    title: "Layer 1: Infrastructure"
+    description: "Power, cooling, networking, and server hardware purpose-built for AI workloads"
     order: 0
-  - id: platform
-    title: "Container Platform"
+    includes: [hardware, os]
+  - id: compute
+    title: "Layer 2: Accelerated Compute"
+    description: "GPU-powered processing for training and inference at scale"
     order: 1
   - id: ai-platform
-    title: "AI Platform"
+    title: "Layer 3: AI Platform"
+    description: "The control plane — model lifecycle, governance, pipelines, and workspaces"
     order: 2
-  - id: inference
-    title: "Inference Serving"
-    order: 3
+    includes: [platform, inference, automation]
   - id: models
-    title: "Foundation Models"
+    title: "Layer 4: Foundation Models"
+    description: "Pre-trained and fine-tuned models serving as the intelligence layer"
+    order: 3
+  - id: applications
+    title: "Layer 5: Intelligent Applications"
+    description: "Production AI capabilities the business consumes — predictions, pattern recognition, automation, and agentic AI"
     order: 4
-  - id: compute
-    title: "GPU Compute"
-    order: 5
+
+  # Legacy layer IDs for backward compatibility with product assignments
+  - id: os
+    title: "Operating System"
+    parent: infrastructure
+    order: 10
+  - id: platform
+    title: "Container Platform"
+    parent: ai-platform
+    order: 11
   - id: hardware
     title: "Server Hardware"
-    order: 6
+    parent: infrastructure
+    order: 12
+  - id: inference
+    title: "Inference Serving"
+    parent: ai-platform
+    order: 13
   - id: automation
     title: "Automation"
-    order: 7
+    parent: ai-platform
+    order: 14

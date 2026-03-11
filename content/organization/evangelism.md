@@ -21,7 +21,3 @@ A visible dashboard tracks adoption: teams using the factory, API calls, deploym
 ## Cross-Team Matchmaking
 
 Connect teams with similar challenges or complementary capabilities. A team struggling with model serving may benefit from another team's experience; a team with excess GPU capacity may share with one that is constrained. Evangelism includes facilitating these connections.
-
-<!-- audience: internal -->
-Evangelism is often under-resourced. Recommend assigning a part-time evangelist (internal or Red Hat) early. Content can be co-created: Red Hat provides templates and examples; the customer adds local context and stories.
-<!-- /audience -->

@@ -1,10 +1,10 @@
-# Phase 6: Operate & Improve
+# Stage 6: Operate & Improve
 
 **Duration:** Ongoing
 
-Operate & Improve is the steady-state phase. The factory runs continuously; this phase ensures it stays healthy, evolves with business needs, and delivers sustained value.
+Operate & Improve is the steady-state stage. The factory runs continuously; this stage ensures it stays healthy, evolves with business needs, and delivers sustained value. The cost of AI inference falls roughly 10x every 12 months — organizations that own their factory infrastructure capture this cost curve directly.
 
-## What Happens in This Phase
+## What Happens in This Stage
 
 **AIOps for the factory itself** applies AI to platform operations: model drift detection, pipeline health prediction, and GPU utilization optimization. Use anomaly detection on metrics to surface issues before they impact users. Automate capacity recommendations based on usage trends.
 
@@ -16,8 +16,4 @@ Operate & Improve is the steady-state phase. The factory runs continuously; this
 
 **Platform evolution roadmap** plans major upgrades: new model types, tooling changes, OpenShift version upgrades, and security patches. Communicate roadmap to consumers and coordinate maintenance windows. Avoid surprise breaking changes.
 
-**TAM + Support engagement model** defines how Red Hat Technical Account Management and Support interact with the customer’s platform team. Establish escalation paths, regular check-ins, and proactive health reviews. Align support level with production criticality.
-
-<!-- audience: internal -->
-This phase is typically covered by ongoing TAM engagement and subscription renewals. Position quarterly value reviews as a differentiator—many customers lack structured AI governance. Knowledge base can be a joint Red Hat–customer asset; consider contributing patterns to Red Hat documentation where appropriate. TAM should own the relationship cadence; ensure AI Factory success metrics are included in TAM deliverables.
-<!-- /audience -->
+**Support and partnership model** defines how Red Hat Technical Account Management and Support interact with the platform team. Establish escalation paths, regular check-ins, and proactive health reviews. Align support level with production criticality.

@@ -19,7 +19,3 @@ Workshops run 1–2 days per session. Participants include business owners (who 
 ## When to Run Workshops
 
 Trigger workshops when new teams or use cases enter the pipeline—during discovery, when scaling to additional business units, or when reprioritizing the portfolio. Do not run workshops as a one-time event; treat them as a repeatable capability.
-
-<!-- audience: internal -->
-Workshops are a standard engagement format. Red Hat consultants typically facilitate; customer provides domain experts and data context. Reuse templates (use case canvas, data readiness checklist, feasibility scorecard) across engagements. Document workshop outputs for steering committee and program tracking.
-<!-- /audience -->

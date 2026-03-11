@@ -107,7 +107,3 @@ Google's MLOps maturity model provides a complementary lens:
 - **Level 2 (CI/CD for ML)**: Full CI/CD. Automated testing. Automated deployment. Feature store. Model monitoring.
 
 Most organizations attempting an AI Factory operate at Level 0 or early Level 1. The gap between ambition and operational maturity is where implementations stall.
-
-<!-- audience: internal -->
-Use this assessment framework in Phase 0 Discovery engagements. It provides a structured, defensible basis for recommending scope, timeline, and investment level. The Field CTO should walk through these dimensions with the customer's CTO/CDO — it builds credibility by showing we understand their actual starting point, not just pitching a product. Score each dimension 0-3 and use the overall assessment table to set realistic expectations.
-<!-- /audience -->

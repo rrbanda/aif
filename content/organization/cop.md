@@ -15,7 +15,3 @@ The AI Community of Practice (CoP) is a cross-functional, opt-in community of pr
 ## Participation and Ownership
 
 The CoP is opt-in. Participation grows when sessions deliver value. A lightweight steering group (2–3 practitioners plus CoE liaison) can own the calendar and format. Avoid making attendance mandatory; voluntary engagement indicates genuine interest and builds organic adoption.
-
-<!-- audience: internal -->
-CoP success correlates with program maturity. Early phases may have limited practitioners; seed the CoP with pilot teams and Red Hat consultants. As more teams onboard, the CoP becomes self-sustaining. Track attendance and topic requests to tune the format.
-<!-- /audience -->

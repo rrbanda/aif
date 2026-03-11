@@ -100,7 +100,3 @@ The AI Factory program engages multiple customer stakeholders across business, t
 | Data Engineering Lead | AI Specialist SA | Account SA |
 | Model Risk Manager | AI Specialist SA | AI Specialist Sales |
 | AI Ethics Lead | AI Specialist SA | Field CTO |
-
-<!-- audience: internal -->
-Use this map to prepare for customer meetings. Each Red Hat persona should know which customer stakeholders they'll interact with most frequently and what those stakeholders care about. The Field CTO aligns with C-suite. Account SA with technical leadership. AI Specialist SA with ML practitioners and risk managers. AE and AI Sales handle deal mechanics with procurement and budget holders.
-<!-- /audience -->

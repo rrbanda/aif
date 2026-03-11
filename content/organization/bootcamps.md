@@ -15,7 +15,3 @@ AI Bootcamps are intensive, role-specific training programs that build practical
 ## Delivery Model
 
 Run bootcamps as quarterly cohorts aligned with platform foundation and pilot phases. Combine Red Hat instructor-led training with customer-specific labs (e.g., internal data, use case scenarios). Hands-on exercises are essential; lecture alone does not build competence.
-
-<!-- audience: internal -->
-Position bootcamps as a gating activity: teams should complete relevant tracks before building on the factory. Track completion rates and feedback; adjust content based on gaps. AI252 is foundational for platform engineers; AI253 and AI267 build on it for data science and ML engineering.
-<!-- /audience -->

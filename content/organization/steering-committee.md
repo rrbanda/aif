@@ -17,7 +17,3 @@ Document which decisions require committee approval versus those that can be mad
 ## Composition
 
 Include the executive sponsor (CTO, COO, or CAIO), line-of-business leaders whose units consume AI outputs, Chief Risk Officer or delegate, Chief Data Officer or delegate, Head of Technology/Platform Engineering, and the Red Hat engagement lead. Keep the group small enough to decide—typically 6–10 people. Absent key voices, decisions stall.
-
-<!-- audience: internal -->
-Position the steering committee as a prerequisite for program success. If the customer cannot convene this group or lacks executive sponsorship, flag it early. Red Hat's role is advisory; the customer owns decisions. Document decision logs and action items for audit trail and continuity.
-<!-- /audience -->

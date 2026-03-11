@@ -71,6 +71,107 @@ use_cases:
       - "Model reuse across teams"
       - "Inference cost per query"
 
+  - id: agentic-ai
+    title: "Agentic AI"
+    industry: cross-industry
+    icon: brain
+    complexity: high
+    ai_type:
+      - agentic
+      - generative
+      - tool-use
+    related_phases:
+      - scale-adopt
+      - operate-improve
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/agentic-ai.md"
+    summary: "Autonomous AI agents that reason, plan, and act — using enterprise tools and data to execute multi-step workflows with governance guardrails"
+    why_ai_factory: "Agents require the full factory stack: foundation models for reasoning, fine-tuned models for domain expertise, inference infrastructure for real-time responses, MCP tool integration, and governance gates for safe autonomous action."
+    factory_output: agentic-ai
+    key_metrics:
+      - "Task completion rate"
+      - "Human-in-the-loop intervention rate"
+      - "End-to-end workflow time reduction"
+      - "Governance compliance rate"
+
+  - id: clinical-ai
+    title: "Clinical AI & Healthcare NLP"
+    industry: healthcare
+    icon: heart-pulse
+    complexity: high
+    ai_type:
+      - generative
+      - extraction
+      - classification
+      - predictive
+    related_phases:
+      - pilot-incubation
+      - operationalize
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/clinical-ai.md"
+    summary: "Clinical NLP, documentation AI, risk stratification, and quality surveillance — trained on institutional data within HIPAA-compliant on-premises infrastructure"
+    why_ai_factory: "Patient health information (PHI) cannot leave the organization's controlled environment. Clinical AI models must be trained and served entirely within the health system's infrastructure."
+    factory_output: predictions
+    key_metrics:
+      - "Documentation time reduction per clinician"
+      - "NLP extraction accuracy (F1 score)"
+      - "Risk stratification C-statistic"
+      - "Quality event detection rate"
+
+  - id: predictive-maintenance
+    title: "Predictive Maintenance"
+    industry: manufacturing
+    icon: wrench
+    complexity: medium
+    ai_type:
+      - predictive
+      - anomaly-detection
+      - time-series
+    related_phases:
+      - pilot-incubation
+      - operationalize
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/predictive-maintenance.md"
+    summary: "AI-driven equipment health monitoring, failure prediction, and remaining useful life estimation — using proprietary sensor data and maintenance records"
+    why_ai_factory: "Proprietary failure signatures from institutional equipment data create competitive advantage. Edge and on-premises inference required for manufacturing environments with limited connectivity."
+    factory_output: predictions
+    key_metrics:
+      - "Unplanned downtime reduction"
+      - "Mean time between failures improvement"
+      - "Remaining useful life prediction accuracy"
+      - "Maintenance cost reduction"
+
+  - id: grid-optimization
+    title: "Energy Grid Optimization"
+    industry: energy
+    icon: zap
+    complexity: high
+    ai_type:
+      - predictive
+      - optimization
+      - real-time-inference
+    related_phases:
+      - pilot-incubation
+      - scale-adopt
+    audience:
+      - customer
+      - internal
+    content_file: "use-cases/grid-optimization.md"
+    summary: "Demand forecasting, renewable integration, anomaly detection, and real-time grid dispatch optimization for utilities"
+    why_ai_factory: "Grid operational data is critical infrastructure (NERC CIP). AI models must train and serve on-premises within the utility's security perimeter. Real-time optimization requires GPU-accelerated inference."
+    factory_output: predictions
+    key_metrics:
+      - "Demand forecast accuracy (MAPE)"
+      - "Renewable curtailment reduction"
+      - "Outage prediction lead time"
+      - "Dispatch optimization cost savings"
+
   - id: aiops
     title: "AIOps — AI-Driven Operations"
     industry: cross-industry
@@ -90,7 +191,7 @@ use_cases:
     why_ai_factory: "The AI Factory itself generates operational data that can be used to optimize its own performance. AIOps is both a product the factory produces and a capability that keeps the factory running efficiently."
     factory_output: predictions
     dual_role:
-      as_product: "AI models for IT operations — anomaly detection on trading platform metrics, predictive capacity planning, automated incident classification"
+      as_product: "AI models for IT operations — anomaly detection on platform metrics, predictive capacity planning, automated incident classification"
       for_factory: "Monitoring the factory itself — model drift detection, pipeline health prediction, GPU utilization optimization, automated retraining triggers"
     key_metrics:
       - "Mean time to detect anomalies"

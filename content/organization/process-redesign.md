@@ -21,7 +21,3 @@ Process redesign reimagines business processes around AI—not bolting AI onto e
 ## Human-in-the-Loop Checkpoints
 
 In financial services, many decisions require human accountability. Define explicitly where humans must review, override, or approve. Document the rationale for each checkpoint—regulatory, risk, or operational—and design the UI and workflow to support it.
-
-<!-- audience: internal -->
-Process redesign is often overlooked in technical engagements. Red Hat consultants can facilitate workshops and contribute patterns; business process expertise must come from the customer. Connect process redesign to value realization—measure process KPIs (cycle time, accuracy, cost) before and after.
-<!-- /audience -->

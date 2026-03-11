@@ -31,7 +31,3 @@ Gates prevent advancing without evidence. They also create natural review points
 ## Reporting Cadence
 
 Report value metrics quarterly to the steering committee and in executive briefings. Maintain a dashboard for practitioners and program leads. Use metrics to prioritize—double down on what works, deprioritize or fix what does not.
-
-<!-- audience: internal -->
-Value realization is the evidence base for continued investment. If the customer cannot or will not track these metrics, flag it—programs without value tracking often lose funding when budgets tighten. Red Hat can provide dashboard templates and metric definitions; the customer must own data collection and reporting.
-<!-- /audience -->

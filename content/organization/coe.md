@@ -17,7 +17,3 @@ CoE members consult with delivery teams on architecture, model selection, pipeli
 ## Coordination with Security and Compliance
 
 The CoE works with security and compliance teams to translate policy into technical requirements. PII handling, model explainability, audit logging, and access controls must be baked into standards. In financial services, this coordination is non-negotiable.
-
-<!-- audience: internal -->
-CoE staffing is often a constraint. Customers may not have dedicated CoE capacity; Red Hat can supplement with architecture and consulting during engagements. Emphasize that the CoE scales through documentation and community of practice—not by being the only experts.
-<!-- /audience -->

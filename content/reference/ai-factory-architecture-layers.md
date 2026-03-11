@@ -95,7 +95,3 @@ This feedback loop is what makes it a factory — not a one-time deployment, but
 - **Phase 4 (Operationalize)**: Establish Layer 4 (MLOps) and Layer 5 (Observability)
 - **Phase 5 (Scale)**: Expand all 5 layers to support additional teams and use cases
 - **Phase 6 (Operate)**: Continuously optimize the full stack
-
-<!-- audience: internal -->
-Use this five-layer model when discussing architecture with Account SAs and AI Specialist SAs. Each layer maps to specific Red Hat and NVIDIA products — this is the technical foundation for the "Red Hat AI Factory with NVIDIA" joint offering. Reference the NVIDIA AI Factory definition (purpose-built data centers for manufacturing intelligence) and the HBS definition (data pipeline, algorithms, experimentation, infrastructure) to show how our stack addresses both.
-<!-- /audience -->

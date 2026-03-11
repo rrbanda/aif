@@ -1,9 +1,9 @@
 sections:
   - id: overview
-    title: "Overview"
+    title: "AI Factory"
     items:
       - id: program-overview
-        title: "Program Overview"
+        title: "Overview"
         icon: home
         route: "/"
         content_file: "overview/program-overview.md"
@@ -13,23 +13,8 @@ sections:
         route: "/executive-summary"
         content_file: "overview/executive-summary.md"
 
-  - id: technical-track
-    title: "Technical Track"
-    source: "phases"
-    description: "The platform, pipelines, models, and operations phases"
-
-  - id: organizational-track
-    title: "Organizational Track"
-    source: "organization"
-    description: "People structures, skills, and change management"
-
-  - id: use-cases
-    title: "Use Cases"
-    source: "use-cases"
-    description: "Banking-focused examples of what the AI Factory produces"
-
-  - id: reference
-    title: "Reference"
+  - id: how-it-works
+    title: "How It Works"
     items:
       - id: architecture
         title: "Architecture"
@@ -41,6 +26,25 @@ sections:
         icon: cpu
         route: "/reference/technology-stack"
         source: "tech-stack"
+
+  - id: maturity-stages
+    title: "Maturity Stages"
+    source: "phases"
+    description: "Seven stages from discovery through continuous operations"
+
+  - id: organizational-track
+    title: "Organizational Track"
+    source: "organization"
+    description: "Governance, expertise, skills, culture, and change management"
+
+  - id: use-cases
+    title: "Use Cases"
+    source: "use-cases"
+    description: "What the AI Factory produces — across financial services, healthcare, manufacturing, and energy"
+
+  - id: reference
+    title: "Reference"
+    items:
       - id: roles-responsibilities
         title: "Roles & Responsibilities"
         icon: users
@@ -56,6 +60,12 @@ sections:
         icon: book-open
         route: "/reference/glossary"
         content_file: "reference/glossary.md"
+      - id: internal-playbook
+        title: "Field Team Playbook"
+        icon: book
+        route: "/reference/internal-playbook"
+        content_file: "reference/internal-playbook.md"
+        requires_role: editor
 
   - id: admin
     title: "Admin"

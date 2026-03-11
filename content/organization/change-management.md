@@ -17,7 +17,3 @@ Proactively identify and address resistance. Common sources: fear of job displac
 ## Adoption Tracking
 
 Measure actual usage, satisfaction, and behavioral change. Deployment does not equal adoption. Track: who is using the factory, how often, for what, and with what satisfaction. Use surveys, usage analytics, and qualitative feedback. Feed findings back into communication and training plans.
-
-<!-- audience: internal -->
-Change management is often under-scoped. Recommend dedicating at least one FTE (or equivalent) to this workstream from discovery through scale. Red Hat can provide frameworks and templates; the customer must own execution—internal credibility matters for adoption messaging.
-<!-- /audience -->
