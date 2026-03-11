@@ -264,19 +264,19 @@ export default function ModelRegistry({ viewMode }: { viewMode: ViewMode }) {
                                   className="pf-v6-u-mt-sm"
                                 >
                                   <DescriptionList isHorizontal isCompact>
-                                    {deploy.endpoint && (
+                                    {!!deploy.endpoint && (
                                       <DescriptionListGroup>
                                         <DescriptionListTerm>Endpoint</DescriptionListTerm>
                                         <DescriptionListDescription>{String(deploy.endpoint)}</DescriptionListDescription>
                                       </DescriptionListGroup>
                                     )}
-                                    {deploy.serving_runtime && (
+                                    {!!deploy.serving_runtime && (
                                       <DescriptionListGroup>
                                         <DescriptionListTerm>Runtime</DescriptionListTerm>
                                         <DescriptionListDescription>{String(deploy.serving_runtime)}</DescriptionListDescription>
                                       </DescriptionListGroup>
                                     )}
-                                    {deploy.container_image && (
+                                    {!!deploy.container_image && (
                                       <DescriptionListGroup>
                                         <DescriptionListTerm>Image</DescriptionListTerm>
                                         <DescriptionListDescription>

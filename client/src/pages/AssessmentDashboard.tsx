@@ -347,25 +347,25 @@ export default function AssessmentDashboard({ viewMode }: { viewMode: ViewMode }
                     {account.red_hat_team.ae && (
                       <DescriptionListGroup>
                         <DescriptionListTerm>AE</DescriptionListTerm>
-                        <DescriptionListDescription>{account.red_hat_team.ae}</DescriptionListDescription>
+                        <DescriptionListDescription>{String(account.red_hat_team.ae)}</DescriptionListDescription>
                       </DescriptionListGroup>
                     )}
                     {account.red_hat_team.account_sa && (
                       <DescriptionListGroup>
                         <DescriptionListTerm>Account SA</DescriptionListTerm>
-                        <DescriptionListDescription>{account.red_hat_team.account_sa}</DescriptionListDescription>
+                        <DescriptionListDescription>{String(account.red_hat_team.account_sa)}</DescriptionListDescription>
                       </DescriptionListGroup>
                     )}
                     {account.red_hat_team.ai_specialist_sa && (
                       <DescriptionListGroup>
                         <DescriptionListTerm>AI Specialist SA</DescriptionListTerm>
-                        <DescriptionListDescription>{account.red_hat_team.ai_specialist_sa}</DescriptionListDescription>
+                        <DescriptionListDescription>{String(account.red_hat_team.ai_specialist_sa)}</DescriptionListDescription>
                       </DescriptionListGroup>
                     )}
                     {account.red_hat_team.field_cto && (
                       <DescriptionListGroup>
                         <DescriptionListTerm>Field CTO</DescriptionListTerm>
-                        <DescriptionListDescription>{account.red_hat_team.field_cto}</DescriptionListDescription>
+                        <DescriptionListDescription>{String(account.red_hat_team.field_cto)}</DescriptionListDescription>
                       </DescriptionListGroup>
                     )}
                   </DescriptionList>
@@ -383,20 +383,20 @@ export default function AssessmentDashboard({ viewMode }: { viewMode: ViewMode }
                     <DescriptionListGroup>
                       <DescriptionListTerm>Type</DescriptionListTerm>
                       <DescriptionListDescription>
-                        <Label isCompact>{account.engagement.engagement_type}</Label>
+                        <Label isCompact>{String(account.engagement.engagement_type)}</Label>
                       </DescriptionListDescription>
                     </DescriptionListGroup>
                     <DescriptionListGroup>
                       <DescriptionListTerm>SOW</DescriptionListTerm>
-                      <DescriptionListDescription>{account.engagement.current_sow}</DescriptionListDescription>
+                      <DescriptionListDescription>{String(account.engagement.current_sow)}</DescriptionListDescription>
                     </DescriptionListGroup>
                     <DescriptionListGroup>
                       <DescriptionListTerm>Start</DescriptionListTerm>
-                      <DescriptionListDescription>{account.engagement.start_date}</DescriptionListDescription>
+                      <DescriptionListDescription>{String(account.engagement.start_date)}</DescriptionListDescription>
                     </DescriptionListGroup>
                     <DescriptionListGroup>
                       <DescriptionListTerm>Est. End</DescriptionListTerm>
-                      <DescriptionListDescription>{account.engagement.estimated_end}</DescriptionListDescription>
+                      <DescriptionListDescription>{String(account.engagement.estimated_end)}</DescriptionListDescription>
                     </DescriptionListGroup>
                   </DescriptionList>
                 </CardBody>
