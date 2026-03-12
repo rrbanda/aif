@@ -1,6 +1,6 @@
-# Red Hat AI Factory with NVIDIA
+# Red Hat AI Factory
 
-A purpose-built computing infrastructure for artificial intelligence workloads to manage the entire AI lifecycle and drive decision-making, automation, and new AI solutions.
+A purpose-built methodology and technology platform for enterprise AI — managing the entire AI lifecycle and driving decision-making, automation, and new AI solutions at production scale.
 
 The AI Factory is where full-stack infrastructure, data pipelines, and continuous AI inference converge — the foundation, the platform, and the engine for enterprise AI at scale.
 
@@ -16,22 +16,17 @@ Existing AI platforms fail to efficiently handle the compute-intensive demands o
 
 ## The Solution
 
-**Red Hat AI Factory with NVIDIA** is a unified, co-engineered foundation for building, deploying, and scaling production-ready AI. The solution combines Red Hat AI Enterprise and NVIDIA AI Enterprise to deliver an end-to-end solution optimized for NVIDIA hardware environments.
+**Red Hat AI Factory** is Red Hat's methodology and technology platform for helping enterprises build, deploy, and scale production-ready AI. The solution combines Red Hat's proven enterprise platform with a curated ecosystem of technology partners to deliver an end-to-end solution that works with the customer's chosen infrastructure.
 
-The solution is designed to accelerate the path from experimentation to production through:
+The solution accelerates the path from experimentation to production through:
 
-- **Production-Ready Foundation** — A unified platform for building, deploying, and scaling AI-ready applications. Pre-validated reference architectures, Red Hat AI quickstarts, and NVIDIA AI Blueprints reduce time to first value.
+- **Proven Methodology** — A seven-stage framework with value gates, deliverables, and decision points at every step. Built from real enterprise engagements across financial services, healthcare, manufacturing, and energy.
 
-- **Collaborative Expertise** — A joint offering that integrates the engineering and support expertise of both Red Hat and NVIDIA to deliver a trusted, enterprise-grade platform.
+- **Enterprise Technology Platform** — Red Hat AI Enterprise on Red Hat OpenShift provides model lifecycle management, governed inference, and hybrid cloud deployment from a single platform.
 
-- **Streamlined Operations** — Empowers IT operations teams to manage both traditional infrastructure and the evolving demands of the AI stack through a single pane of glass.
+- **Curated Partner Ecosystem** — Purpose-built integrations with leading hardware and software partners so the platform works with the infrastructure customers have or plan to acquire.
 
-## Day 0 Support for NVIDIA's Next-Gen Platforms
-
-Red Hat AI Factory delivers Day 0 support for NVIDIA's rack-scale systems, seamlessly integrating RHEL and OpenShift with NVIDIA's rack-scale architecture to power scalable, production-ready enterprise AI.
-
-- **NVIDIA Blackwell** — Available now. Full-stack validated integration.
-- **NVIDIA Rubin** — H2 2026. Day 0 support committed.
+- **Red Hat Services & Enablement** — Consulting, training, and technical account management embedded into every stage — enabling customer teams to operate independently.
 
 ## From Consumption to Production
 
@@ -60,13 +55,13 @@ The factory produces four categories of AI capability spanning predictive ML, ge
 
 The AI Factory runs on two parallel tracks:
 
-**Technical Track** — Seven maturity stages from discovery through continuous operations. Each stage builds on the previous, with value gates ensuring measurable progress before advancing. The platform, data pipelines, models, governance, and production operations grow together.
+**Platform Maturity** — Seven maturity stages from discovery through continuous operations. Each stage builds on the previous, with value gates ensuring measurable progress before advancing. The platform, data pipelines, models, governance, and production operations grow together.
 
-**Organizational Track** — Nine elements covering governance (Steering Committee), expertise (Center of Excellence), skills (Bootcamps, Workshops), culture (Community of Practice, Evangelism), and transformation (Change Management, Process Redesign, Value Realization). Technology without organizational readiness produces shelfware, not production AI.
+**Operating Model** — Nine elements covering governance (Steering Committee), expertise (Center of Excellence), skills (Bootcamps, Workshops), culture (Community of Practice, Evangelism), and transformation (Change Management, Process Redesign, Value Realization). Technology without organizational readiness produces shelfware, not production AI.
 
 ## The Platform
 
-The AI Factory runs on **Red Hat AI Enterprise** and **NVIDIA AI Enterprise** — a co-engineered, continuously validated stack. This is not a generic integration. Red Hat and NVIDIA co-develop reference workflows, validate hardware and software together from day one, and provide enterprise-grade support across the full stack.
+The AI Factory runs on **Red Hat AI Enterprise** — an integrated AI platform on OpenShift that manages the full AI lifecycle. Partner technology integrations (GPU drivers, inference runtimes, model frameworks) are certified and validated per partner.
 
 Key platform capabilities include:
 
@@ -76,18 +71,27 @@ Key platform capabilities include:
 - **Fine-tuning pipelines** — Automated SFT and OSFT workflows
 - **Model registry** — Versioning, lineage, approval workflows
 - **llm-d** — Kubernetes-native distributed inference routing
-- **NIM microservices** — Pre-optimized inference containers from NVIDIA
 
 ## AI Use Cases: From Platform to Production
 
 Prototype reference implementations that guide teams from concept to deployed solution:
 
-- **Enterprise RAG** — Ground AI in proprietary data with NVIDIA NeMo Retriever for document ingestion and Nemotron for generation
-- **Video Search & Summarization** — NVIDIA VLM microservices for video search, summary, and analysis at scale
+- **Enterprise RAG** — Ground AI in proprietary data with document retrieval and embedding pipelines for on-premises RAG
+- **Video Search & Summarization** — Vision-language model microservices for video search, summary, and analysis at scale
 - **Model as a Service** — Models as shared resources via API endpoints with central hosting, orchestration, and multi-tenancy
 - **Enterprise Research** — Connects agents to enterprise data to distill materials with efficiency and precision
 
 Growing AI quickstart portfolio includes IT Self-Service, Product Recommenders, and Infrastructure Monitoring — plus industry-specific use cases across healthcare, financial services, and manufacturing.
+
+## Partner Ecosystem
+
+The AI Factory is designed to work with the customer's chosen technology partners. Red Hat validates and certifies integrations across the ecosystem:
+
+- **GPU/Accelerator vendors** — NVIDIA, Intel, AMD — all supported through certified operators and drivers
+- **Server OEMs** — Dell, HPE, Lenovo, Cisco, Supermicro — validated server configurations for AI workloads
+- **AI software suites** — Partner-provided inference runtimes, model frameworks, and optimization tools
+
+The methodology and governance framework remain constant regardless of which partners are deployed.
 
 <!-- audience: internal -->
 
@@ -95,25 +99,28 @@ Growing AI quickstart portfolio includes IT Self-Service, Product Recommenders, 
 
 **vs. AWS SageMaker + Bedrock** — Lock-in to AWS cloud, no on-premises data sovereignty, limited GPU hardware choice. Red Hat AI Factory runs anywhere — on-prem, hybrid, multi-cloud. Key differentiator: data never leaves the customer's perimeter.
 
-**vs. Azure AI + OpenAI** — Strongest in cloud-native GenAI but tied to Azure infrastructure. Red Hat AI Factory provides hardware flexibility (NVIDIA DGX, HGX, RTX Pro, partner OEMs) and avoids single-cloud dependency.
+**vs. Azure AI + OpenAI** — Strongest in cloud-native GenAI but tied to Azure infrastructure. Red Hat AI Factory provides hardware flexibility and avoids single-cloud dependency.
 
-**vs. Databricks** — Strong on data engineering and MLOps but weaker on inference serving and GPU orchestration. Red Hat AI Factory provides production-grade inference at scale with NIM microservices and llm-d distributed routing.
+**vs. Databricks** — Strong on data engineering and MLOps but weaker on inference serving and GPU orchestration. Red Hat AI Factory provides production-grade inference at scale with vLLM, llm-d distributed routing, and multi-vendor hardware support.
 
 **Key talk track**: "The question isn't whether to build an AI Factory — it's whether you build it on infrastructure you control, or rent it from a cloud provider who controls you."
 
 ## Internal: Deal Strategy
 
 **Entry points:**
-1. OpenShift expansion — customer already runs OpenShift, add OpenShift AI + NVIDIA AI Enterprise
-2. GPU infrastructure — customer procuring NVIDIA GPUs, need platform software
-3. Use case driven — customer has a specific AI use case (fraud, clinical AI, predictive maintenance) that needs production infrastructure
+1. OpenShift expansion — customer already runs OpenShift, add Red Hat AI Enterprise
+2. GPU infrastructure — customer procuring accelerators, need platform software
+3. Use case driven — customer has a specific AI use case that needs production infrastructure
 4. Competitive displacement — customer evaluating SageMaker/Azure AI, position AI Factory as hybrid-cloud alternative
+
+**Partner strategy per engagement:**
+- Assess customer's existing hardware and acquisition plans
+- Lead with the partner that matches their infrastructure (NVIDIA if they have/want NVIDIA GPUs, Intel if Gaudi, etc.)
+- Position Red Hat as the platform constant across any hardware choice
 
 **Sizing guidance:**
 - Starter: 3 GPU nodes (minimum viable factory)
 - Growth: 8-12 GPU nodes (production + development)
 - Enterprise: 24+ GPU nodes (multi-team, multi-use-case)
-
-**Deal structure:** Node-based pricing. Red Hat AI Enterprise subscription + NVIDIA AI Enterprise subscription per GPU node.
 
 <!-- /audience -->

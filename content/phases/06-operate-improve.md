@@ -32,8 +32,8 @@ Operate & Improve is the steady-state stage. The factory runs continuously; this
 **Revenue protection and expansion:**
 - Annual subscription renewal is the baseline — TAM ensures value realization is documented and communicated to executive sponsors
 - Quarterly value reviews surface expansion opportunities (new use cases, new teams, GPU refresh)
-- Platform upgrade cycles (OpenShift versions, GPU Operator updates, new NIM releases) create consulting engagement opportunities
-- NVIDIA hardware refresh (Blackwell → Rubin) is a natural expansion trigger
+- Platform upgrade cycles (OpenShift versions, GPU operator updates, new inference runtime releases) create consulting engagement opportunities
+- Hardware refresh cycles (next-gen accelerators from any partner) are natural expansion triggers
 
 **Common objections and responses:**
 - *"We can operate this ourselves now"* — Validate that the customer has sufficient platform engineering depth. Most customers underestimate the ongoing effort for GPU driver updates, model serving optimization, security patching, and capacity planning. TAM provides insurance and expertise.

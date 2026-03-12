@@ -8,7 +8,7 @@ Pilots prove the end-to-end value of the AI Factory before scaling. Select 2–3
 
 **Pilot use case execution** runs selected workloads (e.g., fraud detection, regulatory document analysis, clinical NLP, predictive maintenance) from data ingestion through production inference. Each pilot must complete the full lifecycle — data pipeline, model training or fine-tuning, evaluation, deployment, and integration with business workflows.
 
-**Fine-tuning pipelines** support domain adaptation of foundation models. Implement supervised fine-tuning (SFT) and open-source fine-tuning (OSFT) using NeMo or InstructLab. Automate the pipeline: data prep, training, evaluation, and model promotion. Document hyperparameters and data requirements for reproducibility.
+**Fine-tuning pipelines** support domain adaptation of foundation models. Implement supervised fine-tuning (SFT) and open-source fine-tuning (OSFT) using InstructLab or partner frameworks. Automate the pipeline: data prep, training, evaluation, and model promotion. Document hyperparameters and data requirements for reproducibility.
 
 **Model evaluation framework** establishes reusable benchmarks for fairness, robustness, and safety. For regulated industries, bias detection (e.g., across demographic segments) and adversarial robustness matter. Define pass/fail thresholds before deployment.
 
@@ -36,7 +36,7 @@ Over 40% of agentic AI projects may be canceled by 2027 due to escalating costs,
 **Resource estimation:**
 - Red Hat Consulting: 1-2 consultants, 8-12 weeks (overlaps with platform stabilization)
 - Customer commitment: Data science team, business process owner, model risk officer
-- NVIDIA involvement: NIM deployment for inference, NeMo for fine-tuning guidance
+- Partner involvement: Inference runtime deployment, fine-tuning framework guidance (partner-specific)
 
 **Pilot selection guidance (internal):**
 - Prioritize use cases with: existing data, clear KPIs, engaged business owner, regulatory simplicity

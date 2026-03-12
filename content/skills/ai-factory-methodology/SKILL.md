@@ -26,8 +26,8 @@ Purpose-built compute infrastructure — a "token factory" — combining acceler
 ### Harvard Business School Definition
 An organizational model with four components: data pipeline, algorithm development, experimentation platform, and software infrastructure. The "factory" metaphor emphasizes repeatable, scalable production — not one-off models. Key insight: "learn from experience and improve over time" (feedback loops).
 
-### Red Hat AI Factory with NVIDIA
-A co-engineered enterprise solution combining Red Hat AI Enterprise (OpenShift, OpenShift AI) with NVIDIA's accelerated computing. Designed for on-premises, hybrid cloud, and edge. Key differentiators: Day 0 integration, modular design, intelligent GPU orchestration, enterprise security.
+### Red Hat AI Factory
+Red Hat's methodology and technology platform for enterprise AI. Combines Red Hat AI Enterprise (OpenShift, OpenShift AI) with a curated partner ecosystem (NVIDIA, Intel, AMD, Dell, HPE, Lenovo, Cisco). Designed for on-premises, hybrid cloud, and edge. Key differentiators: proven seven-stage methodology, partner-neutral architecture, intelligent GPU orchestration, enterprise security.
 
 ## Program Phases
 

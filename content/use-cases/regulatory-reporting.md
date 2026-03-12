@@ -18,12 +18,11 @@ Regulatory reporting and document analysis span a broad set of AI capabilities: 
 - Microsoft Copilot for Finance: Cloud-based, limited customization, no on-prem vector database option
 - AWS Textract + Bedrock RAG: Document extraction is commodity; differentiation is in the governance pipeline and on-prem deployment
 - Google Document AI: Strong extraction but tied to Google Cloud
-- Red Hat AI Factory: On-prem RAG with NeMo Retriever, custom vector stores, full audit trail, governance gates
+- Red Hat AI Factory: On-prem RAG with document retrieval framework, custom vector stores, full audit trail, governance gates
 
-**NVIDIA integration points:**
-- NeMo Retriever for document ingestion and embedding
-- Nemotron for generation (regulatory text is complex — needs strong language model)
-- NIM microservices for optimized inference
+**Partner technology options:**
+- NVIDIA: NeMo Retriever for ingestion/embedding, Nemotron for generation, NIM for optimized inference
+- Open-source: LangChain/LlamaIndex for retrieval, Granite or community models for generation, vLLM for serving
 
 **Typical ROI metrics to present:**
 - Document processing time reduction: 50-70%

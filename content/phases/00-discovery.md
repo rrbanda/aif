@@ -36,7 +36,7 @@ Discovery should include a structured readiness assessment across five dimension
 
 ## Internal: Delivery Methodology
 
-**Red Hat Services alignment:** Discovery maps directly to weeks 1-4 of the Red Hat Services Starter Package. Red Hat Consulting leads the assessment workshops, with NVIDIA expertise accessed for GPU sizing and architecture validation.
+**Red Hat Services alignment:** Discovery maps directly to weeks 1-4 of the Red Hat Services Starter Package. Red Hat Consulting leads the assessment workshops, coordinating with technology partners as needed for hardware sizing and architecture validation.
 
 **Resource estimation:**
 - Red Hat Consulting: 2 consultants, 4 weeks (160 hours)

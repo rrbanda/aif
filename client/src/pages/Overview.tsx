@@ -1,5 +1,5 @@
 import { useConfig } from "../hooks/useConfig";
-import type { ProgramConfig, ViewMode } from "../types";
+import type { ProgramConfig, PartnersConfig, ViewMode } from "../types";
 import {
   Card,
   CardTitle,
@@ -24,8 +24,10 @@ import { Link } from "react-router-dom";
 
 export default function Overview({ viewMode }: { viewMode: ViewMode }) {
   const { data, loading, error } = useConfig<ProgramConfig>("program");
+  const { data: partnersData } = useConfig<PartnersConfig>("partners");
 
   const program = data?.program;
+  const partners = partnersData?.partners;
 
   if (loading) {
     return (
@@ -93,22 +95,6 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
           </Split>
         )}
 
-        {program.platform_availability && (
-          <Flex className="pf-v6-u-mb-xl">
-            <FlexItem>
-              <Label color="green">
-                {program.platform_availability.current.name}: {program.platform_availability.current.status}
-              </Label>
-            </FlexItem>
-            <FlexItem>
-              <Label color="blue">
-                {program.platform_availability.upcoming.name}: {program.platform_availability.upcoming.status}
-                {program.platform_availability.upcoming.note && ` (${program.platform_availability.upcoming.note})`}
-              </Label>
-            </FlexItem>
-          </Flex>
-        )}
-
         <Flex>
           <FlexItem>
             <Button variant="primary" component={(props) => <Link {...props} to="/roadmap" />}>
@@ -126,7 +112,7 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
       {program.value_propositions && program.value_propositions.length > 0 && (
         <PageSection>
           <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-md">
-            The solution
+            The Red Hat AI Factory
           </Title>
           <Gallery hasGutter>
             {program.value_propositions.map((vp) => (
@@ -144,7 +130,7 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
       {program.benefit_pillars && program.benefit_pillars.length > 0 && (
         <PageSection>
           <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-md">
-            Why Red Hat AI Factory with NVIDIA
+            Why an AI Factory
           </Title>
           <Gallery hasGutter>
             {program.benefit_pillars.map((pillar) => (
@@ -184,7 +170,7 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
         </Gallery>
 
         <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-md">
-          Two parallel tracks
+          Two parallel dimensions
         </Title>
         <Gallery hasGutter className="pf-v6-u-mb-xl">
           {program.tracks.map((track) => (
@@ -197,6 +183,43 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
           ))}
         </Gallery>
       </PageSection>
+
+      {partners && partners.length > 0 && (
+        <PageSection>
+          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
+            Partner Ecosystem
+          </Title>
+          <p className="pf-v6-u-color-200 pf-v6-u-mb-md">
+            The AI Factory works with your chosen technology partners. Red Hat validates and certifies integrations across the ecosystem.
+          </p>
+          <Gallery hasGutter>
+            {partners.map((partner) => (
+              <GalleryItem key={partner.id}>
+                <Card isCompact>
+                  <CardTitle>
+                    <Flex>
+                      <FlexItem>{partner.name}</FlexItem>
+                      <FlexItem>
+                        <Label isCompact color={partner.tier === "premier" ? "blue" : "grey"}>
+                          {partner.tier}
+                        </Label>
+                      </FlexItem>
+                    </Flex>
+                  </CardTitle>
+                  <CardBody>
+                    <p className="pf-v6-u-mb-sm">{partner.description}</p>
+                    {partner.key_differentiator && (
+                      <p className="pf-v6-u-font-size-sm pf-v6-u-color-200">
+                        {partner.key_differentiator}
+                      </p>
+                    )}
+                  </CardBody>
+                </Card>
+              </GalleryItem>
+            ))}
+          </Gallery>
+        </PageSection>
+      )}
 
       {program.services_package && (
         <PageSection>

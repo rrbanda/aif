@@ -91,3 +91,25 @@ export interface Program {
 export interface ProgramConfig {
   program: Program;
 }
+
+export interface PartnerContribution {
+  layer: string;
+  products: string[];
+}
+
+export interface Partner {
+  id: string;
+  name: string;
+  type: string;
+  tier: string;
+  icon?: string;
+  website?: string;
+  description: string;
+  contributions: PartnerContribution[];
+  industries?: string[];
+  key_differentiator?: string;
+}
+
+export interface PartnersConfig {
+  partners: Partner[];
+}

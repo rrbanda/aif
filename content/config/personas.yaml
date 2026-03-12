@@ -56,13 +56,13 @@ personas:
     short_title: "AI Sales"
     icon: trending-up
     organization: red-hat
-    description: "Focused on AI market positioning, use case qualification, and partner ecosystem"
-    greeting: "I'm your AI sales specialist assistant. I can help with use case qualification, competitive analysis, NVIDIA partnership positioning, and deal structuring."
+    description: "Focused on AI market positioning, use case qualification, and partner ecosystem strategy"
+    greeting: "I'm your AI sales specialist assistant. I can help with use case qualification, competitive analysis, partner ecosystem positioning, and deal structuring."
     suggested_prompts:
       - "Which use cases are strongest for a Tier-1 bank?"
       - "How does our AI Factory compare to AWS SageMaker + Bedrock?"
       - "Draft a use case qualification matrix for this opportunity"
-      - "What's the NVIDIA AI Enterprise licensing model for this deal?"
+      - "Which technology partners should we lead with for this customer?"
 
   # --- Customer Personas ---
 

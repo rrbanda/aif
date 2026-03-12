@@ -21,8 +21,8 @@ A unified reference architecture description covering all 5 layers of the AI Fac
 
 ## Mapping to Red Hat AI Factory
 
-Explicitly map components to Red Hat AI Factory with NVIDIA:
-- OpenShift + GPU Operator + NVIDIA drivers
+Explicitly map components to Red Hat AI Factory:
+- OpenShift + GPU/accelerator vendor operators + certified drivers
 - OpenShift AI (RHOAI) for workbenches, pipelines, model serving
 - ODF for storage; reference architecture diagrams where applicable
 

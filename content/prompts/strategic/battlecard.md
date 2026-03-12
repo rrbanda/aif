@@ -23,7 +23,7 @@ For each battlecard, present:
 - If on-prem is required → highlight hybrid deployment
 - If banking/FS → highlight compliance and data sovereignty
 - If multi-cloud → highlight portability
-- If GPU optimization → highlight NVIDIA co-engineering
+- If GPU optimization → highlight partner ecosystem integrations and certified hardware support
 
 ### Handling Objections
 - Common objections and recommended responses

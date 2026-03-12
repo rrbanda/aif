@@ -8,7 +8,7 @@ This stage deploys and configures OpenShift AI on your existing OpenShift cluste
 
 **OpenShift AI deployment** installs the OpenShift AI Operator on your cluster. Configuration includes project structure, resource quotas, and integration with existing identity providers. The platform runs on-premises; no data leaves your environment.
 
-**NVIDIA GPU Operator and Network Operator** enable GPU scheduling. Deploy GPU nodes, configure drivers and device plugins, and validate that workloads can request and consume GPU resources. Network Operator handles RDMA and high-bandwidth networking for distributed training. GPU procurement can be a critical path item — start early.
+**GPU/accelerator vendor operators** enable hardware scheduling. Deploy GPU nodes, configure drivers and device plugins, and validate that workloads can request and consume accelerator resources. Network operators handle RDMA and high-bandwidth networking for distributed training. Hardware procurement can be a critical path item — start early.
 
 **AI Hub** provides a central model catalog with approved foundation models, performance insights, and deployment guidance. Curate the initial catalog based on pilot use cases; avoid over-provisioning.
 
@@ -20,20 +20,20 @@ This stage deploys and configures OpenShift AI on your existing OpenShift cluste
 
 ## Five-Layer Architecture
 
-The platform foundation stage deploys Layer 1 (Infrastructure) and Layer 3 (AI Platform) of the AI Factory architecture. For a complete view of how all five layers work together and map to specific Red Hat and NVIDIA technologies, see the [AI Factory Architecture Layers](../reference/ai-factory-architecture-layers.md) reference.
+The platform foundation stage deploys Layer 1 (Infrastructure) and Layer 3 (AI Platform) of the AI Factory architecture. For a complete view of how all five layers work together and map to Red Hat technologies and partner integrations, see the [AI Factory Architecture Layers](../reference/ai-factory-architecture-layers.md) reference.
 
-The platform is built on **Red Hat AI Factory with NVIDIA** — a co-engineered stack with Day 0 integration, validated reference workflows, and intelligent GPU orchestration. This is not a generic OpenShift deployment; it is a prescriptive, jointly validated architecture purpose-built for AI workloads.
+The platform is built on **Red Hat AI Enterprise** on OpenShift — with validated reference architectures, intelligent GPU orchestration, and certified partner integrations. This is not a generic OpenShift deployment; it is a prescriptive architecture purpose-built for AI workloads.
 
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology
 
-**Red Hat Services alignment:** Platform foundation is weeks 5-12 of the Services Starter Package. This is the most hands-on consulting phase — Red Hat Consulting deploys and configures the platform, accesses NVIDIA expertise for GPU stack validation.
+**Red Hat Services alignment:** Platform foundation is weeks 5-12 of the Services Starter Package. This is the most hands-on consulting phase — Red Hat Consulting deploys and configures the platform, coordinating with technology partners for hardware enablement and driver validation.
 
 **Resource estimation:**
 - Red Hat Consulting: 2-3 consultants (OpenShift AI specialist + infrastructure specialist), 8-12 weeks
-- NVIDIA engagement: GPU Operator validation, NIM deployment, driver certification
-- Customer commitment: Platform engineering team, security/networking approvals, GPU procurement
+- Partner engagement: Hardware vendor operator validation, inference runtime deployment, driver certification
+- Customer commitment: Platform engineering team, security/networking approvals, hardware procurement
 
 **GPU Sizing Guidance:**
 
@@ -47,7 +47,7 @@ The platform is built on **Red Hat AI Factory with NVIDIA** — a co-engineered 
 
 **Common objections and responses:**
 - *"We already have OpenShift, why do we need consulting?"* — OpenShift AI configuration for GPU workloads, multi-tenant isolation, and model serving requires specialized expertise. Generic OpenShift does not equal AI-ready OpenShift.
-- *"Can we use our existing GPUs?"* — Yes, if they are NVIDIA A100 or newer. Older GPUs may lack NIM support. GPU Operator validates compatibility.
+- *"Can we use our existing GPUs?"* — Yes, depending on the model. Red Hat AI Enterprise supports NVIDIA, Intel Gaudi, and AMD Instinct accelerators. The vendor operator validates compatibility with your specific hardware.
 - *"Why not just use Kubernetes without OpenShift?"* — OpenShift AI provides the full AI lifecycle (AI Hub, Model Registry, Gen AI Studio, pipelines). Vanilla Kubernetes requires assembling this from disparate tools.
 
 **Competitive architecture comparison:**

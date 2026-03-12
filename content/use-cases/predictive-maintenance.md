@@ -25,7 +25,7 @@ Industrial equipment failure is expensive — unplanned downtime in manufacturin
 - Red Hat AI Factory: Full on-prem pipeline with edge inference capability. Train on institutional failure data. Integrate with existing OT systems via OpenShift.
 
 **Sizing guidance:**
-- Edge inference: NVIDIA RTX Pro or Jetson devices for per-site deployment
+- Edge inference: GPU-accelerated edge devices (NVIDIA Jetson/RTX Pro, Intel Arc, or CPU-based inference with OpenVINO) for per-site deployment
 - Central training: 2-4 GPU nodes for model training on aggregated sensor data
 - Data pipeline: High-throughput ingestion for IoT sensor streams (100K+ sensors)
 

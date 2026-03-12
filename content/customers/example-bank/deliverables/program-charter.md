@@ -14,7 +14,7 @@
 
 ## Vision
 
-Establish a systematic, scalable AI Factory powered by **Red Hat AI Factory with NVIDIA** that enables Example Bank to build, deploy, and operate AI models at enterprise scale — reducing time-to-production from 12 months to 4 weeks while maintaining full regulatory compliance with SR 11-7, PCI DSS, and internal model risk policies.
+Establish a systematic, scalable AI Factory powered by **Red Hat AI Factory** that enables Example Bank to build, deploy, and operate AI models at enterprise scale — reducing time-to-production from 12 months to 4 weeks while maintaining full regulatory compliance with SR 11-7, PCI DSS, and internal model risk policies.
 
 ## Strategic Context
 
@@ -38,7 +38,7 @@ Example Bank processes 8.2 million transactions daily across retail, commercial,
 ### In Scope
 
 - Red Hat AI Enterprise platform deployment and optimization on existing OpenShift 4.16 cluster
-- NVIDIA GPU Operator and AI Enterprise integration for 12x A100 80GB GPUs
+- GPU accelerator enablement (NVIDIA GPU Operator + AI Enterprise) for 12x A100 80GB GPUs
 - Model lifecycle management (experiment to production to monitoring)
 - 3 priority use cases: Fraud Detection, AML Alert Triage, Credit Risk Augmentation
 - Team enablement: OpenShift AI bootcamp, MLOps workshop, data science onboarding
@@ -91,7 +91,7 @@ Example Bank processes 8.2 million transactions daily across retail, commercial,
 | Component | Annual Cost | Notes |
 |-----------|------------|-------|
 | Red Hat AI Enterprise (12 GPU nodes) | Subscription | Node-based pricing |
-| NVIDIA AI Enterprise (12 GPU nodes) | Subscription | Bundled with Red Hat AI Factory |
+| NVIDIA AI Enterprise (12 GPU nodes) | Subscription | Partner software, priced per GPU node |
 | Red Hat Consulting (Services Starter Package) | One-time | Weeks 1-12 |
 | Red Hat Training (AI501 + Learning Subscription) | Annual | 20 seats |
 | Red Hat Technical Account Management | Annual | Production support advisory |

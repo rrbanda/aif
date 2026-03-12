@@ -13,7 +13,8 @@ type ConfigType =
   | "tech-stack"
   | "roles"
   | "metrics"
-  | "navigation";
+  | "navigation"
+  | "partners";
 
 const CONFIG_FILES: Record<ConfigType, string> = {
   program: "program.yaml",
@@ -24,6 +25,7 @@ const CONFIG_FILES: Record<ConfigType, string> = {
   roles: "roles.yaml",
   metrics: "metrics.yaml",
   navigation: "navigation.yaml",
+  partners: "partners.yaml",
 };
 
 export async function loadConfig(type: ConfigType): Promise<unknown> {

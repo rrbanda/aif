@@ -1,4 +1,4 @@
-export type { Audience, FactoryOutput, Track, Program, ProgramConfig } from "./program";
+export type { Audience, FactoryOutput, Track, Program, ProgramConfig, Partner, PartnerContribution, PartnersConfig } from "./program";
 export type { Deliverable, Phase, PhasesConfig } from "./phase";
 export type {
   BootcampTrack,

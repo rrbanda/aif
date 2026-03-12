@@ -2,7 +2,7 @@
 
 Enterprise Retrieval-Augmented Generation (RAG) grounds AI responses in the organization's proprietary data — policies, procedures, research, regulatory guidance, and institutional knowledge. Unlike generic LLM responses, enterprise RAG produces answers that are grounded in verified, organization-specific documents with citation trails.
 
-**NVIDIA NeMo Retriever** handles document ingestion, chunking, and embedding. Documents are converted into vector representations and stored in on-premises vector databases (pgvector, Milvus). **Nemotron** or other foundation models serve as the generation layer, producing responses that reference retrieved context.
+The RAG pipeline handles document ingestion, chunking, and embedding. Documents are converted into vector representations and stored in on-premises vector databases (pgvector, Milvus). Foundation models serve as the generation layer, producing responses that reference retrieved context.
 
 Red Hat AI Factory provides the orchestration layer: document pipelines that ingest from SharePoint, Confluence, regulatory databases, and internal knowledge bases. Governance controls ensure that access policies are respected — a user can only retrieve documents they are authorized to see. Every query and response is logged for compliance.
 
@@ -14,10 +14,10 @@ Enterprise documents contain confidential information: internal policies, unrele
 
 The RAG pipeline consists of four components deployed entirely on the AI Factory platform:
 
-1. **Document ingestion** — NeMo Retriever processes documents from source systems, chunks them, and generates embeddings
+1. **Document ingestion** — Retrieval framework processes documents from source systems, chunks them, and generates embeddings
 2. **Vector store** — On-premises vector database stores embeddings with metadata for access control
 3. **Retrieval** — Semantic search retrieves relevant document chunks for each query
-4. **Generation** — Foundation model (served via NIM) generates responses grounded in retrieved context
+4. **Generation** — Foundation model (served via Red Hat AI Inference Server or partner runtimes) generates responses grounded in retrieved context
 
 ## Use Cases by Industry
 
@@ -39,7 +39,7 @@ The RAG pipeline consists of four components deployed entirely on the AI Factory
 - Azure OpenAI + AI Search: Cloud-hosted, data leaves the org. Azure Search indexing costs scale with document volume.
 - AWS Bedrock Knowledge Bases: S3-based, no on-prem option. Limited vector store options.
 - Google Vertex AI RAG: Cloud-only. Strong retrieval but tied to Google Cloud storage.
-- Red Hat AI Factory: Full on-prem pipeline — NeMo Retriever, on-prem vector store, NIM serving, governance controls.
+- Red Hat AI Factory: Full on-prem pipeline — document retrieval framework, on-prem vector store, production model serving, governance controls. Partner technology options: NVIDIA NeMo Retriever + NIM, or open-source alternatives (LangChain, LlamaIndex) with vLLM serving.
 
 **Sizing:** 1-2 GPU nodes for embedding + generation. Storage scales with document corpus (typically 100GB-1TB for enterprise knowledge base).
 

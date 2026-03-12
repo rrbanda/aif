@@ -78,9 +78,9 @@ export default function Chat({ viewMode }: { viewMode: ViewMode }) {
         },
         {
           title: "Architecture deep-dive",
-          message: "Walk me through the five-layer AI Factory architecture and how Red Hat and NVIDIA technologies map to each layer",
+          message: "Walk me through the five-layer AI Factory architecture and how Red Hat technologies and partner integrations map to each layer",
           onClick: () =>
-            handleSend("Walk me through the five-layer AI Factory architecture and how Red Hat and NVIDIA technologies map to each layer"),
+            handleSend("Walk me through the five-layer AI Factory architecture and how Red Hat technologies and partner integrations map to each layer"),
         },
       ];
 

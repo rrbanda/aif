@@ -90,7 +90,7 @@
 - Many jurisdictions require data to remain within national borders
 - Banking data often subject to multiple overlapping jurisdictions
 - Drives need for on-prem or sovereign cloud, not public cloud
-- Red Hat AI Factory with NVIDIA specifically addresses this with on-prem deployment
+- Red Hat AI Factory specifically addresses this with on-prem deployment
 
 ## Why This Matters for AI Factory Positioning
 
@@ -98,4 +98,4 @@
 2. **The gap between leaders and laggards is widening** — banks that invest in platform capabilities now will have a 2-3 year advantage
 3. **Regulatory pressure makes governance non-negotiable** — the AI Factory's governance gates directly address SR 11-7, DORA, and SOX
 4. **On-prem is not optional for regulated workloads** — Red Hat's hybrid cloud approach with NVIDIA is structurally advantaged for banking
-5. **Organizational transformation is harder than technology** — the AI Factory's organizational track (COE, Steering Committee, Bootcamps) addresses the real bottleneck
+5. **Organizational transformation is harder than technology** — the AI Factory's Operating Model (COE, Steering Committee, Bootcamps) addresses the real bottleneck

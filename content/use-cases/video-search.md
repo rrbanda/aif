@@ -2,7 +2,7 @@
 
 Video content is one of the largest and most underutilized data assets in enterprises. Security footage, training recordings, conference presentations, manufacturing process videos, and operational recordings contain valuable information locked in hours of unstructured content. AI-powered video search and summarization makes this content searchable, summarizable, and analyzable at scale.
 
-**NVIDIA VLM (Vision-Language Model) microservices** enable visual understanding — identifying objects, reading text, understanding scenes, and correlating visual content with natural language queries. Deployed on the Red Hat AI Factory production platform, these models process video streams and generate searchable indexes and summaries.
+**Vision-Language Model (VLM) microservices** enable visual understanding — identifying objects, reading text, understanding scenes, and correlating visual content with natural language queries. Deployed on the Red Hat AI Factory production platform, these models process video streams and generate searchable indexes and summaries.
 
 ## Capabilities
 
@@ -30,7 +30,7 @@ Video content is one of the largest and most underutilized data assets in enterp
 
 **Positioning:** Video search is a high-visibility, differentiated use case. Most competitors do not offer on-premises video AI at scale. Strong demo potential — visual results are compelling for executive audiences.
 
-**NVIDIA differentiation:** VLM microservices are NVIDIA-exclusive via NIM. No equivalent in AWS/Azure/Databricks ecosystem. This is a pure NVIDIA AI Enterprise value-add.
+**Partner technology:** VLM microservices are available via NVIDIA NIM (strongest current option). Open-source alternatives (LLaVA, Video-LLaMA) are emerging but less mature for enterprise workloads. Position based on customer's partner ecosystem.
 
 **Sizing:** GPU-intensive — recommend 2-4 GPU nodes for video processing pipeline. Storage requirements are significant (1TB+ for video archives).
 

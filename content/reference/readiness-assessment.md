@@ -55,7 +55,7 @@ This framework evaluates readiness across five dimensions and maps the results t
 - 1 AI Governance lead (compliance, bias monitoring, audit trail)
 - Executive sponsor with budget authority
 
-**If understaffed**: The program should include AI Bootcamps and Workshops (organizational track elements) and may need to start with a smaller scope (1-2 use cases) while building team capacity.
+**If understaffed**: The program should include AI Bootcamps and Workshops (Operating Model elements) and may need to start with a smaller scope (1-2 use cases) while building team capacity.
 
 ## Dimension 4: Infrastructure Readiness
 
@@ -121,7 +121,7 @@ Most organizations attempting an AI Factory operate at Level 0 or early Level 1.
 **Competitive intelligence:**
 - Customers who have already built on Databricks or SageMaker may score higher on data readiness but lower on infrastructure readiness for on-prem AI.
 - Customers with strong cloud ML practice need the "data sovereignty" and "competitive differentiation" arguments to justify on-prem AI Factory investment.
-- Readiness scores below Level 2 in organizational maturity are the strongest indicator of pilot failure. Prioritize organizational track investment.
+- Readiness scores below Level 2 in organizational maturity are the strongest indicator of pilot failure. Prioritize Operating Model investment.
 
 **Assessment delivery tips:**
 - Run assessment as a structured workshop, not a checklist survey

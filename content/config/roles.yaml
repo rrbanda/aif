@@ -85,6 +85,13 @@ roles:
     description: "Owns the business process that AI will enhance — defines success criteria, validates outcomes, approves process redesign"
     phases: [discovery, pilot-incubation, scale-adopt]
 
+  # --- Partner ---
+  - id: partner-engineer
+    title: "Partner Technical Engineer"
+    organization: partner
+    description: "Technical resource from hardware or software partner (e.g., NVIDIA SA, Intel AI specialist) — provides partner-specific enablement, driver validation, and optimization guidance"
+    phases: [platform-foundation, pilot-incubation, operationalize]
+
   # --- Joint ---
   - id: joint-change-lead
     title: "Change Management Lead"

@@ -26,14 +26,19 @@ sections:
         icon: cpu
         route: "/reference/technology-stack"
         source: "tech-stack"
+      - id: partner-ecosystem
+        title: "Partner Ecosystem"
+        icon: handshake
+        route: "/reference/partner-ecosystem"
+        source: "partners"
 
   - id: maturity-stages
-    title: "Maturity Stages"
+    title: "Platform Maturity"
     source: "phases"
     description: "Seven stages from discovery through continuous operations"
 
   - id: organizational-track
-    title: "Organizational Track"
+    title: "Operating Model"
     source: "organization"
     description: "Governance, expertise, skills, culture, and change management"
 

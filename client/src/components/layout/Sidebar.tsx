@@ -150,7 +150,7 @@ export default function Sidebar() {
             </NavExpandable>
 
             <NavExpandable
-              title="Technical Track"
+              title="Platform Maturity"
               groupId="technical-track"
               isExpanded={location.pathname.startsWith("/phases")}
               isActive={location.pathname.startsWith("/phases")}
@@ -173,7 +173,7 @@ export default function Sidebar() {
             </NavExpandable>
 
             <NavExpandable
-              title="Organizational Track"
+              title="Operating Model"
               groupId="organizational-track"
               isExpanded={location.pathname.startsWith("/organization")}
               isActive={location.pathname.startsWith("/organization")}

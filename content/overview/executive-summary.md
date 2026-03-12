@@ -14,15 +14,15 @@ Three barriers stall the move from pilot to production:
 
 88% of AI pilots fail to reach production (IDC/Lenovo 2024). Meanwhile, AI infrastructure is the largest technology buildout in history. The cost of AI inference falls roughly 10x every 12 months. Organizations that build the factory now capture this cost curve. Organizations that wait will buy it from competitors.
 
-## Red Hat AI Factory with NVIDIA
+## Red Hat AI Factory
 
-Red Hat AI Factory with NVIDIA is a unified, co-engineered foundation for building, deploying, and scaling production-ready AI. It combines Red Hat AI Enterprise and NVIDIA AI Enterprise to deliver an end-to-end solution optimized for NVIDIA hardware environments.
+Red Hat AI Factory is Red Hat's methodology and technology platform for helping enterprises build, deploy, and scale production-ready AI. It combines Red Hat's proven enterprise platform with a curated partner ecosystem to deliver an end-to-end solution that works with the customer's chosen infrastructure.
 
-**Accelerate Time to Value** — Accelerate AI from concept to production with simplified workflows, validated blueprints, and optimized models. Ready-to-deploy NIM microservices, Red Hat AI quickstarts, and NVIDIA AI Blueprints.
+**Accelerate Time to Value** — Move from concept to production AI in weeks with validated architectures, pre-built quickstarts, and optimized models. Ready-to-deploy inference microservices and Red Hat AI quickstarts.
 
-**Increase Operational Efficiency** — Maximize efficiency and cut costs with optimized AI inference, scalable serving, and intelligent resource management. Simplified node-based pricing.
+**Increase Operational Efficiency** — Maximize GPU utilization, reduce serving costs, and scale AI workloads with intelligent resource management. Centralized policy, governance, and visibility.
 
-**Mitigate Risk** — Secure, compliant, and trustworthy AI factory with Red Hat and NVIDIA across your hybrid cloud. Extended-lifetime production branches, secure supply chain, and STIG-hardened containers.
+**Mitigate Risk** — Enterprise-grade security, compliance, and governance across the entire AI lifecycle. Extended-lifetime production branches, secure supply chain, and STIG-hardened containers.
 
 ## Expected Outcomes
 
@@ -39,38 +39,43 @@ Within approximately 12 months of initial deployment:
 
 ## How It Works
 
-The factory matures through seven stages — from discovery through continuous operations. Each stage builds on the previous, with value gates ensuring measurable progress before advancing. Two parallel tracks run simultaneously: the **Technical Track** (platform, data, models, operations) and the **Organizational Track** (governance, expertise, skills, culture, change management).
+The factory matures through seven stages — from discovery through continuous operations. Each stage builds on the previous, with value gates ensuring measurable progress before advancing. Two parallel tracks run simultaneously: **Platform Maturity** (staged capability building across platform, data, models, and operations) and the **Operating Model** (governance, expertise, skills, culture, and change management).
 
-The platform is built on a five-layer architecture co-engineered by Red Hat and NVIDIA: infrastructure and hardware, platform availability, development and deployment capabilities, APIs, and intelligent applications spanning predictive ML, generative AI, agentic AI, and physical AI.
+The platform is built on a five-layer architecture: infrastructure and hardware, platform availability, development and deployment capabilities, optimized models, and intelligent applications spanning predictive ML, generative AI, agentic AI, and physical AI. Red Hat technology forms the core at every layer, with partner integrations providing hardware acceleration and specialized capabilities.
 
 ## Red Hat Services Starter Package
 
-Deploy AI Factory confidently with support from our experts:
+Deploy AI Factory confidently with expert guidance at every stage:
 
 | Phase | Timeline | Milestone |
 |-------|----------|-----------|
 | **Red Hat Consulting** | Weeks 1-8 | Architecture design & deployment |
-| **Use Case Onboarding** | Weeks 9-12+ | One use case onboarding |
+| **Use Case Onboarding** | Weeks 9-12+ | One use case in production |
 | **Red Hat Training** | Ongoing | GenAIOps Enablement (AI501) |
 | **Technical Account Management** | Ongoing | Day 2 advisory & scaling |
 
-Red Hat Consulting accesses NVIDIA expertise directly, ensuring the full co-engineered stack is deployed optimally.
+Red Hat Consulting coordinates with technology partners to ensure the platform is deployed optimally for the customer's chosen hardware.
 
-## Platform Availability
+## Partner Ecosystem
 
-| Platform | Status |
-|----------|--------|
-| NVIDIA Blackwell systems | Available now |
-| NVIDIA Rubin platform | H2 2026 (Day 0 support) |
+The AI Factory works with the customer's preferred technology partners:
+
+| Partner Type | Examples |
+|-------------|----------|
+| GPU/Accelerators | NVIDIA, Intel, AMD |
+| Server OEMs | Dell, HPE, Lenovo, Cisco, Supermicro |
+| AI Software | Partner inference runtimes, model frameworks, optimization tools |
+
+The methodology remains constant regardless of partner selection.
 
 ## Next Steps
 
-1. Review the datasheet
-2. Engage your preferred OEM, VAR, or Distributor in the Red Hat and NVIDIA network
-3. Accelerate with Red Hat Services
-4. Start with your use cases
+1. Engage Red Hat for an AI Factory Discovery & Assessment
+2. Identify your first 2-3 high-value use cases
+3. Assess infrastructure readiness with your preferred technology partners
+4. Start with Red Hat Services Starter Package
 
-The platform is ready. The services are ready. When do you start?
+The methodology is proven. The technology is ready. The partners are aligned. When do you start?
 
 <!-- audience: internal -->
 
@@ -78,7 +83,7 @@ The platform is ready. The services are ready. When do you start?
 
 **Typical deal construct:**
 - Red Hat AI Enterprise subscription per GPU node
-- NVIDIA AI Enterprise subscription per GPU node
+- Partner software subscriptions as applicable (e.g., NVIDIA AI Enterprise per GPU node)
 - Red Hat Consulting engagement (Services Starter Package)
 - Optional: Red Hat Training (AI501), Red Hat Learning Subscription
 - Optional: Technical Account Management (ongoing)
@@ -88,13 +93,13 @@ The platform is ready. The services are ready. When do you start?
 - Year 2+: Subscription renewal + expansion (new GPU nodes, new teams, new use cases)
 - Land-and-expand: Start with 3 GPU nodes, grow to 24+ as use cases prove value
 
-**Competitive timing:**
-- AWS re:Invent and Azure Ignite announcements create urgency
-- NVIDIA GTC announcements (Blackwell, Rubin) create platform refresh opportunities
-- Customer budget cycles: Q4 planning for next-year AI investments
+**Partner strategy:**
+- Identify customer's existing hardware and partner relationships
+- Lead with the partner that matches their infrastructure
+- Red Hat AI Enterprise is the constant; partner software is the variable
 
 **Qualification criteria:**
-- Customer has or is procuring NVIDIA GPUs
+- Customer has or is procuring GPU accelerators (any vendor)
 - Customer runs or is evaluating OpenShift
 - Customer has AI use cases requiring on-premises data processing
 - Customer has regulatory requirements preventing cloud-only AI

@@ -1,6 +1,6 @@
 # Agentic AI
 
-Agentic AI represents the next inflection point in enterprise AI. Where traditional models respond to prompts, agents **reason, plan, and act** — autonomously executing multi-step workflows using enterprise tools and data. NVIDIA CEO Jensen Huang calls this "a multi-trillion-dollar opportunity." OpenAI CEO Sam Altman describes agents as "virtual co-workers that materially change the output of companies." The AI Factory is where enterprises build, govern, and operate these agents.
+Agentic AI represents the next inflection point in enterprise AI. Where traditional models respond to prompts, agents **reason, plan, and act** — autonomously executing multi-step workflows using enterprise tools and data. Industry leaders describe this as a multi-trillion-dollar opportunity — agents as "virtual co-workers that materially change the output of companies." The AI Factory is where enterprises build, govern, and operate these agents.
 
 ## What Makes an Agent Different
 
@@ -49,7 +49,7 @@ The AI Factory Agent in this platform demonstrates the concept: an agent built o
 **Positioning Gartner data:** Over 40% of agentic AI projects may be canceled by 2027 due to escalating costs, unclear business value, and inadequate risk controls. AI Factory governance framework directly addresses these failure modes — tool permissions, action boundaries, audit trails, and safety levels.
 
 **Agent deployment requirements:**
-- Foundation model for reasoning: 1-2 GPU nodes (Nemotron or Granite 34B via NIM)
+- Foundation model for reasoning: 1-2 GPU nodes (Granite 34B or partner models via production inference server)
 - Fine-tuned models for domain expertise: Additional GPU allocation
 - MCP server infrastructure: CPU-based, runs on existing OpenShift
 - Governance middleware: Built into OpenShift AI model serving

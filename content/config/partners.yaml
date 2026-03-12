@@ -1,0 +1,158 @@
+partners:
+  - id: nvidia
+    name: "NVIDIA"
+    type: "hardware-software"
+    tier: "premier"
+    icon: "gpu"
+    website: "https://www.nvidia.com/en-us/data-center/"
+    description: "End-to-end AI computing platform — from GPUs and networking hardware to inference software and AI frameworks"
+    contributions:
+      - layer: infrastructure
+        products:
+          - "Blackwell GPUs (B200) — current generation, highest throughput"
+          - "Rubin platform — next generation (H2 2026)"
+          - "H100 GPUs — widely deployed, proven at scale"
+          - "ConnectX-7 / BlueField-3 — high-performance networking"
+          - "DGX, HGX, RTX Pro server platforms"
+      - layer: ai-platform
+        products:
+          - "AI Enterprise — optimized containers, certified drivers, enterprise support"
+          - "NIM — pre-optimized inference microservices"
+          - "NeMo — framework for training and fine-tuning generative AI"
+          - "Triton Inference Server — multi-framework model serving"
+          - "GPU Operator — automated driver and runtime management on Kubernetes"
+          - "Network Operator — RDMA, GPUDirect Storage configuration"
+      - layer: models
+        products:
+          - "Nemotron — family of optimized enterprise LLMs"
+          - "NeMo Retriever — document ingestion and embedding for RAG"
+          - "AI Blueprints — pre-built industry-specific use case templates"
+    industries: ["all"]
+    key_differentiator: "Deepest GPU hardware-software co-optimization from silicon to inference runtime"
+
+  - id: intel
+    name: "Intel"
+    type: "hardware-software"
+    tier: "premier"
+    icon: "cpu"
+    website: "https://www.intel.com/content/www/us/en/products/details/processors/ai-accelerators.html"
+    description: "Broad compute portfolio from data center accelerators to edge inference, with open software ecosystem"
+    contributions:
+      - layer: infrastructure
+        products:
+          - "Gaudi 3 AI accelerators — high-performance training and inference"
+          - "Xeon Scalable processors — general-purpose AI inference"
+          - "GPU Max Series — HPC and AI workloads"
+      - layer: ai-platform
+        products:
+          - "OpenVINO — cross-platform inference optimization toolkit"
+          - "Intel Extension for PyTorch — performance optimizations for Intel hardware"
+          - "oneAPI — unified programming model across architectures"
+      - layer: models
+        products:
+          - "Intel Optimized Models — pre-tuned models for Intel hardware"
+    industries: ["all"]
+    key_differentiator: "Open software ecosystem with broad hardware choice from accelerators to CPUs"
+
+  - id: dell
+    name: "Dell Technologies"
+    type: "infrastructure"
+    tier: "premier"
+    icon: "server"
+    website: "https://www.dell.com/en-us/dt/solutions/artificial-intelligence/index.htm"
+    description: "Enterprise-grade AI infrastructure — validated server platforms, storage, and integrated solutions"
+    contributions:
+      - layer: infrastructure
+        products:
+          - "PowerEdge XE9680 — purpose-built AI server supporting up to 8 GPUs"
+          - "PowerEdge R760xa — versatile AI-ready rack server"
+          - "PowerScale — high-performance storage for AI data pipelines"
+          - "APEX Cloud Platform for Red Hat OpenShift — turnkey hybrid cloud"
+    industries: ["all"]
+    key_differentiator: "End-to-end validated AI infrastructure with global enterprise support and financing"
+
+  - id: hpe
+    name: "Hewlett Packard Enterprise"
+    type: "infrastructure"
+    tier: "premier"
+    icon: "server"
+    website: "https://www.hpe.com/us/en/solutions/artificial-intelligence.html"
+    description: "AI infrastructure and services — from edge to supercomputer scale with GreenLake consumption model"
+    contributions:
+      - layer: infrastructure
+        products:
+          - "ProLiant DL380a — AI-optimized server platform"
+          - "Cray EX — supercomputer-class AI training"
+          - "GreenLake for AI — consumption-based AI infrastructure"
+          - "Alletra Storage — high-throughput data platform for ML pipelines"
+    industries: ["all"]
+    key_differentiator: "Supercomputer-to-edge AI infrastructure with flexible consumption model"
+
+  - id: lenovo
+    name: "Lenovo"
+    type: "infrastructure"
+    tier: "premier"
+    icon: "server"
+    website: "https://www.lenovo.com/us/en/servers-storage/ai/"
+    description: "AI-optimized server platforms with liquid cooling innovation and global deployment services"
+    contributions:
+      - layer: infrastructure
+        products:
+          - "ThinkSystem SR675 V3 — AI-optimized GPU server"
+          - "ThinkSystem SR670 V2 — proven AI training platform"
+          - "Neptune liquid cooling — energy-efficient GPU cooling at scale"
+          - "TruScale — infrastructure-as-a-service model"
+    industries: ["all"]
+    key_differentiator: "Industry-leading liquid cooling technology for dense GPU deployments"
+
+  - id: cisco
+    name: "Cisco"
+    type: "infrastructure"
+    tier: "premier"
+    icon: "network"
+    website: "https://www.cisco.com/site/us/en/solutions/ai/index.html"
+    description: "AI networking and compute infrastructure — high-performance fabrics connecting GPU clusters"
+    contributions:
+      - layer: infrastructure
+        products:
+          - "UCS X-Series — modular AI-ready compute"
+          - "Nexus 9000 — high-bandwidth AI cluster networking"
+          - "Silicon One — AI-optimized network silicon"
+          - "Intersight — infrastructure management and observability"
+    industries: ["all"]
+    key_differentiator: "Network fabric expertise ensuring GPU clusters communicate at maximum throughput"
+
+  - id: supermicro
+    name: "Supermicro"
+    type: "infrastructure"
+    tier: "standard"
+    icon: "server"
+    website: "https://www.supermicro.com/en/solutions/artificial-intelligence"
+    description: "Flexible, high-density GPU server platforms optimized for AI workloads"
+    contributions:
+      - layer: infrastructure
+        products:
+          - "GPU SuperServer — up to 8-GPU liquid-cooled AI platforms"
+          - "SuperBlade — high-density inference servers"
+          - "Building Block Solutions — customizable AI infrastructure"
+    industries: ["all"]
+    key_differentiator: "Fastest time-to-market for new GPU platforms with flexible configuration options"
+
+  - id: amd
+    name: "AMD"
+    type: "hardware-software"
+    tier: "premier"
+    icon: "cpu"
+    website: "https://www.amd.com/en/solutions/ai.html"
+    description: "High-performance AI accelerators and CPUs with open software ecosystem"
+    contributions:
+      - layer: infrastructure
+        products:
+          - "Instinct MI300X — AI accelerator with high-bandwidth memory"
+          - "EPYC processors — data center CPUs optimized for AI workloads"
+      - layer: ai-platform
+        products:
+          - "ROCm — open-source GPU computing platform"
+          - "Vitis AI — inference optimization for AMD hardware"
+    industries: ["all"]
+    key_differentiator: "Open-source GPU computing stack with competitive price-performance"

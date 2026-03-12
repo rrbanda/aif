@@ -4,8 +4,7 @@
 
 - **OpenShift** — Red Hat's enterprise Kubernetes platform. The foundation the AI Factory runs on.
 - **OpenShift AI** — AI/ML lifecycle management platform built on OpenShift. Provides model serving, training orchestration, and experiment tracking.
-- **GPU Operator** — NVIDIA operator that automates GPU driver deployment and health monitoring on Kubernetes nodes.
-- **Network Operator** — NVIDIA operator for configuring high-performance networking for GPU workloads.
+- **GPU Operator** — Kubernetes operator that automates GPU driver deployment and health monitoring on cluster nodes. Available from NVIDIA, Intel, and AMD.
 - **GitOps** — Infrastructure and application management approach where Git is the source of truth.
 
 ## AI & ML
@@ -13,8 +12,6 @@
 - **AI Hub** — Centralized model catalog within OpenShift AI providing approved models, performance insights, and deployment guidance.
 - **MaaS (Model-as-a-Service)** — Serving approved models via API endpoints with rate limiting, quotas, and SLA policies.
 - **Gen AI Studio** — Prompt playground within OpenShift AI with MCP tool integration for model experimentation.
-- **NIM (NVIDIA Inference Microservices)** — Pre-optimized inference containers for running AI models at scale.
-- **NeMo** — NVIDIA's framework for building and customizing generative AI models.
 - **llm-d** — Kubernetes-native distributed inference routing for LLM workloads. Selects models by cost, latency, and SLA.
 - **InstructLab** — Red Hat's open-source tool for model alignment and fine-tuning using synthetic data generation.
 - **vLLM** — High-throughput LLM inference engine used by the Red Hat AI Inference Server.
@@ -48,17 +45,24 @@
 - **AML** — Anti-Money Laundering. Regulations requiring detection and reporting of suspicious financial activity.
 - **PII** — Personally Identifiable Information. Data that can identify an individual.
 
+## Partner Technologies
+
+- **NIM (NVIDIA Inference Microservices)** — Pre-optimized inference containers for running AI models at scale. NVIDIA partner technology.
+- **NeMo** — NVIDIA's framework for building and customizing generative AI models.
+- **OpenVINO** — Intel's cross-platform inference optimization toolkit.
+- **ROCm** — AMD's open-source GPU computing platform.
+- **Triton Inference Server** — NVIDIA's multi-framework model serving engine.
+
 
 <!-- audience: internal -->
 
 ## Internal: Key Terms for Customer Conversations
 
 - **Red Hat AI Enterprise** — The umbrella product name. Includes OpenShift AI and related AI platform capabilities. Use this name in customer-facing materials.
-- **Red Hat AI Factory with NVIDIA** — The joint solution name. Always include "with NVIDIA" — this is a co-engineered offering, not a Red Hat solo product.
+- **Red Hat AI Factory** — Red Hat's methodology and platform for helping enterprises build production AI. The framework is partner-neutral; partner technologies are configured per engagement.
 - **Services Starter Package** — The consulting + training + TAM bundle. Always position as part of the initial engagement.
-- **Node-based pricing** — Simplified pricing model. Per-GPU-node subscription for both Red Hat AI Enterprise and NVIDIA AI Enterprise.
-- **Day 0 support** — New NVIDIA hardware platforms are supported from launch day. Currently: Blackwell. Coming: Rubin (H2 2026).
-- **NIM** — NVIDIA Inference Microservices. Pre-optimized containers for model serving. Key NVIDIA value-add.
+- **Node-based pricing** — Simplified pricing model. Per-GPU-node subscription for Red Hat AI Enterprise. Partner software subscriptions (e.g., NVIDIA AI Enterprise) priced separately per partner.
 - **llm-d** — Kubernetes-native distributed inference routing. Red Hat contribution to intelligent multi-model serving.
+- **Partner ecosystem** — NVIDIA, Intel, AMD, Dell, HPE, Lenovo, Cisco, Supermicro. Position based on customer's existing infrastructure and acquisition plans.
 
 <!-- /audience -->

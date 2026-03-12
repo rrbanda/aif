@@ -33,7 +33,7 @@ Scale & Adopt expands the factory beyond the initial pilot teams to become the o
 - Customer requesting GPU capacity expansion → upsell GPU nodes + subscriptions
 - New business units asking for platform access → onboarding consulting engagement
 - Customer evaluating agentic AI or multi-model serving → advanced consulting + additional NIM subscriptions
-- Customer benchmarking GPU alternatives → defensive engagement, reinforce NVIDIA partnership value
+- Customer benchmarking GPU alternatives → consultative engagement, ensure platform supports chosen hardware
 
 **Common objections and responses:**
 - *"Shadow AI teams are deploying outside the factory"* — This is a governance and adoption problem. Position the factory as enabling (self-service, Gen AI Studio) rather than controlling. Evangelism and COP activities are critical at this stage.

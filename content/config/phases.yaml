@@ -114,7 +114,7 @@ phases:
         description: "OpenShift AI Operator installed on existing OpenShift cluster with multi-tenant project structure"
         audience: [customer, internal]
       - title: "GPU nodes enabled"
-        description: "NVIDIA GPU Operator and Network Operator deployed; GPU resources available for scheduling"
+        description: "GPU/accelerator vendor operators deployed; GPU resources available for scheduling"
         audience: [customer, internal]
       - title: "AI Hub configured"
         description: "Central model catalog with approved models, performance insights, and deployment guidance"

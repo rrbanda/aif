@@ -1,5 +1,5 @@
 products:
-  # --- Red Hat AI Enterprise ---
+  # --- Red Hat Technology (Core Platform) ---
   - id: red-hat-ai-enterprise
     name: "Red Hat AI Enterprise"
     vendor: red-hat
@@ -65,57 +65,7 @@ products:
     role: "Infrastructure automation — provisioning, configuration, and orchestration of AI infrastructure"
     url: "https://www.redhat.com/en/technologies/management/ansible"
 
-  # --- NVIDIA AI Enterprise ---
-  - id: nvidia-ai-enterprise
-    name: "NVIDIA AI Enterprise"
-    vendor: nvidia
-    layer: ai-platform
-    role: "GPU-optimized AI software suite — accelerate and optimize production AI deployments"
-    capabilities:
-      - "Accelerated Time to Value — ready-to-deploy NIM microservices and blueprints"
-      - "Run AI Workloads at Scale — maximize GPU utilization, increase throughput, centralize governance"
-      - "Build with Confidence — extended-lifetime production branches, secure supply chain, STIG-hardened containers"
-    features:
-      - "NIM — pre-optimized inference microservices"
-      - "NeMo — generative AI model building and customization"
-      - "NeMo Retriever — document ingestion for enterprise RAG"
-      - "TensorRT-LLM — optimized inference runtime"
-      - "GPU Operator — automated driver deployment and health monitoring"
-      - "Network Operator — networking configuration and optimization"
-      - "DOCA microservices — zero-trust architecture and AI runtime security"
-      - "Dynamo — inference optimization framework"
-
-  - id: nvidia-gpus
-    name: "NVIDIA GPUs"
-    vendor: nvidia
-    layer: compute
-    role: "Accelerated computing for training and inference"
-    options:
-      - "NVIDIA Blackwell (B200) — current generation, highest throughput (Available Now)"
-      - "NVIDIA Rubin — next generation platform (H2 2026, Day 0 support)"
-      - "NVIDIA H100 — widely deployed, proven at scale"
-      - "NVIDIA RTX PRO 6000 — inference-optimized workstations"
-
-  - id: nvidia-networking
-    name: "NVIDIA Networking"
-    vendor: nvidia
-    layer: networking
-    role: "High-performance and programmable networking for AI workloads"
-    options:
-      - "SpectrumX — high-performance AI networking"
-      - "BlueField — programmable DPU for zero-trust networking"
-
-  # --- Server & Rack Scale Platforms ---
-  - id: nvidia-platforms
-    name: "NVIDIA Server and Rack Scale Platforms"
-    vendor: nvidia
-    layer: hardware
-    role: "Purpose-built infrastructure for AI workloads at rack scale"
-    options:
-      - "DGX — purpose-built AI supercomputing systems"
-      - "HGX — GPU baseboard for OEM server integration"
-      - "RTX Pro — professional AI workstations"
-
+  # --- Foundation Models ---
   - id: granite
     name: "IBM Granite Models"
     vendor: ibm
@@ -126,44 +76,67 @@ products:
       - "Granite 8B — balanced performance"
       - "Granite 34B — highest capability"
 
-  - id: nemotron
-    name: "NVIDIA Nemotron"
-    vendor: nvidia
-    layer: models
-    role: "High-performance open models available via NIM microservices"
+  # --- Partner Technology (configured per engagement) ---
+  # Partner-specific products are detailed in partners.yaml.
+  # The following entries represent commonly deployed partner technologies
+  # that integrate with the Red Hat AI Factory platform.
 
-  # --- Hardware Partners (OEMs) ---
-  - id: dell-poweredge
-    name: "Dell PowerEdge XE"
-    vendor: dell
-    layer: hardware
-    role: "AI-optimized servers supporting up to 8 NVIDIA GPUs per node"
+  - id: gpu-accelerators
+    name: "GPU / AI Accelerators"
+    vendor: partner
+    layer: compute
+    role: "Accelerated computing for training and inference — supported hardware includes NVIDIA, Intel, and AMD accelerators"
+    partner_options:
+      - partner: nvidia
+        products: ["Blackwell B200", "H100", "RTX Pro 6000"]
+      - partner: intel
+        products: ["Gaudi 3", "GPU Max Series"]
+      - partner: amd
+        products: ["Instinct MI300X"]
 
-  - id: lenovo-thinksystem
-    name: "Lenovo ThinkSystem"
-    vendor: lenovo
-    layer: hardware
-    role: "Inferencing-optimized server infrastructure"
+  - id: ai-software-suite
+    name: "Partner AI Software"
+    vendor: partner
+    layer: ai-platform
+    role: "GPU-optimized AI software suites from hardware partners — inference runtimes, model frameworks, and developer tools"
+    partner_options:
+      - partner: nvidia
+        products: ["AI Enterprise", "NIM microservices", "NeMo", "TensorRT-LLM", "GPU Operator", "Network Operator"]
+      - partner: intel
+        products: ["OpenVINO", "Intel Extension for PyTorch", "oneAPI"]
+      - partner: amd
+        products: ["ROCm", "Vitis AI"]
 
-  - id: cisco-ucs
-    name: "Cisco UCS"
-    vendor: cisco
+  - id: server-platforms
+    name: "Server & Infrastructure Platforms"
+    vendor: partner
     layer: hardware
-    role: "Enterprise-grade compute with integrated networking and security"
+    role: "Enterprise server platforms validated for AI Factory deployments from OEM partners"
+    partner_options:
+      - partner: dell
+        products: ["PowerEdge XE9680", "PowerEdge R760xa"]
+      - partner: hpe
+        products: ["ProLiant DL380a", "Cray EX"]
+      - partner: lenovo
+        products: ["ThinkSystem SR675 V3", "ThinkSystem SR670 V2"]
+      - partner: cisco
+        products: ["UCS X-Series"]
+      - partner: supermicro
+        products: ["GPU SuperServer"]
 
 quickstarts:
   - id: enterprise-rag
     title: "Enterprise RAG"
-    description: "Ground AI in proprietary data with NVIDIA NeMo Retriever for document ingestion and Nemotron for generation. Red Hat provides orchestration and governance control."
+    description: "Ground AI in proprietary data using document ingestion, embedding, and retrieval pipelines orchestrated on the Red Hat platform with enterprise governance."
   - id: video-search
     title: "Video Search & Summarization"
-    description: "NVIDIA VLM microservices for video search, summarization, and analysis at scale. Deployed on the Red Hat production platform."
+    description: "Search, summarize, and analyze video at scale using vision-language model microservices deployed on the Red Hat production platform."
   - id: model-as-a-service
     title: "Model as a Service"
     description: "Models as shared resources via API endpoints. Central hosting for teams and applications with orchestration, multi-tenancy, and API management."
   - id: enterprise-research
     title: "Enterprise Research"
-    description: "Connects agents to enterprise data. Distill materials with efficiency and precision. Faster token generation and data ingestion with improved semantic accuracy."
+    description: "Connects AI agents to enterprise data. Distill materials with efficiency and precision. Faster token generation and data ingestion with improved semantic accuracy."
   - id: it-self-service
     title: "IT Self-Service"
     description: "AI-powered IT helpdesk and self-service automation for common operational requests."
@@ -177,7 +150,7 @@ quickstarts:
 layers:
   - id: infrastructure
     title: "Layer 1: Infrastructure & Hardware"
-    description: "Server and rack scale platforms — DGX, HGX, RTX Pro, SpectrumX, BlueField"
+    description: "Server platforms, GPU accelerators, networking — from technology partners validated for the AI Factory"
     order: 0
     includes: [hardware, os, networking]
   - id: platform-availability
@@ -192,7 +165,7 @@ layers:
     includes: [ai-platform, inference, automation]
   - id: models
     title: "Layer 4: Optimized Models & Quickstarts"
-    description: "Optimized validated open models, Red Hat AI quickstarts, NVIDIA AI Blueprints"
+    description: "Optimized validated open models, Red Hat AI quickstarts, and partner blueprints"
     order: 3
   - id: applications
     title: "Layer 5: Intelligent Applications"
