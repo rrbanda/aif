@@ -7,10 +7,10 @@ resources:
 images:
   - name: web
     newName: ghcr.io/rrbanda/aif/web
-    newTag: sha-64fed88
+    newTag: sha-9da6ed6
   - name: agent
     newName: ghcr.io/rrbanda/aif/agent
-    newTag: sha-64fed88
+    newTag: sha-9da6ed6
 
 patches:
   - target:
