@@ -3,9 +3,28 @@ import path from "path";
 import { config } from "../config.js";
 
 export async function readContent(contentPath: string): Promise<string> {
+  const resolved = await resolveContentPath(contentPath);
+  await assertWithinContentDir(resolved);
+  return fs.readFile(resolved, "utf-8");
+}
+
+async function resolveContentPath(contentPath: string): Promise<string> {
   const fullPath = path.join(config.contentDir, contentPath);
-  await assertWithinContentDir(fullPath);
-  return fs.readFile(fullPath, "utf-8");
+  try {
+    await fs.access(fullPath);
+    return fullPath;
+  } catch {
+    if (!contentPath.endsWith(".md")) {
+      const withMd = fullPath + ".md";
+      try {
+        await fs.access(withMd);
+        return withMd;
+      } catch {
+        // fall through
+      }
+    }
+    return fullPath;
+  }
 }
 
 export async function writeContent(
@@ -26,6 +45,14 @@ export async function contentExists(contentPath: string): Promise<boolean> {
     await fs.access(fullPath);
     return true;
   } catch {
+    if (!contentPath.endsWith(".md")) {
+      try {
+        await fs.access(fullPath + ".md");
+        return true;
+      } catch {
+        return false;
+      }
+    }
     return false;
   }
 }
