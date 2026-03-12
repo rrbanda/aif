@@ -175,30 +175,28 @@ export default function Sidebar({ viewMode }: { viewMode: ViewMode }) {
               })}
             </NavExpandable>
 
-            {viewMode === "internal" && (
-              <NavExpandable
-                title="Operating Model"
-                groupId="organizational-track"
-                isExpanded={location.pathname.startsWith("/organization")}
-                isActive={location.pathname.startsWith("/organization")}
-              >
-                {orgElements.map((el) => {
-                  const Icon = getIcon(el.icon);
-                  return (
-                    <NavItem
-                      key={el.id}
-                      groupId="organizational-track"
-                      itemId={`/organization/${el.id}`}
-                      to={`/organization/${el.id}`}
-                      isActive={isPathActive(`/organization/${el.id}`)}
-                      icon={<Icon />}
-                    >
-                      {el.title}
-                    </NavItem>
-                  );
-                })}
-              </NavExpandable>
-            )}
+            <NavExpandable
+              title={viewMode === "customer" ? "Organizational Readiness" : "Operating Model"}
+              groupId="organizational-track"
+              isExpanded={location.pathname.startsWith("/organization")}
+              isActive={location.pathname.startsWith("/organization")}
+            >
+              {orgElements.map((el) => {
+                const Icon = getIcon(el.icon);
+                return (
+                  <NavItem
+                    key={el.id}
+                    groupId="organizational-track"
+                    itemId={`/organization/${el.id}`}
+                    to={`/organization/${el.id}`}
+                    isActive={isPathActive(`/organization/${el.id}`)}
+                    icon={<Icon />}
+                  >
+                    {el.title}
+                  </NavItem>
+                );
+              })}
+            </NavExpandable>
 
             <NavExpandable
               title="Reference"

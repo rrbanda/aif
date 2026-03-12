@@ -69,7 +69,7 @@ function AppRoutes() {
           />
           <Route
             path="organization/:id"
-            element={viewMode === "internal" ? <OrgView viewMode={viewMode} /> : <Navigate to="/" replace />}
+            element={<OrgView viewMode={viewMode} />}
           />
           <Route path="use-cases" element={<UseCases viewMode={viewMode} />} />
           <Route

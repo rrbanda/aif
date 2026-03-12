@@ -9,22 +9,28 @@ export async function readContent(contentPath: string): Promise<string> {
 }
 
 async function resolveContentPath(contentPath: string): Promise<string> {
-  const fullPath = path.join(config.contentDir, contentPath);
-  try {
-    await fs.access(fullPath);
-    return fullPath;
-  } catch {
-    if (!contentPath.endsWith(".md")) {
-      const withMd = fullPath + ".md";
-      try {
-        await fs.access(withMd);
-        return withMd;
-      } catch {
-        // fall through
-      }
-    }
-    return fullPath;
+  const candidates: string[] = [contentPath];
+  if (!contentPath.endsWith(".md")) {
+    candidates.push(contentPath + ".md");
   }
+  if (!contentPath.includes("/")) {
+    candidates.push("reference/" + contentPath);
+    if (!contentPath.endsWith(".md")) {
+      candidates.push("reference/" + contentPath + ".md");
+    }
+  }
+
+  for (const candidate of candidates) {
+    const full = path.join(config.contentDir, candidate);
+    try {
+      await fs.access(full);
+      return full;
+    } catch {
+      // try next
+    }
+  }
+
+  return path.join(config.contentDir, contentPath);
 }
 
 export async function writeContent(
@@ -40,19 +46,11 @@ export async function writeContent(
 }
 
 export async function contentExists(contentPath: string): Promise<boolean> {
-  const fullPath = path.join(config.contentDir, contentPath);
+  const resolved = await resolveContentPath(contentPath);
   try {
-    await fs.access(fullPath);
+    await fs.access(resolved);
     return true;
   } catch {
-    if (!contentPath.endsWith(".md")) {
-      try {
-        await fs.access(fullPath + ".md");
-        return true;
-      } catch {
-        return false;
-      }
-    }
     return false;
   }
 }
