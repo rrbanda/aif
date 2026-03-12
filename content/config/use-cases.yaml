@@ -16,7 +16,7 @@ use_cases:
     content_file: "use-cases/fraud-detection.md"
     summary: "On-premises fraud detection model trained on proprietary transaction data with real-time inference serving sub-200ms SLAs"
     why_ai_factory: "Transaction data is highly sensitive (PII, PCI DSS). Cannot send to third-party APIs. Requires on-prem model training and inference within the organization's data perimeter."
-    factory_output: predictions
+    factory_output: decision-intelligence
     key_metrics:
       - "False positive rate reduction"
       - "Detection accuracy (precision/recall)"
@@ -41,7 +41,7 @@ use_cases:
     content_file: "use-cases/regulatory-reporting.md"
     summary: "AI-powered analysis and extraction from regulatory documents, compliance checking, and automated report generation"
     why_ai_factory: "Regulatory documents contain confidential information. RAG over internal knowledge bases requires on-prem vector databases and model serving. Audit trail for every AI-assisted decision is mandatory."
-    factory_output: process-automation
+    factory_output: intelligent-automation
     key_metrics:
       - "Document processing time reduction"
       - "Extraction accuracy"
@@ -64,7 +64,7 @@ use_cases:
     content_file: "use-cases/domain-models.md"
     summary: "Fine-tuned foundation models specialized for credit risk, equities research, AML pattern detection, and regulatory interpretation"
     why_ai_factory: "Generic models lack financial domain knowledge. Fine-tuning on proprietary data creates competitive advantage that the organization owns. Models trained on sensitive data cannot leave the organization's infrastructure."
-    factory_output: pattern-recognition
+    factory_output: operational-intelligence
     key_metrics:
       - "Domain task accuracy vs generic model baseline"
       - "Fine-tuning time and cost"
@@ -115,7 +115,7 @@ use_cases:
     content_file: "use-cases/clinical-ai.md"
     summary: "Clinical NLP, documentation AI, risk stratification, and quality surveillance — trained on institutional data within HIPAA-compliant on-premises infrastructure"
     why_ai_factory: "Patient health information (PHI) cannot leave the organization's controlled environment. Clinical AI models must be trained and served entirely within the health system's infrastructure."
-    factory_output: predictions
+    factory_output: decision-intelligence
     key_metrics:
       - "Documentation time reduction per clinician"
       - "NLP extraction accuracy (F1 score)"
@@ -140,7 +140,7 @@ use_cases:
     content_file: "use-cases/predictive-maintenance.md"
     summary: "AI-driven equipment health monitoring, failure prediction, and remaining useful life estimation — using proprietary sensor data and maintenance records"
     why_ai_factory: "Proprietary failure signatures from institutional equipment data create competitive advantage. Edge and on-premises inference required for manufacturing environments with limited connectivity."
-    factory_output: predictions
+    factory_output: operational-intelligence
     key_metrics:
       - "Unplanned downtime reduction"
       - "Mean time between failures improvement"
@@ -165,7 +165,7 @@ use_cases:
     content_file: "use-cases/grid-optimization.md"
     summary: "Demand forecasting, renewable integration, anomaly detection, and real-time grid dispatch optimization for utilities"
     why_ai_factory: "Grid operational data is critical infrastructure (NERC CIP). AI models must train and serve on-premises within the utility's security perimeter. Real-time optimization requires GPU-accelerated inference."
-    factory_output: predictions
+    factory_output: decision-intelligence
     key_metrics:
       - "Demand forecast accuracy (MAPE)"
       - "Renewable curtailment reduction"
@@ -189,7 +189,7 @@ use_cases:
     content_file: "use-cases/aiops.md"
     summary: "AI-driven infrastructure monitoring, anomaly detection, incident classification, root cause analysis, and capacity forecasting"
     why_ai_factory: "The AI Factory itself generates operational data that can be used to optimize its own performance. AIOps is both a product the factory produces and a capability that keeps the factory running efficiently."
-    factory_output: predictions
+    factory_output: operational-intelligence
     dual_role:
       as_product: "AI models for IT operations — anomaly detection on platform metrics, predictive capacity planning, automated incident classification"
       for_factory: "Monitoring the factory itself — model drift detection, pipeline health prediction, GPU utilization optimization, automated retraining triggers"
@@ -218,7 +218,7 @@ use_cases:
     content_file: "use-cases/enterprise-rag.md"
     summary: "Ground AI in proprietary data with document ingestion, embedding, and retrieval pipelines — on-premises RAG with Red Hat orchestration and governance"
     why_ai_factory: "Enterprise documents contain confidential information. RAG over internal knowledge bases requires on-premises vector databases, embedding models, and LLM serving — all within the organization's data perimeter."
-    factory_output: agentic-ai
+    factory_output: intelligent-automation
     quickstart: true
     key_metrics:
       - "Retrieval accuracy (recall@k)"
@@ -242,7 +242,7 @@ use_cases:
     content_file: "use-cases/video-search.md"
     summary: "Search, summarize, and analyze video at scale using vision-language model microservices deployed on the Red Hat production platform"
     why_ai_factory: "Video content contains sensitive organizational data — security footage, training recordings, operational procedures. Processing must stay on-premises."
-    factory_output: pattern-recognition
+    factory_output: operational-intelligence
     quickstart: true
     key_metrics:
       - "Search relevance (mAP)"
@@ -267,7 +267,7 @@ use_cases:
     content_file: "use-cases/model-as-a-service.md"
     summary: "Models as shared resources via API endpoints with central hosting, orchestration, multi-tenancy, and API management"
     why_ai_factory: "Centralizing model serving eliminates redundant deployments, reduces GPU waste, and provides consistent governance, rate limiting, and cost tracking across teams."
-    factory_output: predictions
+    factory_output: intelligent-automation
     quickstart: true
     key_metrics:
       - "API latency (p50, p95, p99)"

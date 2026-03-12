@@ -41,19 +41,19 @@ This shift matters because:
 
 ## What the Factory Produces
 
-The factory produces four categories of AI capability spanning predictive ML, generative AI, agentic AI, and physical AI:
+The factory produces four classes of business outcome:
 
-**Predictions** — Real-time scoring and forecasting. Fraud probability, credit risk, demand forecasting, clinical risk stratification, equipment failure prediction.
+**Decision Intelligence** — AI-augmented decisions at enterprise speed. Risk scoring, demand forecasting, pricing optimization, credit adjudication, and resource allocation with full explainability.
 
-**Pattern Recognition** — Detecting what humans miss at scale. Anomalous transactions, regulatory changes, disease markers, equipment degradation signatures, grid anomalies.
+**Operational Intelligence** — Continuous detection of what humans miss. Anomalous transactions, compliance drift, equipment degradation signals, and emerging patterns surfaced before they become incidents.
 
-**Process Automation** — End-to-end intelligent workflows. Automated compliance checking, document routing, clinical documentation, predictive maintenance scheduling.
+**Intelligent Automation** — End-to-end workflows that combine AI reasoning with enterprise systems. Document processing, regulatory checking, predictive maintenance, and clinical documentation at scale.
 
-**Agentic AI** — Autonomous agents that reason, plan, and act using enterprise tools and data. Multi-step workflows with governance guardrails — the next inflection point in enterprise AI.
+**Agentic AI** — Autonomous AI agents that reason, plan, and act using enterprise tools and data to execute multi-step workflows with governance guardrails and human oversight.
 
-## Two Tracks
+## Two Dimensions
 
-The AI Factory runs on two parallel tracks:
+The AI Factory operates across two parallel dimensions:
 
 **Platform Maturity** — Seven maturity stages from discovery through continuous operations. Each stage builds on the previous, with value gates ensuring measurable progress before advancing. The platform, data pipelines, models, governance, and production operations grow together.
 

@@ -77,21 +77,21 @@ program:
         - "Full audit trails for regulated industries"
 
   factory_outputs:
-    - id: predictions
-      title: "Predictions"
-      description: "Real-time scoring and forecasting — fraud probability, credit risk, market signals, demand forecasting, clinical risk stratification"
+    - id: decision-intelligence
+      title: "Decision Intelligence"
+      description: "AI-augmented decisions at enterprise speed — risk scoring, demand forecasting, pricing optimization, credit adjudication, and resource allocation with full explainability"
       icon: trending-up
-    - id: pattern-recognition
-      title: "Pattern Recognition"
-      description: "Detecting what humans miss — anomalous transactions, regulatory changes, equipment degradation, disease markers, grid anomalies"
+    - id: operational-intelligence
+      title: "Operational Intelligence"
+      description: "Continuous detection of what humans miss — anomalous transactions, compliance drift, equipment degradation signals, and emerging patterns surfaced before they become incidents"
       icon: scan
-    - id: process-automation
-      title: "Process Automation"
-      description: "End-to-end intelligent workflows — compliance checking, document routing, agentic operations, predictive maintenance, clinical documentation"
+    - id: intelligent-automation
+      title: "Intelligent Automation"
+      description: "End-to-end workflows that combine AI reasoning with enterprise systems — document processing, regulatory checking, predictive maintenance, and clinical documentation at scale"
       icon: bot
     - id: agentic-ai
       title: "Agentic AI"
-      description: "Autonomous AI agents that reason, plan, and act — using enterprise tools and data to execute multi-step workflows with governance guardrails"
+      description: "Autonomous AI agents that reason, plan, and act — using enterprise tools and data to execute multi-step workflows with governance guardrails and human oversight"
       icon: brain
 
   tracks:
