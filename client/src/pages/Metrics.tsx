@@ -1,6 +1,6 @@
 import { useConfig } from "../hooks/useConfig";
 import ApplicationsPage from "../components/layout/ApplicationsPage";
-import type { MetricsConfig } from "../types";
+import type { MetricsConfig, ViewMode } from "../types";
 import {
   Card,
   CardTitle,
@@ -13,13 +13,17 @@ import {
   GalleryItem,
 } from "@patternfly/react-core";
 
-export default function Metrics() {
+export default function Metrics({ viewMode }: { viewMode: ViewMode }) {
   const { data, loading, error } = useConfig<MetricsConfig>("metrics");
 
   return (
     <ApplicationsPage
       title="Success Metrics"
-      description="How we measure the AI Factory is working"
+      description={
+        viewMode === "customer"
+          ? "How we measure your AI Factory is delivering value"
+          : "How we measure the AI Factory is working — use for value gate assessments"
+      }
       loading={loading}
       error={error}
       empty={

@@ -58,36 +58,38 @@ function AppRoutes() {
         >
           <Route index element={<Overview viewMode={viewMode} />} />
           <Route path="chat" element={<Chat viewMode={viewMode} />} />
-          <Route path="assessment" element={<AssessmentDashboard viewMode={viewMode} />} />
-          <Route path="models" element={<ModelRegistry viewMode={viewMode} />} />
-          <Route path="portfolio" element={<Portfolio viewMode={viewMode} />} />
-          <Route path="monitoring" element={<MonitoringDashboard viewMode={viewMode} />} />
-          <Route path="roadmap" element={<Roadmap viewMode={viewMode} />} />
+          <Route path="assessment" element={viewMode === "internal" ? <AssessmentDashboard viewMode={viewMode} /> : <Navigate to="/" replace />} />
+          <Route path="models" element={viewMode === "internal" ? <ModelRegistry viewMode={viewMode} /> : <Navigate to="/" replace />} />
+          <Route path="portfolio" element={viewMode === "internal" ? <Portfolio viewMode={viewMode} /> : <Navigate to="/" replace />} />
+          <Route path="monitoring" element={viewMode === "internal" ? <MonitoringDashboard viewMode={viewMode} /> : <Navigate to="/" replace />} />
+          <Route path="roadmap" element={viewMode === "internal" ? <Roadmap viewMode={viewMode} /> : <Navigate to="/" replace />} />
           <Route
             path="phases/:id"
             element={<PhaseView viewMode={viewMode} />}
           />
           <Route
             path="organization/:id"
-            element={<OrgView viewMode={viewMode} />}
+            element={viewMode === "internal" ? <OrgView viewMode={viewMode} /> : <Navigate to="/" replace />}
           />
-          <Route path="use-cases" element={<UseCases />} />
+          <Route path="use-cases" element={<UseCases viewMode={viewMode} />} />
           <Route
             path="use-cases/:id"
             element={<UseCaseView viewMode={viewMode} />}
           />
-          <Route path="reference/tech-stack" element={<TechStack />} />
-          <Route path="reference/roles" element={<Roles />} />
-          <Route path="reference/metrics" element={<Metrics />} />
+          <Route path="reference/tech-stack" element={<TechStack viewMode={viewMode} />} />
+          <Route path="reference/roles" element={<Roles viewMode={viewMode} />} />
+          <Route path="reference/metrics" element={<Metrics viewMode={viewMode} />} />
           <Route
             path="reference/*"
             element={<ContentPage viewMode={viewMode} />}
           />
-          <Route path="admin" element={<AdminLayout />}>
-            <Route index element={<ContentFiles />} />
-            <Route path="config" element={<ConfigEditor />} />
-            <Route path="history" element={<GitHistory />} />
-          </Route>
+          {viewMode === "internal" && (
+            <Route path="admin" element={<AdminLayout />}>
+              <Route index element={<ContentFiles />} />
+              <Route path="config" element={<ConfigEditor />} />
+              <Route path="history" element={<GitHistory />} />
+            </Route>
+          )}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       ) : (

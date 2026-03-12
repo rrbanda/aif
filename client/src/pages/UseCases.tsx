@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useConfig } from "../hooks/useConfig";
 import ApplicationsPage from "../components/layout/ApplicationsPage";
-import type { UseCasesConfig } from "../types";
+import type { UseCasesConfig, ViewMode } from "../types";
 import {
   Card,
   CardTitle,
@@ -11,13 +11,17 @@ import {
   Badge,
 } from "@patternfly/react-core";
 
-export default function UseCases() {
+export default function UseCases({ viewMode }: { viewMode: ViewMode }) {
   const { data, loading, error } = useConfig<UseCasesConfig>("use-cases");
 
   return (
     <ApplicationsPage
       title="Use Cases"
-      description="Real-world examples of what the AI Factory produces"
+      description={
+        viewMode === "customer"
+          ? "Explore what the AI Factory can build for your organization"
+          : "Use cases for qualification, scoping, and delivery planning"
+      }
       loading={loading}
       error={error}
       empty={!loading && !error && !data?.use_cases?.length ? "No use cases found" : null}

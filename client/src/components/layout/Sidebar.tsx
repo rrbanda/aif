@@ -89,69 +89,71 @@ export default function Sidebar({ viewMode }: { viewMode: ViewMode }) {
               AI Assistant
             </NavItem>
 
-            <NavExpandable
-              title="Dashboards"
-              groupId="dashboards"
-              isExpanded={
-                ["/assessment", "/models", "/portfolio", "/monitoring", "/roadmap"].some(
-                  (p) => location.pathname.startsWith(p)
-                )
-              }
-              isActive={
-                ["/assessment", "/models", "/portfolio", "/monitoring", "/roadmap"].some(
-                  (p) => location.pathname.startsWith(p)
-                )
-              }
-            >
-              <NavItem
+            {viewMode === "internal" && (
+              <NavExpandable
+                title="Dashboards"
                 groupId="dashboards"
-                itemId="/assessment"
-                to="/assessment"
-                isActive={isPathActive("/assessment")}
-                icon={<ClipboardCheckIcon />}
+                isExpanded={
+                  ["/assessment", "/models", "/portfolio", "/monitoring", "/roadmap"].some(
+                    (p) => location.pathname.startsWith(p)
+                  )
+                }
+                isActive={
+                  ["/assessment", "/models", "/portfolio", "/monitoring", "/roadmap"].some(
+                    (p) => location.pathname.startsWith(p)
+                  )
+                }
               >
-                Assessment
-              </NavItem>
-              <NavItem
-                groupId="dashboards"
-                itemId="/models"
-                to="/models"
-                isActive={isPathActive("/models")}
-                icon={<DatabaseIcon />}
-              >
-                Model Registry
-              </NavItem>
-              <NavItem
-                groupId="dashboards"
-                itemId="/portfolio"
-                to="/portfolio"
-                isActive={isPathActive("/portfolio")}
-                icon={<FolderOpenIcon />}
-              >
-                Use Case Portfolio
-              </NavItem>
-              <NavItem
-                groupId="dashboards"
-                itemId="/monitoring"
-                to="/monitoring"
-                isActive={isPathActive("/monitoring")}
-                icon={<HeartbeatIcon />}
-              >
-                Model Monitoring
-              </NavItem>
-              <NavItem
-                groupId="dashboards"
-                itemId="/roadmap"
-                to="/roadmap"
-                isActive={isPathActive("/roadmap")}
-                icon={<MapMarkedAltIcon />}
-              >
-                Program Roadmap
-              </NavItem>
-            </NavExpandable>
+                <NavItem
+                  groupId="dashboards"
+                  itemId="/assessment"
+                  to="/assessment"
+                  isActive={isPathActive("/assessment")}
+                  icon={<ClipboardCheckIcon />}
+                >
+                  Assessment
+                </NavItem>
+                <NavItem
+                  groupId="dashboards"
+                  itemId="/models"
+                  to="/models"
+                  isActive={isPathActive("/models")}
+                  icon={<DatabaseIcon />}
+                >
+                  Model Registry
+                </NavItem>
+                <NavItem
+                  groupId="dashboards"
+                  itemId="/portfolio"
+                  to="/portfolio"
+                  isActive={isPathActive("/portfolio")}
+                  icon={<FolderOpenIcon />}
+                >
+                  Use Case Portfolio
+                </NavItem>
+                <NavItem
+                  groupId="dashboards"
+                  itemId="/monitoring"
+                  to="/monitoring"
+                  isActive={isPathActive("/monitoring")}
+                  icon={<HeartbeatIcon />}
+                >
+                  Model Monitoring
+                </NavItem>
+                <NavItem
+                  groupId="dashboards"
+                  itemId="/roadmap"
+                  to="/roadmap"
+                  isActive={isPathActive("/roadmap")}
+                  icon={<MapMarkedAltIcon />}
+                >
+                  Program Roadmap
+                </NavItem>
+              </NavExpandable>
+            )}
 
             <NavExpandable
-              title="Platform Maturity"
+              title={viewMode === "customer" ? "Your Journey" : "Platform Maturity"}
               groupId="technical-track"
               isExpanded={location.pathname.startsWith("/phases")}
               isActive={location.pathname.startsWith("/phases")}
@@ -173,28 +175,30 @@ export default function Sidebar({ viewMode }: { viewMode: ViewMode }) {
               })}
             </NavExpandable>
 
-            <NavExpandable
-              title="Operating Model"
-              groupId="organizational-track"
-              isExpanded={location.pathname.startsWith("/organization")}
-              isActive={location.pathname.startsWith("/organization")}
-            >
-              {orgElements.map((el) => {
-                const Icon = getIcon(el.icon);
-                return (
-                  <NavItem
-                    key={el.id}
-                    groupId="organizational-track"
-                    itemId={`/organization/${el.id}`}
-                    to={`/organization/${el.id}`}
-                    isActive={isPathActive(`/organization/${el.id}`)}
-                    icon={<Icon />}
-                  >
-                    {el.title}
-                  </NavItem>
-                );
-              })}
-            </NavExpandable>
+            {viewMode === "internal" && (
+              <NavExpandable
+                title="Operating Model"
+                groupId="organizational-track"
+                isExpanded={location.pathname.startsWith("/organization")}
+                isActive={location.pathname.startsWith("/organization")}
+              >
+                {orgElements.map((el) => {
+                  const Icon = getIcon(el.icon);
+                  return (
+                    <NavItem
+                      key={el.id}
+                      groupId="organizational-track"
+                      itemId={`/organization/${el.id}`}
+                      to={`/organization/${el.id}`}
+                      isActive={isPathActive(`/organization/${el.id}`)}
+                      icon={<Icon />}
+                    >
+                      {el.title}
+                    </NavItem>
+                  );
+                })}
+              </NavExpandable>
+            )}
 
             <NavExpandable
               title="Reference"

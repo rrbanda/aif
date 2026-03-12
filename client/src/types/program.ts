@@ -21,7 +21,10 @@ export interface HeroStat {
 
 export interface Hero {
   headline: string;
+  headline_internal?: string;
   subheadline?: string;
+  subheadline_internal?: string;
+  description_internal?: string;
   stats?: HeroStat[];
 }
 
@@ -79,6 +82,29 @@ export interface CustomerJourney {
   stages: CustomerJourneyStage[];
 }
 
+export interface CustomerValueProp {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface CompetitiveEntry {
+  competitor: string;
+  differentiator: string;
+}
+
+export interface DealQualification {
+  title: string;
+  ideal_customer_profile: string[];
+  disqualifiers: string[];
+  competitive_positioning?: CompetitiveEntry[];
+}
+
+export interface NextSteps {
+  steps: string[];
+  call_to_action?: string;
+}
+
 export interface Program {
   name: string;
   tagline: string;
@@ -91,14 +117,17 @@ export interface Program {
   customer_placeholder: string;
   hero?: Hero;
   value_propositions?: ValueProposition[];
+  value_propositions_customer?: CustomerValueProp[];
   benefit_pillars?: BenefitPillar[];
   factory_outputs: FactoryOutput[];
   tracks: Track[];
   customer_journey?: CustomerJourney;
+  customer_why?: WhyAIFactory[];
   why_ai_factory?: WhyAIFactory[];
+  deal_qualification?: DealQualification;
   platform_availability?: PlatformAvailability;
   services_package?: ServicesPackage;
-  next_steps?: string[];
+  next_steps?: NextSteps;
   principles: string[];
 }
 

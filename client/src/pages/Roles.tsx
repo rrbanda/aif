@@ -1,6 +1,6 @@
 import { useConfig } from "../hooks/useConfig";
 import ApplicationsPage from "../components/layout/ApplicationsPage";
-import type { RolesConfig } from "../types";
+import type { RolesConfig, ViewMode } from "../types";
 import {
   Card,
   CardTitle,
@@ -18,7 +18,7 @@ const ORG_LABELS: Record<string, string> = {
 
 const ORG_ORDER = ["red-hat", "customer", "joint"] as const;
 
-export default function Roles() {
+export default function Roles({ viewMode }: { viewMode: ViewMode }) {
   const { data, loading, error } = useConfig<RolesConfig>("roles");
 
   const groups = data?.roles
@@ -31,7 +31,11 @@ export default function Roles() {
   return (
     <ApplicationsPage
       title="Roles & Responsibilities"
-      description="Key roles across the AI Factory program"
+      description={
+        viewMode === "customer"
+          ? "Your team and Red Hat's team — who does what at each stage"
+          : "Key roles across the AI Factory program — use for resource planning and SOW scoping"
+      }
       loading={loading}
       error={error}
       empty={

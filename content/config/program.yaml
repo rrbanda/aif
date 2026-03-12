@@ -17,7 +17,13 @@ program:
 
   hero:
     headline: "From experimentation to repeatable business outcomes"
+    headline_internal: "Qualify, position, and deliver AI Factory engagements"
     subheadline: "Red Hat AI Factory — the methodology and platform for enterprise AI at scale"
+    subheadline_internal: "Red Hat AI Factory — your playbook for enterprise AI deals"
+    description_internal: >
+      This is your field enablement hub for the Red Hat AI Factory program. Use it to qualify
+      opportunities, scope engagements, position against competitors, and track delivery across
+      your customer portfolio.
     stats:
       - value: "88%"
         label: "of AI pilots fail to reach production"
@@ -47,6 +53,20 @@ program:
       description: "Red Hat Consulting, Training, and Technical Account Management embedded into every stage — enabling your teams to operate independently, not creating permanent dependencies."
       icon: users
 
+  value_propositions_customer:
+    - id: methodology
+      title: "A proven 7-stage methodology"
+      description: "Not a blank canvas — a structured path from discovery to production AI, refined across enterprise engagements in financial services, healthcare, manufacturing, and energy."
+    - id: platform
+      title: "Enterprise-grade AI platform"
+      description: "Red Hat OpenShift AI provides model lifecycle management, governed inference, and hybrid cloud deployment — your team operates it, Red Hat enables you."
+    - id: partners
+      title: "Works with your infrastructure"
+      description: "Certified integrations with NVIDIA, Intel, AMD, Dell, HPE, Lenovo, and Cisco — the AI Factory works with the hardware you already have or plan to acquire."
+    - id: expertise
+      title: "Hands-on Red Hat expertise"
+      description: "Red Hat Consulting, Training, and Technical Account Management embedded into every stage — building your team's capability, not creating permanent dependencies."
+
   benefit_pillars:
     - id: accelerate-value
       title: "Accelerate Time to Value"
@@ -75,6 +95,38 @@ program:
         - "Secure supply chain and STIG-hardened containers"
         - "Comprehensive governance gates at every stage"
         - "Full audit trails for regulated industries"
+
+  customer_why:
+    - title: "Your data stays yours"
+      description: "Models train and serve on infrastructure you own and control — your proprietary data never leaves your perimeter."
+    - title: "Build a competitive moat"
+      description: "Models fine-tuned on your proprietary data create capabilities your competitors cannot replicate by subscribing to the same API."
+    - title: "Production-grade from day one"
+      description: "Sub-200ms inference SLAs, automated governance gates, and full audit trails — built for regulated industries from the start."
+    - title: "Scale beyond the pilot"
+      description: "Move from an isolated experiment to a repeatable factory that any business unit can use to build, deploy, and monitor AI."
+
+  deal_qualification:
+    title: "When to propose the AI Factory"
+    ideal_customer_profile:
+      - "Running OpenShift or evaluating Kubernetes for AI workloads"
+      - "Multiple AI use cases beyond a single POC — pipeline of 3+ opportunities"
+      - "Executive sponsor with budget authority for AI platform investment"
+      - "Regulated industry or strong data sovereignty requirements"
+      - "Existing GPU infrastructure or planned procurement"
+      - "Dissatisfied with hyperscaler lock-in or SaaS AI limitations"
+    disqualifiers:
+      - "Single use case with no expansion roadmap"
+      - "No OpenShift footprint and no interest in Kubernetes"
+      - "Fully committed to a hyperscaler AI stack (SageMaker, Vertex AI)"
+      - "No executive sponsorship for platform-level AI investment"
+    competitive_positioning:
+      - competitor: "AWS SageMaker / Azure ML"
+        differentiator: "Hybrid/on-prem deployment, data sovereignty, no cloud lock-in, runs on customer infrastructure"
+      - competitor: "Databricks"
+        differentiator: "Full-stack platform (not just data + ML), production inference at scale, Kubernetes-native, partner hardware ecosystem"
+      - competitor: "DIY Kubernetes + OSS"
+        differentiator: "Methodology and value gates prevent pilot-to-nowhere, enterprise support, certified partner integrations, governance built-in"
 
   factory_outputs:
     - id: decision-intelligence

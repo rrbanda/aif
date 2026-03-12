@@ -1,6 +1,6 @@
 import { useConfig } from "../hooks/useConfig";
 import ApplicationsPage from "../components/layout/ApplicationsPage";
-import type { TechStackConfig } from "../types";
+import type { TechStackConfig, ViewMode } from "../types";
 import {
   Card,
   CardTitle,
@@ -11,7 +11,7 @@ import {
   ListItem,
 } from "@patternfly/react-core";
 
-export default function TechStack() {
+export default function TechStack({ viewMode }: { viewMode: ViewMode }) {
   const { data, loading, error } = useConfig<TechStackConfig>("tech-stack");
 
   const layers = data?.layers
@@ -21,7 +21,11 @@ export default function TechStack() {
   return (
     <ApplicationsPage
       title="Technology Stack"
-      description="Products and platforms that compose the AI Factory"
+      description={
+        viewMode === "customer"
+          ? "The technology foundation of your AI Factory"
+          : "Products and platforms that compose the AI Factory — use for architecture design and BOMs"
+      }
       loading={loading}
       error={error}
       empty={
