@@ -66,6 +66,19 @@ export interface PlatformAvailability {
   upcoming: { name: string; status: string; note?: string };
 }
 
+export interface CustomerJourneyStage {
+  id: string;
+  title: string;
+  timeline: string;
+  description: string;
+}
+
+export interface CustomerJourney {
+  title: string;
+  description: string;
+  stages: CustomerJourneyStage[];
+}
+
 export interface Program {
   name: string;
   tagline: string;
@@ -81,6 +94,7 @@ export interface Program {
   benefit_pillars?: BenefitPillar[];
   factory_outputs: FactoryOutput[];
   tracks: Track[];
+  customer_journey?: CustomerJourney;
   why_ai_factory?: WhyAIFactory[];
   platform_availability?: PlatformAvailability;
   services_package?: ServicesPackage;

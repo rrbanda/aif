@@ -36,6 +36,12 @@ phases:
       - title: "Program charter"
         description: "Agreed scope, timeline, success criteria, governance model, and resource commitments"
         audience: [customer, internal]
+      - title: "Executive readiness briefing"
+        description: "Summary presentation for executive sponsors — current state assessment, recommended path, investment requirements, and expected timeline"
+        audience: [customer]
+      - title: "Deal qualification scorecard"
+        description: "Internal assessment of deal viability — readiness levels, budget signals, competitive landscape, and recommended engagement model"
+        audience: [internal]
     decision_points:
       - "Which use cases warrant factory-level investment vs lighter-touch solutions?"
       - "What GPU/compute capacity is needed for the pilot stage?"
@@ -128,6 +134,12 @@ phases:
       - title: "GitOps pipeline"
         description: "Infrastructure-as-Code for platform management using GitOps approach"
         audience: [customer, internal]
+      - title: "Architecture decision record"
+        description: "Documented design decisions for GPU topology, networking, storage, and security posture — your reference for future capacity planning"
+        audience: [customer]
+      - title: "GPU sizing and expansion model"
+        description: "Internal sizing guidance — current allocation, growth projections, and expansion trigger criteria for GPU node procurement"
+        audience: [internal]
     decision_points:
       - "Which foundation models to include in the AI Hub catalog?"
       - "How to allocate GPU resources across teams — shared pool or dedicated quotas?"
@@ -176,6 +188,12 @@ phases:
       - title: "Lessons learned report"
         description: "Technical and organizational lessons from pilot stage — what worked, what to change"
         audience: [customer, internal]
+      - title: "Scaling business case"
+        description: "Data-driven justification for expanding the factory — pilot ROI, projected value from additional use cases, and investment requirements"
+        audience: [customer]
+      - title: "Expansion proposal"
+        description: "Internal proposal for GPU node expansion, additional subscriptions, and extended consulting engagement based on pilot results"
+        audience: [internal]
     decision_points:
       - "Which pilots met KPIs and should scale? Which should be iterated or dropped?"
       - "What additional governance gates are needed before production?"

@@ -11,8 +11,12 @@ export interface MarkdownRendererProps {
 }
 
 function filterAudienceBlocks(content: string, viewMode: ViewMode): string {
-  if (viewMode === "internal") return content;
-
+  if (viewMode === "internal") {
+    return content.replace(
+      /<!-- audience: customer -->([\s\S]*?)<!-- \/audience -->/g,
+      ""
+    );
+  }
   return content.replace(
     /<!-- audience: internal -->([\s\S]*?)<!-- \/audience -->/g,
     ""

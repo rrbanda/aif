@@ -24,6 +24,44 @@ Video content is one of the largest and most underutilized data assets in enterp
 
 **Energy** — Infrastructure inspection video analysis. Drone footage processing for asset monitoring. Safety compliance verification.
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| Search relevance | 80-90% mAP | Mean Average Precision for natural language queries against video content |
+| Summarization accuracy | 85-95% | Human evaluation of generated summaries against video content |
+| Processing throughput | 10-50 videos/hour | Number of videos processed through the ingestion and indexing pipeline |
+| Investigation time | 60-80% reduction | Time to find specific moments or events in video archives |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your organization:
+- Has large video archives (security footage, training recordings, operational videos, conference presentations) that are underutilized
+- Currently relies on manual review to find information in video content
+- Cannot send video content to cloud services due to security classification, patient privacy, or proprietary content concerns
+- Has specific search needs: safety compliance monitoring, incident investigation, training content indexing, or operational process analysis
+- Has GPU infrastructure available — video processing is compute-intensive
+
+## Your Data Requirements
+
+- **Video archive**: Target video corpus for ingestion and indexing (storage scales: 1TB+ typical for enterprise video archives)
+- **Search queries**: Representative natural language queries that users would ask against video content (for evaluation)
+- **Metadata**: Any existing metadata (timestamps, titles, categories, tags) to supplement AI-generated indexes
+- **Storage infrastructure**: High-throughput storage for video files and generated embeddings/indexes
+
+## Implementation Timeline
+
+| Stage | Duration | What Happens |
+|-------|----------|-------------|
+| Video ingestion pipeline | 2-3 weeks | Video processing, frame extraction, VLM embedding generation |
+| Search index and API | 2-3 weeks | Vector store for video embeddings, semantic search API, relevance tuning |
+| Summarization and analysis | 2-3 weeks | Automated summary generation, scene classification, temporal search |
+| User testing and rollout | 1-2 weeks | Target user community validation, feedback iteration, production deployment |
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

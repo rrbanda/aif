@@ -17,6 +17,36 @@ AI Bootcamps are intensive, role-specific training programs that build practical
 Run bootcamps as quarterly cohorts aligned with platform foundation and pilot phases. Combine Red Hat instructor-led training with customer-specific labs (e.g., internal data, use case scenarios). Hands-on exercises are essential; lecture alone does not build competence.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+Bootcamps are not one-time events — they are a recurring capability that scales with the factory.
+
+**Your responsibilities:**
+- Identify participants by role: ML engineers, data scientists, platform engineers, business stakeholders
+- Allocate 1-5 days per participant depending on track (ML engineers need the most depth)
+- Provide access to the live AI Factory platform for hands-on labs (training on a separate environment is less effective)
+- Schedule bootcamps quarterly, aligned with new team onboarding and platform releases
+- Track completion and certification as inputs to team readiness assessment
+
+**Recommended training paths:**
+
+| Role | Duration | Focus Areas |
+|------|----------|-------------|
+| ML Engineers | 5 days | OpenShift AI, model serving, fine-tuning, MLOps, model registry |
+| Data Scientists | 3 days | Experiment tracking, fine-tuning, evaluation, Gen AI Studio |
+| Platform Engineers | 3 days | GPU Operator, cluster sizing, observability, GitOps, capacity planning |
+| Business Stakeholders | 1 day | AI capabilities overview, use case framing, reading model evaluations |
+
+**Maturity indicators:**
+- All team members complete relevant bootcamp track before working on the platform
+- Bootcamp content is updated to reflect current platform capabilities and lessons learned
+- Post-bootcamp assessment shows 80%+ competency in core skills
+- Bootcamps are delivered internally (not dependent on external trainers) by Stage 5
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

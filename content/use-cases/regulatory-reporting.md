@@ -8,6 +8,44 @@ Regulatory reporting and document analysis span a broad set of AI capabilities: 
 
 **Audit trails** are mandatory. Every AI-assisted decision — extraction result, compliance flag, suggested edit — must be logged with model version, input hash, and timestamp. Regulators and internal audit require traceability: what did the model recommend, what did the human decide, and can we reproduce the analysis? Design the pipeline for auditability from the start; retrofitting is costly.
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| Document processing time | 50-70% reduction | Hours per reporting cycle, measured pre/post deployment |
+| Compliance check coverage | 80%+ automated | Percentage of checks automated vs. manual review |
+| Extraction accuracy | 92-97% F1 score | Precision and recall on structured field extraction from unstructured documents |
+| Hours saved per cycle | 200-500 hours | Analyst hours redirected from manual extraction to review and exception handling |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your organization:
+- Submits regular regulatory reports (quarterly, annual) that require extracting data from multiple source documents
+- Maintains internal policy libraries, regulatory guidance, and prior submission archives
+- Has compliance teams spending significant hours on manual document review and cross-referencing
+- Operates under regulatory frameworks (Basel III, Dodd-Frank, PCI DSS, HIPAA, SOX) that require audit trails
+- Cannot send regulatory documents or internal policies to external cloud services
+
+## Your Data Requirements
+
+- **Document corpus**: Internal policies, regulatory guidance, prior submissions, and interpretive memos (typically 1,000-50,000 documents)
+- **Regulatory rules**: Structured rule sets for compliance checking (field requirements, calculation formulas, disclosure standards)
+- **Document access**: Permissions to ingest from document management systems (SharePoint, Confluence, regulatory databases)
+- **Ground truth**: Labeled extraction examples for training and evaluation (100-500 annotated documents per document type)
+
+## Implementation Timeline
+
+| Stage | Duration | What Happens |
+|-------|----------|-------------|
+| Document ingestion pipeline | 3-4 weeks | Connect source systems, build chunking and embedding pipelines |
+| RAG and extraction model setup | 3-4 weeks | Vector store deployment, model fine-tuning for domain terminology |
+| Compliance checking automation | 3-4 weeks | Rule engine integration, automated validation workflows |
+| User acceptance and rollout | 2-3 weeks | Compliance team validation, audit trail verification, production deployment |
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

@@ -19,6 +19,34 @@ CoE members consult with delivery teams on architecture, model selection, pipeli
 The CoE works with security and compliance teams to translate policy into technical requirements. PII handling, model explainability, audit logging, and access controls must be baked into standards. In financial services, this coordination is non-negotiable.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+The CoE is a permanent function, not a project team. Plan for it to grow as the factory scales.
+
+**Minimum viable CoE (3-5 people):**
+- Lead ML architect — owns standards, reference architectures, and model catalog
+- 1-2 ML engineers — maintain shared pipelines, evaluation frameworks, and templates
+- Security/compliance liaison — translates policy into technical requirements
+- Business liaison (part-time) — ensures CoE priorities align with business needs
+
+**Your responsibilities:**
+- Publish and maintain platform standards (approved models, tooling, patterns)
+- Curate the model catalog with evaluation criteria and deployment guidance
+- Provide lightweight consulting to delivery teams (office hours, async channels)
+- Coordinate with security and compliance on PII handling, audit logging, access controls
+- Manage reusable assets: pipeline templates, evaluation frameworks, integration patterns
+
+**Maturity indicators:**
+- Teams consult the CoE before model selection (not after deployment)
+- Standards are treated as guardrails, not approval queues — teams are accelerated, not blocked
+- Reusable assets reduce time-to-deploy for new use cases by 30-50%
+- Model catalog is current with performance benchmarks and deployment guidance
+- CoE scales with the factory (1 CoE member per 10-15 data scientists is a common ratio)
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

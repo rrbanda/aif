@@ -18,6 +18,48 @@ Operate & Improve is the steady-state stage. The factory runs continuously; this
 
 **Support and partnership model** defines how Red Hat Technical Account Management and Support interact with the platform team. Establish escalation paths, regular check-ins, and proactive health reviews. Align support level with production criticality.
 
+<!-- audience: customer -->
+
+## Your Commitments
+
+Operate & Improve is the steady state. Your organization now owns and operates the factory; the focus shifts to sustained value delivery, continuous improvement, and strategic evolution.
+
+| Role | Time Commitment | Purpose |
+|------|----------------|---------|
+| **ML platform engineering team** | Ongoing (permanent function) | Platform health, upgrades, capacity management, incident response |
+| **AI Center of Excellence** | Ongoing | Standards evolution, model catalog maintenance, cross-team consulting |
+| **Steering Committee** | Quarterly reviews | Strategic direction, budget allocation, value realization assessment |
+| **FinOps / Finance** | Monthly | Cost tracking, GPU utilization optimization, chargeback reporting |
+| **Executive sponsor** | Quarterly reviews | Strategic alignment, budget decisions, organizational mandate |
+
+## What You Receive
+
+| Deliverable | What It Contains |
+|-------------|-----------------|
+| **AIOps monitoring** | AI-driven monitoring of the factory itself — model drift detection, pipeline health prediction, GPU utilization optimization |
+| **Quarterly value review package** | ROI analysis, adoption metrics, cost trends, and strategic recommendations presented to steering committee |
+| **Knowledge base and pattern library** | Reusable solutions: model architectures, pipeline templates, governance patterns, troubleshooting guides |
+| **Platform evolution roadmap** | Planned upgrades: new model types, tooling changes, hardware refresh cycles, security patches |
+| **Support and escalation framework** | Defined support tiers, escalation paths, SLAs, and proactive health review schedule |
+
+## Readiness Checklist
+
+Before entering Operate & Improve, confirm:
+
+- [ ] Multiple use cases are in production across multiple business units
+- [ ] MLOps pipelines are handling automated retraining, evaluation, and promotion
+- [ ] Governance gates are enforcing consistently across all production models
+- [ ] Adoption dashboard shows sustained and growing usage
+- [ ] Platform engineering team is self-sufficient for day-to-day operations
+- [ ] Steering committee is meeting regularly and receiving value reports
+- [ ] Support model (TAM, vendor support, internal SRE) is defined and operational
+
+## What to Expect
+
+The factory is now a core enterprise capability. Expect ongoing investment in platform evolution (hardware refresh cycles, new model architectures, OpenShift version upgrades) and organizational maturation (new team onboarding, skills development, governance refinement). The cost of AI inference falls roughly 10x every 12 months — organizations that own their factory infrastructure capture this cost curve directly rather than paying cloud markup. Quarterly value reviews are the mechanism for demonstrating sustained ROI and securing continued investment.
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

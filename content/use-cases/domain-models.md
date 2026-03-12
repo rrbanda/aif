@@ -12,6 +12,44 @@ Generic foundation models — trained on broad internet and book corpora — und
 
 **Model reuse** across teams amplifies ROI. A credit risk model fine-tuned for underwriting may serve collections, portfolio management, and stress testing. A clinical NLP model may support documentation, coding, and quality reporting. Design fine-tuning pipelines for modularity and reuse.
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| Domain task accuracy | 15-40% over generic models | Task-specific benchmarks (credit scoring AUC, NLP F1 score, classification accuracy) |
+| Model reuse across teams | 3-5 consuming teams per model | Number of downstream applications using the fine-tuned model via MaaS |
+| Time to deploy new domain capability | 4-6 weeks (vs. 3-6 months building from scratch) | Calendar time from fine-tuning start to production serving |
+| Inference cost per query | 30-60% lower than large generic models | Cost comparison: fine-tuned 8B model vs. generic 70B+ model for equivalent accuracy |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your organization:
+- Has domain-specific language, terminology, or reasoning that generic models handle poorly
+- Possesses proprietary data that creates competitive advantage when embedded in models (credit histories, clinical records, equipment telemetry, regulatory interpretations)
+- Needs AI accuracy that exceeds what off-the-shelf models deliver for your specific tasks
+- Wants to own the model rather than depend on a third-party vendor's model and pricing
+- Cannot send proprietary training data to external fine-tuning services
+
+## Your Data Requirements
+
+- **Training data**: 1,000-50,000 labeled examples per domain task (quality matters more than volume)
+- **Domain documentation**: Policies, procedures, guidelines that encode institutional knowledge
+- **Evaluation benchmarks**: Gold-standard test sets with human-validated labels for measuring improvement
+- **Subject matter experts**: Available for training data curation, evaluation criteria definition, and output review
+
+## Implementation Timeline
+
+| Stage | Duration | What Happens |
+|-------|----------|-------------|
+| Training data curation | 2-4 weeks | SME-guided data selection, labeling, quality review |
+| Fine-tuning | 1-2 weeks | Supervised fine-tuning or InstructLab alignment on your data |
+| Evaluation and benchmarking | 1-2 weeks | Performance comparison against generic baseline, bias and safety checks |
+| Production deployment | 1-2 weeks | Model registry promotion, governance gate approval, API endpoint provisioning |
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

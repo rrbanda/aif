@@ -27,6 +27,49 @@ The most common pilot failure modes are not technical:
 
 Over 40% of agentic AI projects may be canceled by 2027 due to escalating costs, unclear business value, and inadequate risk controls (Gartner). Pilots with clear KPIs and business owner commitment avoid this trap.
 
+<!-- audience: customer -->
+
+## Your Commitments
+
+Pilots require deep engagement from business process owners — not just data science teams. A model that works technically but is not adopted by the business is a failed pilot.
+
+| Role | Time Commitment | Purpose |
+|------|----------------|---------|
+| **Data science team** | Near full-time, 8-12 weeks | Model development, fine-tuning, evaluation, and pipeline implementation |
+| **Business process owner** (per use case) | 4-6 hours/week | Requirements validation, process redesign, KPI definition, user acceptance |
+| **Subject matter experts** | 2-4 hours/week per use case | Domain knowledge for training data curation, evaluation criteria, edge cases |
+| **Model risk / compliance officer** | Review cycles | Bias assessment, governance gate approval, documentation review |
+| **End users** (for integration testing) | 2-3 sessions | User acceptance testing, workflow integration validation |
+
+## What You Receive
+
+| Deliverable | What It Contains |
+|-------------|-----------------|
+| **Working pilot models** (2-3 use cases) | End-to-end operational models from data ingestion through inference, deployed on your AI Factory platform |
+| **KPI measurement report** | Baseline vs. pilot performance for each use case — accuracy, latency, cost impact, time savings |
+| **Fine-tuning pipeline** | Automated pipeline for domain adaptation of foundation models, documented for reproducibility and reuse |
+| **Model evaluation framework** | Reusable benchmarks for fairness, robustness, safety, and domain accuracy — applicable to future use cases |
+| **Process redesign documentation** | Before/after workflow maps showing how AI integrates into business operations, with handoff points and human-in-the-loop steps |
+| **Scaling business case** | Data-driven justification for expanding the factory based on pilot results |
+
+## Readiness Checklist
+
+Before entering Pilot & Incubation, confirm:
+
+- [ ] Platform Foundation is complete — OpenShift AI operational, GPU nodes available, workspaces provisioned
+- [ ] 2-3 pilot use cases selected with clear business owners and defined KPIs
+- [ ] Training data for pilot use cases is accessible, profiled, and quality-assessed
+- [ ] Data science team has been onboarded to the platform and validated workbench access
+- [ ] Business process owners have committed time for requirements, feedback, and acceptance testing
+- [ ] Compliance/model risk team is aware of pilot scope and prepared to review outputs
+- [ ] Success criteria defined and agreed before work begins (not retrofitted after)
+
+## What to Expect
+
+The first pilot takes longer than subsequent ones — it is proving the entire factory process, not just building one model. Expect 8-12 weeks for the first use case end-to-end. Subsequent use cases on the same platform typically complete in 4-6 weeks because the infrastructure, pipelines, and governance framework are already in place. This acceleration is the core value of the factory model.
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

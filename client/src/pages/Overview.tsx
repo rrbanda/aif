@@ -184,6 +184,34 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
         </Gallery>
       </PageSection>
 
+      {viewMode === "customer" && program.customer_journey && (
+        <PageSection>
+          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
+            {program.customer_journey.title}
+          </Title>
+          <p className="pf-v6-u-color-200 pf-v6-u-mb-md">
+            {program.customer_journey.description}
+          </p>
+          <Gallery hasGutter>
+            {program.customer_journey.stages.map((stage) => (
+              <GalleryItem key={stage.id}>
+                <Card>
+                  <CardTitle>
+                    <Flex>
+                      <FlexItem>{stage.title}</FlexItem>
+                      <FlexItem>
+                        <Label isCompact>{stage.timeline}</Label>
+                      </FlexItem>
+                    </Flex>
+                  </CardTitle>
+                  <CardBody>{stage.description}</CardBody>
+                </Card>
+              </GalleryItem>
+            ))}
+          </Gallery>
+        </PageSection>
+      )}
+
       {partners && partners.length > 0 && (
         <PageSection>
           <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
@@ -221,7 +249,7 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
         </PageSection>
       )}
 
-      {program.services_package && (
+      {viewMode === "internal" && program.services_package && (
         <PageSection>
           <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
             {program.services_package.title}

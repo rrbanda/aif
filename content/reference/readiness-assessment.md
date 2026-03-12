@@ -109,6 +109,36 @@ Google's MLOps maturity model provides a complementary lens:
 Most organizations attempting an AI Factory operate at Level 0 or early Level 1. The gap between ambition and operational maturity is where implementations stall.
 
 
+<!-- audience: customer -->
+
+## Self-Assessment Guide
+
+Use this framework to evaluate your organization's readiness before engaging Red Hat for a formal Discovery & Assessment. Score each dimension honestly — optimistic self-assessments lead to misaligned timelines and expectations.
+
+**How to score:**
+- For each dimension above, identify your current maturity level (0-3)
+- Be specific: "We think we're at Level 2 in data because we have governed pipelines but no feature store" is better than "Level 2"
+- Note the specific gaps that lower your score — these become the priority actions
+
+**Interpreting your results:**
+
+| Your Score | What It Means | Recommended Action |
+|-----------|---------------|-------------------|
+| Mostly Level 0 | Significant foundational work needed | Start with Discovery + extended Data Strategy. Budget for 15-18 months to production AI |
+| Mixed Level 0-1 | Some assets in place, gaps to address | Discovery will map gaps to a prioritized remediation plan |
+| Mostly Level 1-2 | Good foundation, ready for structured program | Platform Foundation can start quickly after Discovery |
+| Mostly Level 2-3 | Advanced readiness — focus on factory model and governance | May be ready for Pilot stage directly |
+
+**Common self-assessment traps to avoid:**
+- Confusing "we have data" with "we have AI-ready data" — data quality, labeling, and governance matter
+- Overrating infrastructure because OpenShift is deployed — OpenShift is not the same as AI-ready OpenShift
+- Underrating organizational readiness — this is typically the biggest gap and the hardest to fix
+- Counting interest as commitment — "teams are interested in AI" is different from "teams have identified specific use cases with business owners and KPIs"
+
+**Next step:** Bring your self-assessment results to the Red Hat Discovery engagement. Honest self-assessment accelerates the formal assessment and produces a more actionable program charter.
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Scoring Guidance

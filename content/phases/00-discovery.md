@@ -32,6 +32,47 @@ Discovery should include a structured readiness assessment across five dimension
 - **Talent and skills gap** — The factory cannot run when the workforce has not been equipped to operate it. Plan bootcamps early.
 - **Missing executive sponsorship** — Without a signed program charter with budget authority, programs stall when priorities shift. Non-negotiable for Stage 0 exit.
 
+<!-- audience: customer -->
+
+## Your Commitments
+
+Discovery requires active participation from your organization — this is a joint engagement, not a handoff.
+
+| Role | Time Commitment | Purpose |
+|------|----------------|---------|
+| **Executive sponsor** (VP/C-level with budget authority) | 3-4 hours total | Program charter review, scope sign-off |
+| **Technical lead** (architect or senior platform engineer) | 3-4 hours/week for 4-6 weeks | Infrastructure audit, workload assessment workshops |
+| **Data owners** (per business unit) | 2-3 sessions, 2 hours each | Data catalog walkthrough, governance gap identification |
+| **Business unit leaders** (for candidate use cases) | 2-3 prioritization sessions | Use case scoring and selection |
+| **Compliance/legal representative** | 2-3 sessions | Regulatory constraint mapping |
+
+## What You Receive
+
+| Deliverable | What It Contains |
+|-------------|-----------------|
+| **Workload assessment report** | Inventory of current and planned AI/ML workloads, classified by data sensitivity, latency requirements, compute needs, and regulatory constraints |
+| **Infrastructure readiness audit** | Gap analysis of your OpenShift environment for AI workloads — GPU capacity, networking, storage, and security posture |
+| **AI maturity assessment** | Your organization's current AI practices benchmarked against industry peers — data science workflows, tooling, governance, and skills |
+| **Prioritized use case portfolio** | Scored and ranked use cases with estimated business value, feasibility rating, data readiness, and recommended sequencing |
+| **Program charter** | Agreed scope, timeline, success criteria, governance model, resource commitments, and executive sign-off |
+
+## Readiness Checklist
+
+Before entering Discovery, confirm your organization can provide:
+
+- [ ] An executive sponsor with budget authority and organizational mandate
+- [ ] At least one business unit with a defined AI use case or pain point
+- [ ] An existing OpenShift environment (or a committed plan to deploy one)
+- [ ] Access to data catalogs or schema documentation for candidate use cases
+- [ ] A data governance policy (even if basic or informal)
+- [ ] No active competing AI platform procurement that would create organizational conflict
+
+## What to Expect
+
+Discovery typically surfaces more complexity than expected — this is by design. Organizations that skip or abbreviate discovery spend 2-3x more on rework in later stages. Expect honest assessments of gaps; the goal is a realistic foundation, not an optimistic one.
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

@@ -8,6 +8,44 @@ AIOps plays a **dual role** in the AI Factory: it is both a product the factory 
 
 The same platform — OpenShift AI, GPU infrastructure, MLOps pipelines — supports both roles. AIOps models for infrastructure monitoring consume metrics from Prometheus, OpenTelemetry, and application logs. AIOps models for the factory consume model registry metadata, pipeline run history, and inference latency metrics. Shared tooling and patterns reduce duplication.
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| Mean time to detect | 50-70% reduction | Time from anomaly onset to alert, compared to static threshold-based monitoring |
+| False alarm rate | 40-60% reduction | Percentage of alerts that are actionable vs. noise (alert fatigue reduction) |
+| Incident classification accuracy | 85-95% | Percentage of alerts correctly routed to the right team with correct severity |
+| Capacity forecast accuracy | Within 10% for 30-day horizon | Predicted vs. actual resource utilization (GPU, storage, network) |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your organization:
+- Operates complex infrastructure (on-premises, hybrid, or multi-cluster) with significant monitoring data volume
+- Experiences alert fatigue from static thresholds that generate excessive false positives
+- Spends significant engineering time on manual incident triage, classification, and root cause analysis
+- Wants to apply AI capabilities to the AI Factory platform itself (self-monitoring)
+- Has Prometheus, OpenTelemetry, or similar observability data sources already generating metrics and logs
+
+## Dual Role in the AI Factory
+
+AIOps is unique among use cases because it serves two functions:
+
+1. **As a product**: AI models that monitor your broader IT infrastructure — anomaly detection, capacity planning, incident classification for the entire organization
+2. **As a factory capability**: Self-monitoring of the AI Factory itself — model drift detection, pipeline health prediction, GPU utilization optimization, automated retraining triggers
+
+This dual role means AIOps can start as a platform team internal use case (monitoring the factory) and expand to serve the broader IT operations organization.
+
+## Your Data Requirements
+
+- **Infrastructure metrics**: Prometheus/OpenTelemetry time-series data — CPU, memory, GPU utilization, network throughput, disk I/O
+- **Application logs**: Structured logs from applications running on the platform
+- **Incident records**: Historical incident tickets with timestamps, severity, root cause, and resolution (for classification training)
+- **Change records**: Deployment and configuration change history (for correlation with incidents)
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

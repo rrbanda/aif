@@ -24,6 +24,49 @@ The platform foundation stage deploys Layer 1 (Infrastructure) and Layer 3 (AI P
 
 The platform is built on **Red Hat AI Enterprise** on OpenShift — with validated reference architectures, intelligent GPU orchestration, and certified partner integrations. This is not a generic OpenShift deployment; it is a prescriptive architecture purpose-built for AI workloads.
 
+<!-- audience: customer -->
+
+## Your Commitments
+
+Platform foundation is the most infrastructure-intensive stage. Your platform engineering and security teams are essential participants.
+
+| Role | Time Commitment | Purpose |
+|------|----------------|---------|
+| **Platform engineering team** | Near full-time, 8-12 weeks | OpenShift AI deployment, operator configuration, GitOps setup |
+| **Security/networking team** | 4-6 hours/week + approval gates | Network policies, RBAC configuration, GPU node access, firewall rules |
+| **Procurement** | As needed, start early | GPU hardware ordering (lead times can be 8-16 weeks for enterprise GPUs) |
+| **Data science team leads** | 2-3 onboarding sessions | Workspace provisioning, tool validation, initial workbench setup |
+| **Executive sponsor** | 1-2 checkpoint meetings | Budget approval for hardware, scope confirmation |
+
+## What You Receive
+
+| Deliverable | What It Contains |
+|-------------|-----------------|
+| **Operational OpenShift AI platform** | Fully configured OpenShift AI with GPU-accelerated compute, multi-tenant workspaces, and identity provider integration |
+| **AI Hub with model catalog** | Curated catalog of approved foundation models with deployment guidance and performance benchmarks |
+| **Multi-tenant workspace configuration** | Isolated namespaces per team with RBAC policies, resource quotas, and shared GPU pool access |
+| **GitOps pipeline** | Declarative platform configuration managed as code for reproducibility and drift detection |
+| **Developer onboarding runbook** | Step-by-step guide for data scientists to access workbenches, request compute, and begin experimentation |
+| **Architecture decision record** | Documented design decisions for GPU topology, networking, storage, and security posture |
+
+## Readiness Checklist
+
+Before entering Platform Foundation, confirm:
+
+- [ ] OpenShift cluster is running (version 4.14+) with sufficient control plane capacity
+- [ ] GPU hardware is ordered or available (minimum 2-3 GPU nodes for starter factory)
+- [ ] Network team has approved GPU node network requirements (RDMA if needed for distributed training)
+- [ ] Identity provider integration path is defined (LDAP, SSO, etc.)
+- [ ] Storage backend can support large dataset I/O (object storage or high-throughput filesystem)
+- [ ] Security team has reviewed and approved the OpenShift AI operator deployment
+- [ ] Budget for GPU hardware and Red Hat AI subscriptions is approved
+
+## What to Expect
+
+Hardware procurement is frequently the longest lead-time item. GPU node delivery can take 8-16 weeks depending on vendor and configuration — start procurement in the Data Strategy stage if possible. The platform itself deploys in 2-4 weeks once hardware is available; the remaining time is spent on multi-tenant configuration, security hardening, and developer onboarding.
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

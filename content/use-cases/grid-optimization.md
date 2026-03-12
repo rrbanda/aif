@@ -12,6 +12,46 @@ Energy utilities manage increasingly complex grids — balancing variable renewa
 
 **Real-time optimization.** Grid dispatch and voltage optimization require inference latency measured in seconds, not minutes. The AI Factory's GPU-accelerated inference infrastructure supports the throughput and latency requirements of real-time grid optimization, with the governance and auditability that regulated utilities require.
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| Demand forecast accuracy | 2-5% MAPE improvement | Mean Absolute Percentage Error vs. current forecasting method |
+| Renewable curtailment | 10-20% reduction | MWh of renewable generation lost due to grid balancing constraints |
+| Outage prediction | 2-6 hours advance warning | Lead time between AI alert and actual equipment failure or outage |
+| Dispatch optimization | 3-8% cost savings | Generation procurement cost reduction from optimized dispatch decisions |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your utility:
+- Manages grid operations with increasing renewable penetration (solar, wind, distributed energy resources)
+- Has SCADA and AMI data generating continuous grid telemetry (voltage, current, frequency, power quality)
+- Operates under NERC CIP requirements for bulk electric system data — AI models must train and serve on-premises
+- Currently relies on statistical or rule-based forecasting and dispatch optimization
+- Has experienced outages or near-misses that earlier detection could have prevented
+
+## Your Data Requirements
+
+- **Load data**: Historical demand data at feeder/substation level (minimum 2-3 years for seasonal patterns)
+- **Weather data**: Historical and forecast weather data correlated with service territory
+- **Generation data**: Renewable generation output (solar irradiance, wind speed, actual generation) for integration models
+- **Grid telemetry**: SCADA data — voltage, current, frequency, transformer temperatures, power quality metrics
+- **AMI data**: Smart meter data for granular demand analysis (if available)
+- **Outage records**: Historical outage data with timestamps, causes, affected equipment, and restoration times
+
+## Implementation Timeline
+
+| Stage | Duration | What Happens |
+|-------|----------|-------------|
+| Data integration | 4-6 weeks | SCADA/AMI data ingestion, weather data feeds, historical load data pipeline |
+| Forecasting models | 4-6 weeks | Demand and renewable generation forecast model training and validation |
+| Anomaly detection | 3-4 weeks | Grid equipment health models trained on telemetry data |
+| Dispatch optimization and rollout | 3-4 weeks | Real-time optimization integration with EMS/SCADA, operator validation |
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

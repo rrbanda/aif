@@ -19,6 +19,35 @@ Document which decisions require committee approval versus those that can be mad
 Include the executive sponsor (CTO, COO, or CAIO), line-of-business leaders whose units consume AI outputs, Chief Risk Officer or delegate, Chief Data Officer or delegate, Head of Technology/Platform Engineering, and the Red Hat engagement lead. Keep the group small enough to decide—typically 6–10 people. Absent key voices, decisions stall.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+The Steering Committee is the single most important organizational element. Without executive decision-making authority, AI programs stall when priorities compete.
+
+**Minimum viable committee:**
+- Executive sponsor (CTO, COO, or CAIO) — owns budget and organizational mandate
+- 2-3 business unit leaders — represent the teams that will consume AI outputs
+- Chief Risk Officer or delegate — ensures governance and compliance alignment
+- Chief Data Officer or delegate — owns data strategy and quality
+- Head of Platform Engineering — technical authority for AI infrastructure
+- Program lead — drives execution and reports progress
+
+**Your responsibilities:**
+- Meet monthly during active phases, quarterly during steady state
+- Make prioritization decisions within 5 business days of escalation
+- Review and approve quarterly value reports
+- Allocate budget for GPU expansion, new use cases, and team onboarding
+- Resolve cross-business-unit conflicts over shared resources
+
+**Maturity indicators:**
+- Decisions are made and documented within SLA (not deferred indefinitely)
+- All members attend or send empowered delegates
+- Value realization metrics are reviewed and acted upon quarterly
+- The committee proactively identifies new use cases and expansion opportunities
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

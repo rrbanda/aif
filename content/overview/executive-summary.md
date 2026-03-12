@@ -77,6 +77,37 @@ The methodology remains constant regardless of partner selection.
 
 The methodology is proven. The technology is ready. The partners are aligned. When do you start?
 
+<!-- audience: customer -->
+
+## Building the Business Case
+
+When presenting the AI Factory investment internally, these are the key arguments:
+
+**Cost of inaction:**
+- AI infrastructure is the largest technology buildout in history — organizations that delay will pay more to catch up
+- Inference costs fall 10x every 12 months — owning infrastructure captures this cost curve directly
+- Competitors are building proprietary AI capabilities on their own data — the window for parity narrows with every quarter
+
+**Investment structure:**
+- Platform subscriptions (Red Hat AI Enterprise per GPU node) — predictable, node-based pricing
+- Consulting engagement for initial deployment (12-20 weeks to first production use case)
+- GPU hardware investment (minimum 3 nodes for a starter factory, expandable as use cases prove value)
+- Ongoing training and technical account management for sustained capability building
+
+**Expected ROI indicators:**
+- First use case ROI typically demonstrated within 6 months of production deployment
+- Subsequent use cases deploy 3-5x faster because factory infrastructure is in place
+- GPU utilization increases from 10-30% (siloed deployments) to 60-80% (centralized factory)
+- Skills investment compounds — trained teams deliver faster, reduce consulting dependency
+
+**Risk mitigation:**
+- Value gates at every stage prevent runaway investment without evidence of return
+- Start small (3 GPU nodes, 2-3 use cases) and expand only when KPIs are met
+- Red Hat Services Starter Package de-risks the first 12-20 weeks with expert guidance
+- Open platform avoids vendor lock-in — hardware partners are interchangeable
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Investment Analysis

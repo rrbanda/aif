@@ -40,6 +40,44 @@ Research materials are among the most sensitive organizational assets — propri
 
 **Enhanced semantic accuracy** — Domain-specific fine-tuning on organizational terminology, writing style, and research methodology improves relevance and reduces hallucination.
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| Research time | 40-60% reduction | Hours per research task, measured pre/post deployment via analyst surveys |
+| Citation accuracy | 90-95% | Percentage of generated citations that correctly reference source material |
+| Content coverage | 80-95% of target sources indexed | Percentage of organizational research corpus accessible to the agent |
+| Analyst satisfaction | Net positive adoption | User satisfaction survey scores and voluntary usage rates |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your organization:
+- Employs research analysts who spend significant time finding, reading, and synthesizing information across multiple sources
+- Has proprietary research materials — analyst reports, competitive intelligence, client-specific analysis, regulatory filings — that cannot be sent to external AI services
+- Wants AI that goes beyond simple search — multi-step research workflows that retrieve, synthesize, and produce structured outputs with citations
+- Has identifiable research workflows that involve querying databases, APIs, or calculation tools (not just document search)
+- Operates in financial services, pharmaceuticals, legal, consulting, or policy where research quality directly impacts business decisions
+
+## Your Data Requirements
+
+- **Research corpus**: Internal documents, reports, analyses, and data repositories that form the agent's knowledge base
+- **Source system access**: Permissions for the research agent to query databases, APIs, and document management systems via MCP tool integration
+- **Research workflows**: Documented examples of typical research tasks (equity analysis, literature review, due diligence, regulatory analysis)
+- **Quality benchmarks**: Example research outputs for measuring the agent's synthesis quality against analyst-produced work
+
+## Implementation Timeline
+
+| Stage | Duration | What Happens |
+|-------|----------|-------------|
+| Knowledge base ingestion | 2-3 weeks | Document corpus indexing, source system MCP connectors, embedding pipeline |
+| Agent development | 3-4 weeks | Research agent workflow design, tool integration, prompt engineering |
+| Quality validation | 2-3 weeks | Analyst evaluation of agent outputs against gold-standard research examples |
+| Pilot rollout | 1-2 weeks | Target analyst group onboarding, feedback iteration, governance review |
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

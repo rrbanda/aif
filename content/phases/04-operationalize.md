@@ -28,6 +28,48 @@ Operationalization is where the "pilot-to-production gap" becomes real. Over 40%
 - **Observability gaps** — Models deployed without drift detection or fairness monitoring degrade silently. By the time problems surface, they've affected customers or created regulatory risk.
 - **Insufficient MLOps maturity** — Most organizations attempting factory-scale operationalization are at Google MLOps Level 0 or early Level 1. The gap between ambition and operational maturity is where implementations stall. Invest in pipeline automation before scaling model count.
 
+<!-- audience: customer -->
+
+## Your Commitments
+
+Operationalization requires your organization to build sustained engineering and governance capabilities — this is where the factory becomes yours to operate.
+
+| Role | Time Commitment | Purpose |
+|------|----------------|---------|
+| **ML platform engineering team** | Ongoing (dedicated function) | MLOps pipeline management, model registry operations, infrastructure maintenance |
+| **Model risk / compliance team** | Ongoing review cycles | Governance gate enforcement, bias audit schedules, regulatory documentation |
+| **SRE / operations team** | Ongoing | Inference infrastructure monitoring, incident response, capacity management |
+| **Data science teams** | Per retraining cycle | Model retraining, evaluation, promotion through governance gates |
+| **Business process owners** | Quarterly review participation | Value realization reporting, model performance feedback |
+
+## What You Receive
+
+| Deliverable | What It Contains |
+|-------------|-----------------|
+| **MLOps pipeline** | Automated CI/CD for models — testing, canary deployment, traffic splitting, and rollback procedures |
+| **Model registry with governance** | Versioned model artifacts with full lineage (training data, code, hyperparameters) and approval workflows |
+| **Governance gate framework** | Automated pre-deployment checks for bias, security, performance thresholds — with documented override procedures |
+| **Model-as-a-Service infrastructure** | API endpoints for model consumption with rate limiting, authentication, SLA monitoring, and usage tracking |
+| **Observability stack** | Dashboards for model drift, latency, throughput, error rates, and fairness metrics with alerting |
+| **Incident response playbooks** | Documented procedures for model degradation, pipeline failures, and capacity incidents |
+
+## Readiness Checklist
+
+Before entering Operationalize, confirm:
+
+- [ ] At least one pilot model has demonstrated measurable business value (KPIs met)
+- [ ] ML platform engineering team is staffed or identified (this is a dedicated function, not a side project)
+- [ ] Model risk / compliance team has reviewed pilot outputs and agreed to governance gate criteria
+- [ ] SRE team understands the difference between infrastructure monitoring and ML observability
+- [ ] Business process owners have validated workflow integration from pilot stage
+- [ ] Budget allocated for ongoing GPU compute, model serving infrastructure, and platform subscriptions
+
+## What to Expect
+
+Operationalization is the stage where AI becomes a production system with the same rigor as your other critical business applications. Expect to invest in building dedicated ML platform engineering capability — this is not a one-time setup but an ongoing function. Organizations that treat operationalization as a project rather than a capability typically see model degradation and governance failures within 6-12 months.
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

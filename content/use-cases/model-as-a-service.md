@@ -30,6 +30,45 @@ MaaS on the AI Factory platform uses:
 
 **Model routing** — llm-d routes requests to the appropriate model variant: cost-optimized (smaller model), accuracy-optimized (larger model), or domain-specialized (fine-tuned variant).
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| GPU utilization | 60-80% (vs. 10-30% with dedicated deployments) | Average GPU utilization across shared model serving pool |
+| API latency | p50: sub-100ms, p95: sub-500ms, p99: sub-1s | Inference latency percentiles across all consuming applications |
+| Cost per inference | 30-60% reduction vs. per-team deployments | Total infrastructure cost divided by inference requests, compared to siloed deployments |
+| Team onboarding time | Days (vs. weeks for standalone deployment) | Time from access request to first API call for new consuming teams |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your organization:
+- Has multiple teams or applications that need access to AI models (or will as the factory scales)
+- Experiences GPU waste from dedicated per-team model deployments with low utilization
+- Wants consistent governance across all model consumption — authentication, rate limiting, audit logging
+- Needs cost visibility and chargeback/showback for AI compute consumption
+- Has a platform engineering team capable of operating shared infrastructure
+
+## Your Requirements
+
+- **Platform Foundation complete**: OpenShift AI operational with GPU nodes and model registry
+- **Model catalog**: At least one approved model ready for shared serving
+- **Consuming teams identified**: At least 2-3 teams or applications ready to consume models via API
+- **Governance policies defined**: Authentication, authorization, rate limiting, and usage tracking requirements
+- **Budget model decided**: Centralized cost pool vs. chargeback per consuming team
+
+## Implementation Timeline
+
+| Stage | Duration | What Happens |
+|-------|----------|-------------|
+| Inference infrastructure | 2-3 weeks | Model serving deployment, GPU pool configuration, routing setup |
+| API gateway and governance | 1-2 weeks | Authentication, rate limiting, request logging, quota management |
+| Consumer onboarding | 1-2 weeks per team | API key provisioning, SDK/documentation, first integration |
+| Observability and chargeback | 1-2 weeks | Per-model and per-consumer dashboards, cost tracking, SLA monitoring |
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

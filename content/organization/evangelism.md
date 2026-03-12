@@ -23,6 +23,28 @@ A visible dashboard tracks adoption: teams using the factory, API calls, deploym
 Connect teams with similar challenges or complementary capabilities. A team struggling with model serving may benefit from another team's experience; a team with excess GPU capacity may share with one that is constrained. Evangelism includes facilitating these connections.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+Evangelism turns individual pilot successes into organizational momentum. Without it, the factory serves a small group while the rest of the organization remains unaware or skeptical.
+
+**Your responsibilities:**
+- Run quarterly demo days showcasing working use cases to a broad audience (including skeptics)
+- Deliver executive briefings with value realization metrics — models in production, business impact, adoption growth
+- Publish internal newsletters or blog posts with success stories, new capabilities, and how to get started
+- Maintain an adoption metrics dashboard visible to practitioners and leadership
+- Identify and empower internal champions — practitioners who have used the platform successfully are the most credible advocates
+
+**Maturity indicators:**
+- Demo days attract attendees beyond the immediate delivery teams (including business leaders from non-participating units)
+- New teams approach the factory proactively rather than being recruited
+- Internal champions can articulate the factory's value without external support
+- Adoption dashboard shows sustained growth in teams, API calls, and use cases
+- Executive briefings lead to concrete decisions (budget allocation, new use case approval)
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

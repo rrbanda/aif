@@ -33,6 +33,45 @@ Building agents requires the full AI Factory stack: foundation models for reason
 
 The AI Factory Agent in this platform demonstrates the concept: an agent built on the factory's own knowledge base, using retrieval and tool access to answer questions, run assessments, and guide users through the program. It is itself a product of the factory it describes.
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| Task completion rate | 70-90% autonomous | Percentage of agent-initiated tasks completed without human intervention |
+| Human-in-the-loop rate | 10-30% of actions | Percentage of agent actions requiring human approval (should decrease over time as trust builds) |
+| Workflow time reduction | 40-70% | End-to-end time for multi-step workflows (investigation, reporting, remediation) |
+| Governance compliance | 100% | All agent actions logged, within defined boundaries, with audit trails |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your organization:
+- Has multi-step workflows that involve querying multiple systems, applying business rules, and producing structured outputs
+- Has already deployed foundation models or fine-tuned models on the AI Factory platform (agents require the full stack)
+- Can define clear action boundaries — which tasks agents can perform autonomously vs. which require human approval
+- Has governance and compliance teams prepared to define and enforce agent safety levels
+- Understands that agentic AI is the most advanced factory capability and requires Platform Maturity stages 0-4 as prerequisites
+
+## Prerequisites
+
+Agentic AI is not a starting point — it requires the full AI Factory stack already operational:
+- **Foundation models** deployed and serving (for agent reasoning)
+- **Fine-tuned domain models** available (for domain expertise)
+- **Inference infrastructure** with low-latency serving (for interactive agent responses)
+- **Governance gates** enforcing (for agent action boundaries and audit trails)
+- **Tool integration** via MCP (for agent access to enterprise systems)
+
+## Your Governance Requirements
+
+Before deploying agents, your organization must define:
+- **Tool permissions**: Which enterprise systems can agents access? Read-only vs. read-write?
+- **Action boundaries**: Which actions are autonomous, which require approval, which are prohibited?
+- **Safety levels**: Graduated autonomy tiers aligned with risk (e.g., Level 1: read-only; Level 2: suggest actions; Level 3: execute with approval; Level 4: fully autonomous for low-risk actions)
+- **Audit and accountability**: Who is responsible when an agent takes an action? How are agent decisions reviewed?
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

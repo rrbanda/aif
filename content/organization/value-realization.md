@@ -33,6 +33,42 @@ Gates prevent advancing without evidence. They also create natural review points
 Report value metrics quarterly to the steering committee and in executive briefings. Maintain a dashboard for practitioners and program leads. Use metrics to prioritize—double down on what works, deprioritize or fix what does not.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+Value realization is the mechanism that justifies continued investment. Without it, the AI Factory becomes an infrastructure cost center rather than a business value driver.
+
+**Your responsibilities:**
+- Capture baseline metrics before AI deployment (you cannot demonstrate improvement without before-state data)
+- Define KPIs for each use case at the start — not retrofitted after deployment
+- Report metrics quarterly to the Steering Committee with clear business impact narrative
+- Use value gates to govern stage progression: do not advance without evidence of measurable progress
+
+**Metric categories you should track:**
+
+| Category | Example Metrics | Why It Matters |
+|----------|----------------|----------------|
+| **Business impact** | Cost savings ($), revenue impact, hours saved, error reduction | Justifies investment to executive sponsors |
+| **Deployment velocity** | Time from idea to production, deployment frequency | Measures factory throughput and repeatability |
+| **Model quality** | Accuracy, F1 score, drift frequency, hallucination rate | Ensures AI outputs meet quality standards |
+| **Adoption** | Teams active, API calls/month, developer satisfaction | Measures organizational uptake |
+| **Infrastructure efficiency** | GPU utilization, cost per inference, throughput | Measures platform economics |
+| **Governance** | Models monitored (%), audit pass rate, remediation time | Demonstrates risk control |
+
+**Value gates (progression criteria):**
+- **Pilot to Operationalize**: Pilot use cases meet defined business KPIs
+- **Operationalize to Scale**: Production models running with governance and SLAs met
+- **Scale to Operate**: Multiple teams active with measurable, documented business impact
+
+**Maturity indicators:**
+- Baselines captured before every AI deployment
+- Quarterly value reports are presented to the Steering Committee with decisions resulting
+- Value gates are enforced — advancement without evidence is not permitted
+- Business impact metrics (not just technical metrics) are the primary decision inputs
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

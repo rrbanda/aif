@@ -93,6 +93,34 @@ The AI Factory is designed to work with the customer's chosen technology partner
 
 The methodology and governance framework remain constant regardless of which partners are deployed.
 
+<!-- audience: customer -->
+
+## Executive Briefing
+
+**For CTO / CIO / CAIO:**
+
+The Red Hat AI Factory is a methodology and platform for transforming AI from isolated experiments into a governed, repeatable enterprise capability.
+
+**What it solves:** 88% of AI pilots fail to reach production. The root causes are not technical — they are organizational (missing governance), operational (no MLOps), and architectural (fragmented infrastructure). The AI Factory addresses all three simultaneously.
+
+**What you get:**
+- A seven-stage methodology with measurable value gates — you advance when KPIs are met, not when time runs out
+- A production-grade AI platform (Red Hat AI Enterprise on OpenShift) that runs on your infrastructure with your chosen hardware partners
+- Organizational frameworks (Center of Excellence, Steering Committee, Bootcamps) that build internal capability rather than permanent consulting dependencies
+- Full data sovereignty — your models train and serve on infrastructure you own and control
+
+**What it requires:**
+- Executive sponsorship with budget authority
+- A platform engineering team to operate the factory
+- Commitment to organizational change (governance, skills, process redesign)
+- GPU infrastructure investment (minimum 3 nodes for a starter factory)
+
+**Expected timeline:** First use case in production within 12-20 weeks. Factory self-sufficient within 6-12 months.
+
+**Next step:** Engage Red Hat for a Discovery & Assessment (4-6 weeks) to evaluate readiness, prioritize use cases, and define the program charter.
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Competitive Positioning

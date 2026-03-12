@@ -23,6 +23,34 @@ Process redesign reimagines business processes around AI—not bolting AI onto e
 In financial services, many decisions require human accountability. Define explicitly where humans must review, override, or approve. Document the rationale for each checkpoint—regulatory, risk, or operational—and design the UI and workflow to support it.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+Process redesign is where AI moves from a technology project to a business transformation. Bolting AI onto existing workflows captures a fraction of the value.
+
+**Your responsibilities:**
+- Assign a business process owner for each AI use case — someone who owns the current workflow and will own the redesigned one
+- Map current processes (as-is) with decision points, handoffs, and pain points documented
+- Design future processes (to-be) with clear roles for AI and humans — including human-in-the-loop checkpoints for high-stakes decisions
+- Pilot new processes alongside existing ones before full cutover
+- Measure process-level KPIs (throughput, cycle time, error rate, cost) before and after
+
+**Human-in-the-loop design principles:**
+- Define which decisions AI can make autonomously vs. which require human review
+- Design the review interface to present AI output with explanation and confidence
+- Document the rationale for each checkpoint: regulatory requirement, risk level, or organizational policy
+- Plan for the human-in-the-loop ratio to evolve as trust in the model builds
+
+**Maturity indicators:**
+- Every production AI use case has a documented before/after process map
+- Business process owners actively participate in redesign (not just the technology team)
+- Process-level KPIs show measurable improvement (not just model-level accuracy)
+- Human-in-the-loop checkpoints are defined, documented, and enforced
+- Redesigned processes are trained and communicated to all affected staff
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

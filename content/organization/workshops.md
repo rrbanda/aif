@@ -21,6 +21,36 @@ Workshops run 1–2 days per session. Participants include business owners (who 
 Trigger workshops when new teams or use cases enter the pipeline—during discovery, when scaling to additional business units, or when reprioritizing the portfolio. Do not run workshops as a one-time event; treat them as a repeatable capability.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+Workshops are a repeatable capability — not a one-time event during discovery.
+
+**Your responsibilities:**
+- Identify business owners, data scientists, and ML engineers for each workshop (6-12 participants)
+- Prepare pre-work: brief business problem descriptions, data inventory, and success criteria hypotheses
+- Commit decision-makers who can approve go/no-go on use cases after scoring
+- Schedule workshops whenever new use cases or teams enter the pipeline
+- Maintain workshop outputs (use case canvas, feasibility scorecard) as living documents
+
+**Workshop outputs you receive:**
+
+| Output | What It Contains |
+|--------|-----------------|
+| Use case canvas | Problem definition, data sources, success criteria, constraints, stakeholders |
+| Data readiness checklist | Data availability, quality, governance, access gaps, and remediation steps |
+| Feasibility scorecard | Technical feasibility, business value, risk, and effort scored on 1-5 scale |
+| Prioritized next steps | Specific actions, owners, and timelines for each use case |
+
+**Maturity indicators:**
+- Workshops produce actionable outputs (not just discussion notes)
+- Feasibility scorecards feed directly into the prioritized use case portfolio
+- New teams can run workshops independently using established templates and facilitation guides
+- Workshop cadence matches the pace of new use case and team onboarding
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

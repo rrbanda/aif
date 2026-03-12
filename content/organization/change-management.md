@@ -19,6 +19,37 @@ Proactively identify and address resistance. Common sources: fear of job displac
 Measure actual usage, satisfaction, and behavioral change. Deployment does not equal adoption. Track: who is using the factory, how often, for what, and with what satisfaction. Use surveys, usage analytics, and qualitative feedback. Feed findings back into communication and training plans.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+Change management is not optional — it is the single biggest determinant of whether AI initiatives survive past the pilot stage. The 10/20/70 rule applies: 10% algorithms, 20% technology, 70% people and processes.
+
+**Your responsibilities:**
+- Conduct stakeholder analysis: identify champions, skeptics, and blockers at executive, middle management, and practitioner levels
+- Develop a communication plan: what to communicate, when, to whom, and through which channel
+- Proactively address resistance: fear of job displacement, distrust of AI decisions, workload concerns, turf protection
+- Track adoption — deployment does not equal adoption. Measure who is using the factory, how often, and with what satisfaction
+
+**Key activities by stage:**
+
+| Stage | Change Management Focus |
+|-------|------------------------|
+| Discovery | Stakeholder mapping, executive alignment, initial communication |
+| Platform Foundation | Developer onboarding messaging, skills gap communication |
+| Pilot | Process redesign communication, user acceptance, quick win stories |
+| Operationalize | Production readiness communication, incident response training |
+| Scale & Adopt | Broad organizational communication, resistance mitigation, adoption tracking |
+| Operate & Improve | Continuous improvement messaging, quarterly value communication |
+
+**Maturity indicators:**
+- Stakeholder map is current and actively used for communication planning
+- Resistance is identified and addressed proactively (not reactively after failures)
+- Adoption metrics show sustained and growing usage (not just initial deployment)
+- Communication reaches all levels: executives, middle management, and practitioners
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

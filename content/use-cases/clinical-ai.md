@@ -10,6 +10,45 @@ Healthcare generates vast amounts of unstructured data — clinical notes, patho
 
 **Quality and safety surveillance** applies anomaly detection to clinical data streams — flagging unexpected patterns in medication orders, lab results, or vital sign trajectories. These models reduce reliance on manual chart review for quality reporting and patient safety event detection. Integration with EHR systems enables closed-loop alerting.
 
+<!-- audience: customer -->
+
+## Expected Business Outcomes
+
+| Metric | Typical Improvement | How It Is Measured |
+|--------|--------------------|--------------------|
+| Clinician documentation time | 30-50% reduction (2-3 hours/day saved per clinician) | Time-motion study pre/post deployment, EHR audit logs |
+| NLP extraction accuracy | 92-97% F1 score | Precision and recall against human-annotated clinical records |
+| Risk stratification | 0.05-0.10 C-statistic improvement over generic scores | Calibration and discrimination metrics against institutional patient outcomes |
+| Quality event detection | 40-60% increase in early detection | Events flagged before clinical deterioration vs. retrospective chart review |
+
+## Is This Right for Your Organization?
+
+This use case is a strong fit if your health system:
+- Generates significant unstructured clinical data (notes, reports, discharge summaries) that contains information not captured in structured fields
+- Has clinicians reporting documentation burden as a major pain point
+- Operates under HIPAA/HITECH with strict data residency requirements — PHI cannot leave the organization's controlled environment
+- Has at least one target application: clinical documentation, risk stratification, quality surveillance, or clinical NLP extraction
+- Has clinical informatics or data science capacity to validate model outputs against clinical judgment
+
+## Your Data Requirements
+
+- **Clinical notes**: 12-24 months of de-identified or access-controlled clinical documentation (notes, reports, discharge summaries)
+- **Structured clinical data**: Diagnoses, labs, medications, vitals, procedures for risk stratification models
+- **Outcome labels**: For supervised learning — known adverse events, readmissions, quality incidents
+- **Clinical terminology**: Institutional abbreviations, specialty-specific vocabulary, medication naming conventions
+- **IRB/compliance approval**: Data use agreement and institutional review for AI model development on clinical data
+
+## Implementation Timeline
+
+| Stage | Duration | What Happens |
+|-------|----------|-------------|
+| Data access and de-identification | 3-4 weeks | IRB approval, data pipeline from EHR, de-identification or access-controlled environment setup |
+| Model development and fine-tuning | 4-6 weeks | NLP model fine-tuning on institutional clinical text, risk model training |
+| Clinical validation | 3-4 weeks | Clinician review of model outputs, accuracy assessment against gold standard |
+| EHR integration and rollout | 3-4 weeks | Workflow integration, user training, shadow mode before production |
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Deal Positioning

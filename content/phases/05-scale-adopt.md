@@ -18,6 +18,49 @@ Scale & Adopt expands the factory beyond the initial pilot teams to become the o
 
 **Adoption dashboard** tracks usage (inference calls, training jobs), compute consumption (GPU hours, memory), and cost per model or team. Use this data for capacity planning, chargeback/showback, and value realization reporting to the steering committee.
 
+<!-- audience: customer -->
+
+## Your Commitments
+
+Scaling the factory is primarily an organizational challenge. Technology scales more easily than adoption, governance, and skills.
+
+| Role | Time Commitment | Purpose |
+|------|----------------|---------|
+| **AI Center of Excellence** | Ongoing (permanent function) | Standards enforcement, model catalog curation, cross-team consulting |
+| **Business unit champions** (per new team) | 4-6 weeks onboarding | Use case definition, team onboarding, adoption tracking |
+| **Platform engineering team** | Ongoing | Capacity planning, new team provisioning, GPU scaling |
+| **Change management lead** | Ongoing | Adoption tracking, resistance mitigation, executive communications |
+| **Finance / FinOps** | Monthly | Chargeback/showback reporting, cost optimization |
+
+## What You Receive
+
+| Deliverable | What It Contains |
+|-------------|-----------------|
+| **Self-service AI platform** | Gen AI Studio and AI Hub access for all onboarded teams — experiment, fine-tune, and deploy within guardrails |
+| **Onboarding runbook** | Standardized process for new teams: environment provisioning, training paths, first-use-case playbook |
+| **Domain-specific fine-tuned models** | Models specialized for your industry and use cases, served via the factory's model-as-a-service infrastructure |
+| **Agentic AI capabilities** | Autonomous AI agents with tool integration, governance guardrails, and human-in-the-loop controls |
+| **Adoption dashboard** | Real-time tracking of usage, compute consumption, cost per team/model, and value realization metrics |
+| **Capacity planning model** | GPU demand forecasting based on adoption trends and workload growth |
+
+## Readiness Checklist
+
+Before entering Scale & Adopt, confirm:
+
+- [ ] MLOps pipeline is operational with governance gates enforcing for all production models
+- [ ] AI Center of Excellence is established with standards, model catalog, and consulting capacity
+- [ ] At least 2-3 use cases are in production with documented KPI results
+- [ ] Onboarding process is defined and tested with the initial teams
+- [ ] Budget model for GPU scaling is approved (per-node, chargeback, or centralized)
+- [ ] Change management and communication plan covers all target business units
+- [ ] Executive sponsor has communicated the factory mandate to the broader organization
+
+## What to Expect
+
+Scaling introduces organizational complexity: competing priorities across business units, shadow AI initiatives, budget debates over GPU allocation, and skills gaps in newly onboarded teams. Expect the Center of Excellence and Steering Committee to become critical governance mechanisms. The factory's value proposition at this stage is not just technical capability — it is the repeatability that allows new use cases to reach production in weeks rather than months.
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

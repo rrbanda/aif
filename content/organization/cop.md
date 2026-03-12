@@ -17,6 +17,35 @@ The AI Community of Practice (CoP) is a cross-functional, opt-in community of pr
 The CoP is opt-in. Participation grows when sessions deliver value. A lightweight steering group (2–3 practitioners plus CoE liaison) can own the calendar and format. Avoid making attendance mandatory; voluntary engagement indicates genuine interest and builds organic adoption.
 
 
+<!-- audience: customer -->
+
+## What Your Organization Needs to Build
+
+The Community of Practice is organic — forced participation kills it. Build value, and people will come.
+
+**Your responsibilities:**
+- Appoint a lightweight steering group (2-3 practitioners + CoE liaison) to own the calendar and format
+- Schedule bi-weekly sessions: show-and-tell, office hours, or lightning talks on a rotating basis
+- Provide a shared knowledge base (wiki, Slack/Teams channel, or code repository) for capturing patterns and FAQs
+- Encourage cross-team participation — the CoP's primary value is breaking silos between teams using the factory
+
+**Recommended formats:**
+
+| Format | Cadence | Duration | Purpose |
+|--------|---------|----------|---------|
+| Show-and-tell | Bi-weekly | 30-45 min | Teams demo working models, pipelines, or integrations |
+| Office hours | Weekly | 30 min | Drop-in Q&A with CoE experts on specific topics |
+| Lightning talks | Monthly | 10 min each | Deep dives on techniques, tools, or debugging stories |
+| Knowledge base | Continuous | — | Captured patterns, runbooks, FAQs, reusable code |
+
+**Maturity indicators:**
+- Attendance is voluntary and growing (not mandated and declining)
+- Practitioners contribute patterns and reusable assets without being asked
+- Cross-team collaboration occurs organically (teams find each other through the CoP)
+- Knowledge base reduces support requests and onboarding time for new teams
+
+<!-- /audience -->
+
 <!-- audience: internal -->
 
 ## Internal: Delivery Methodology

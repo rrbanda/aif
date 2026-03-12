@@ -102,6 +102,27 @@ program:
       title: "Operating Model"
       description: "The governance, expertise, skills, culture, and change management that make the AI Factory sustainable — because technology without organizational readiness produces shelfware"
 
+  customer_journey:
+    title: "Your AI Factory Journey"
+    description: "From first conversation to production AI — here is what to expect"
+    stages:
+      - id: engage
+        title: "Engage"
+        timeline: "Weeks 1-2"
+        description: "Initial conversation with Red Hat to understand your AI objectives, current infrastructure, and priority use cases"
+      - id: discover
+        title: "Discover"
+        timeline: "Weeks 3-8"
+        description: "Joint discovery workshop — workload assessment, infrastructure audit, AI maturity assessment, and use case prioritization"
+      - id: build
+        title: "Build"
+        timeline: "Weeks 9-20"
+        description: "Platform deployment, first use case pilot, and organizational readiness — your team works alongside Red Hat Consulting"
+      - id: scale
+        title: "Scale"
+        description: "Expand to additional teams and use cases with your AI Center of Excellence driving adoption"
+        timeline: "Ongoing"
+
   why_ai_factory:
     - title: "Data sovereignty"
       description: "Your data never leaves your perimeter. Models train and serve on infrastructure you own and control."
