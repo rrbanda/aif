@@ -11,6 +11,7 @@ import {
   Spinner,
   Bullseye,
   Alert,
+  AlertVariant,
   Split,
   SplitItem,
   Flex,
@@ -19,7 +20,10 @@ import {
   Label,
   List,
   ListItem,
+  Icon,
 } from "@patternfly/react-core";
+import UsersIcon from "@patternfly/react-icons/dist/esm/icons/users-icon";
+import RedhatIcon from "@patternfly/react-icons/dist/esm/icons/redhat-icon";
 import { Link } from "react-router-dom";
 
 export default function Overview({ viewMode }: { viewMode: ViewMode }) {
@@ -109,6 +113,104 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
         </Flex>
       </PageSection>
 
+      <PageSection>
+        <Alert
+          variant={viewMode === "customer" ? AlertVariant.info : AlertVariant.custom}
+          isInline
+          title={
+            viewMode === "customer" ? (
+              <Flex spaceItems={{ default: "spaceItemsSm" }} alignItems={{ default: "alignItemsCenter" }}>
+                <FlexItem>
+                  <Icon>
+                    <UsersIcon />
+                  </Icon>
+                </FlexItem>
+                <FlexItem>
+                  Customer View — showing what your customer sees: journey, outcomes, and commitments
+                </FlexItem>
+              </Flex>
+            ) : (
+              <Flex spaceItems={{ default: "spaceItemsSm" }} alignItems={{ default: "alignItemsCenter" }}>
+                <FlexItem>
+                  <Icon>
+                    <RedhatIcon />
+                  </Icon>
+                </FlexItem>
+                <FlexItem>
+                  Red Hat View — showing internal delivery methodology, services packaging, and deal strategy
+                </FlexItem>
+              </Flex>
+            )
+          }
+        />
+      </PageSection>
+
+      {viewMode === "customer" && program.customer_journey && (
+        <PageSection>
+          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
+            {program.customer_journey.title}
+          </Title>
+          <p className="pf-v6-u-color-200 pf-v6-u-mb-md">
+            {program.customer_journey.description}
+          </p>
+          <Gallery hasGutter>
+            {program.customer_journey.stages.map((stage) => (
+              <GalleryItem key={stage.id}>
+                <Card>
+                  <CardTitle>
+                    <Flex>
+                      <FlexItem>{stage.title}</FlexItem>
+                      <FlexItem>
+                        <Label isCompact>{stage.timeline}</Label>
+                      </FlexItem>
+                    </Flex>
+                  </CardTitle>
+                  <CardBody>{stage.description}</CardBody>
+                </Card>
+              </GalleryItem>
+            ))}
+          </Gallery>
+        </PageSection>
+      )}
+
+      {viewMode === "internal" && program.services_package && (
+        <PageSection>
+          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
+            {program.services_package.title}
+          </Title>
+          <p className="pf-v6-u-color-200 pf-v6-u-mb-md">
+            {program.services_package.description}
+          </p>
+          <Gallery hasGutter>
+            {program.services_package.phases.map((phase) => (
+              <GalleryItem key={phase.id}>
+                <Card>
+                  <CardTitle>
+                    <Flex>
+                      <FlexItem>{phase.title}</FlexItem>
+                      <FlexItem>
+                        <Label isCompact>{phase.timeline}</Label>
+                      </FlexItem>
+                    </Flex>
+                  </CardTitle>
+                  <CardBody>
+                    <p className="pf-v6-u-font-weight-bold pf-v6-u-mb-sm">{phase.milestone}</p>
+                    <p className="pf-v6-u-mb-md">{phase.description}</p>
+                    {phase.details && phase.details.length > 0 && (
+                      <List>
+                        {phase.details.map((d, i) => (
+                          <ListItem key={i}>{d}</ListItem>
+                        ))}
+                      </List>
+                    )}
+                  </CardBody>
+                </Card>
+              </GalleryItem>
+            ))}
+          </Gallery>
+        </PageSection>
+      )}
+
       {program.value_propositions && program.value_propositions.length > 0 && (
         <PageSection>
           <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-md">
@@ -184,34 +286,6 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
         </Gallery>
       </PageSection>
 
-      {viewMode === "customer" && program.customer_journey && (
-        <PageSection>
-          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
-            {program.customer_journey.title}
-          </Title>
-          <p className="pf-v6-u-color-200 pf-v6-u-mb-md">
-            {program.customer_journey.description}
-          </p>
-          <Gallery hasGutter>
-            {program.customer_journey.stages.map((stage) => (
-              <GalleryItem key={stage.id}>
-                <Card>
-                  <CardTitle>
-                    <Flex>
-                      <FlexItem>{stage.title}</FlexItem>
-                      <FlexItem>
-                        <Label isCompact>{stage.timeline}</Label>
-                      </FlexItem>
-                    </Flex>
-                  </CardTitle>
-                  <CardBody>{stage.description}</CardBody>
-                </Card>
-              </GalleryItem>
-            ))}
-          </Gallery>
-        </PageSection>
-      )}
-
       {partners && partners.length > 0 && (
         <PageSection>
           <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
@@ -240,44 +314,6 @@ export default function Overview({ viewMode }: { viewMode: ViewMode }) {
                       <p className="pf-v6-u-font-size-sm pf-v6-u-color-200">
                         {partner.key_differentiator}
                       </p>
-                    )}
-                  </CardBody>
-                </Card>
-              </GalleryItem>
-            ))}
-          </Gallery>
-        </PageSection>
-      )}
-
-      {viewMode === "internal" && program.services_package && (
-        <PageSection>
-          <Title headingLevel="h2" size="xl" className="pf-v6-u-mb-sm">
-            {program.services_package.title}
-          </Title>
-          <p className="pf-v6-u-color-200 pf-v6-u-mb-md">
-            {program.services_package.description}
-          </p>
-          <Gallery hasGutter>
-            {program.services_package.phases.map((phase) => (
-              <GalleryItem key={phase.id}>
-                <Card>
-                  <CardTitle>
-                    <Flex>
-                      <FlexItem>{phase.title}</FlexItem>
-                      <FlexItem>
-                        <Label isCompact>{phase.timeline}</Label>
-                      </FlexItem>
-                    </Flex>
-                  </CardTitle>
-                  <CardBody>
-                    <p className="pf-v6-u-font-weight-bold pf-v6-u-mb-sm">{phase.milestone}</p>
-                    <p className="pf-v6-u-mb-md">{phase.description}</p>
-                    {phase.details && phase.details.length > 0 && (
-                      <List>
-                        {phase.details.map((d, i) => (
-                          <ListItem key={i}>{d}</ListItem>
-                        ))}
-                      </List>
                     )}
                   </CardBody>
                 </Card>

@@ -102,11 +102,13 @@ export default function Header({
               )}
               <ToolbarItem>
                 <Button
-                  variant="plain"
+                  variant="link"
                   aria-label="Sign out"
                   icon={<SignOutAltIcon />}
                   onClick={onLogout}
-                />
+                >
+                  Sign out
+                </Button>
               </ToolbarItem>
             </ToolbarGroup>
           </ToolbarContent>

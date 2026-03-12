@@ -22,6 +22,7 @@ import HeartbeatIcon from "@patternfly/react-icons/dist/esm/icons/heartbeat-icon
 import MapMarkedAltIcon from "@patternfly/react-icons/dist/esm/icons/map-marked-alt-icon";
 import type { Phase, PhasesConfig } from "../../types/phase";
 import type { OrgElement, OrgConfig } from "../../types/organization";
+import type { ViewMode } from "../../types";
 import { useConfig } from "../../hooks/useConfig";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -39,7 +40,7 @@ function getIcon(name: string): React.ComponentType<{ className?: string }> {
   return ICON_MAP[name.toLowerCase()] ?? CircleIcon;
 }
 
-export default function Sidebar() {
+export default function Sidebar({ viewMode }: { viewMode: ViewMode }) {
   const navigate = useNavigate();
   const location = useLocation();
   const { data: phasesData } = useConfig<PhasesConfig>("phases");
@@ -248,14 +249,16 @@ export default function Sidebar() {
               Use Cases
             </NavItem>
 
-            <NavItem
-              itemId="/admin"
-              to="/admin"
-              isActive={isPathActive("/admin")}
-              icon={<CogIcon />}
-            >
-              Content Manager
-            </NavItem>
+            {viewMode === "internal" && (
+              <NavItem
+                itemId="/admin"
+                to="/admin"
+                isActive={isPathActive("/admin")}
+                icon={<CogIcon />}
+              >
+                Content Manager
+              </NavItem>
+            )}
           </NavList>
         </Nav>
       </PageSidebarBody>

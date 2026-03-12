@@ -33,7 +33,7 @@ export default function AppShell({
     />
   );
 
-  const sidebar = <Sidebar />;
+  const sidebar = <Sidebar viewMode={viewMode} />;
 
   return (
     <Page masthead={header} sidebar={sidebar} isManagedSidebar>
