@@ -1,20 +1,15 @@
-FROM python:3.12-slim-bookworm
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+ARG RELEASE_VERSION="main"
 
 WORKDIR /app
-
-RUN pip install --no-cache-dir uv
-
-COPY pyproject.toml ./
-COPY src/ src/
-
-RUN uv pip install --system --no-cache .
+COPY . .
+RUN uv sync --no-cache --locked --link-mode copy
 
 ENV PRODUCTION_MODE=True \
-    OPENAI_API_KEY=not-needed \
-    CONTENT_DIR=""
+    RELEASE_VERSION=${RELEASE_VERSION} \
+    OPENAI_API_KEY=not-needed
 
-RUN useradd -u 1001 -m appuser && chown -R 1001:1001 /app
+RUN chown -R 1001:1001 /app
 USER 1001
 
-EXPOSE 8000
-CMD ["python", "-m", "ai_factory_kagenti.agent"]
+CMD ["uv", "run", "--no-sync", "server", "--host", "0.0.0.0", "--port", "8000"]
