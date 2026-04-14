@@ -1,0 +1,119 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ai-factory-agent
+  namespace: ai-factory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: ai-factory-agent
+    kagenti.io/type: agent
+    protocol.kagenti.io/a2a: ""
+  name: ai-factory-agent
+  namespace: ai-factory
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app.kubernetes.io/name: ai-factory-agent
+    kagenti.io/type: agent
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/component: agent
+    app.kubernetes.io/name: ai-factory-agent
+    kagenti.io/framework: GoogleADK
+    kagenti.io/type: agent
+    kagenti.io/workload-type: deployment
+    protocol.kagenti.io/a2a: ""
+  name: ai-factory-agent
+  namespace: ai-factory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ai-factory-agent
+      kagenti.io/type: agent
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ai-factory-agent
+        kagenti.io/framework: GoogleADK
+        kagenti.io/type: agent
+        protocol.kagenti.io/a2a: ""
+    spec:
+      containers:
+      - name: agent
+        image: ai-factory-agent:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: AGENT_ENDPOINT
+          value: http://ai-factory-agent.ai-factory.svc.cluster.local:8080/
+        - name: LLM_API_BASE
+          value: https://llamastack.example.com/v1
+        - name: LLM_API_KEY
+          value: not-needed
+        - name: OPENAI_API_KEY
+          value: not-needed
+        - name: LLM_MODEL
+          value: openai/gemini/models/gemini-2.5-flash
+        - name: CONTENT_API_URL
+          value: http://backstage.ai-factory.svc.cluster.local:7007/api/aifactory
+        - name: CONTENT_DIR
+          value: /app/content
+        - name: UV_CACHE_DIR
+          value: /app/.cache/uv
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          failureThreshold: 12
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 3
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          failureThreshold: 3
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+          requests:
+            cpu: 200m
+            memory: 512Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          runAsUser: 1001
+        volumeMounts:
+        - mountPath: /app/.cache
+          name: cache
+      restartPolicy: Always
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      serviceAccountName: ai-factory-agent
+      volumes:
+      - emptyDir: {}
+        name: cache

@@ -1,0 +1,23 @@
+[project]
+name = "ai-factory-kagenti"
+version = "0.1.0"
+description = "AI Factory multi-agent system exposed as a Kagenti A2A agent, using LiteLLM for LLM abstraction."
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+dependencies = [
+    "google-adk>=1.0.0",
+    "litellm",
+    "a2a-sdk[http-server]>=0.2.16",
+    "uvicorn>=0.30.0",
+    "pydantic-settings>=2.8.1",
+    "httpx>=0.27.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+server = "ai_factory_kagenti.agent:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
