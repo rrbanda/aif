@@ -2,9 +2,9 @@ FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 ARG RELEASE_VERSION="main"
 
 WORKDIR /app
-COPY agents/kagenti/pyproject.toml ./
+COPY agents/kagenti/pyproject.toml agents/kagenti/uv.lock ./
 COPY agents/kagenti/src/ src/
-RUN uv sync --no-cache --link-mode copy
+RUN uv sync --frozen --no-cache --link-mode copy
 
 COPY content/ /content/
 
